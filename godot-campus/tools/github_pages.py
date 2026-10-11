@@ -1,6 +1,6 @@
 """Use the existing Git credential helper without printing or storing credentials."""
 import subprocess,urllib.request,json,os,sys
-REPO='wenzhotw/nccu-exchange-map'
+REPO='Frankfangcode/nccu-campus-3d'
 def auth():
     env={**os.environ,'GIT_TERMINAL_PROMPT':'0','GCM_INTERACTIVE':'never'}
     p=subprocess.run(['git','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,env=env,timeout=30)

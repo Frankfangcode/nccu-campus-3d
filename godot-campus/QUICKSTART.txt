@@ -63,7 +63,7 @@
 原網頁仍在 ../nccu100playplay/，Godot 專案獨立存放。
 
 GitHub Pages 部署網址
-  https://wenzhotw.github.io/nccu-exchange-map/campus3d/
+  https://Frankfangcode.github.io/nccu-campus-3d/campus3d/
   上傳資料夾為儲存庫根目錄的 campus3d/，不取代原網站。
   tools/stage_publish.py 準備發布檔案，version.json 記錄各檔案 SHA-256。
   重新發布需先匯出 Web 至 build/web/index.html，
