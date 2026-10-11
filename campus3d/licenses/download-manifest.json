@@ -1,0 +1,98 @@
+{
+  "licenses/Godot-LICENSE.txt": {
+    "source": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/LICENSE.txt",
+    "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+  },
+  "licenses/Godot-COPYRIGHT.txt": {
+    "source": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/COPYRIGHT.txt",
+    "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+  },
+  "licenses/Threejs-LICENSE.txt": {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r149/LICENSE",
+    "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+  },
+  "assets/models/student.glb": {
+    "source": "https://grab3d.com/dl/man-rigged/man-rigged.glb",
+    "sha256": "c41f2bfc62b03a8dd8fbae37d201d4c73bba3806678984c6895f59a7cbf22c4f"
+  },
+  "assets/models/student_female.glb": {
+    "source": "https://grab3d.com/dl/woman-rigged/woman-rigged.glb",
+    "sha256": "a9f2bcf774e3e9d19416c99c68a6d73041b17808def97fddf72c50d71a8b2b8c"
+  },
+  "licenses/Grab3D-man.txt": {
+    "source": "https://grab3d.com/dl/man/LICENSE.txt",
+    "sha256": "a15412842aa03ed7746551767e80808a9303edbbca02a06cfbcf354dfbd0ad27"
+  },
+  "licenses/Grab3D-woman.txt": {
+    "source": "https://grab3d.com/dl/woman/LICENSE.txt",
+    "sha256": "a15412842aa03ed7746551767e80808a9303edbbca02a06cfbcf354dfbd0ad27"
+  },
+  "tools/vendor/GLTFExporter.js": {
+    "source": "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/exporters/GLTFExporter.js",
+    "sha256": "591e3ec06aba897cc451cc4cfcac08ec4854b1ea6464a1faab1c134ff308fe7a"
+  },
+  "tools/vendor/BufferGeometryUtils.js": {
+    "source": "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "sha256": "3619d17b973bc18b14d38071ebbda43610e8aaa3d259df34cc93e792daf8703e"
+  },
+  "tools/vendor/three.module.js": {
+    "source": "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.module.js",
+    "sha256": "d4b2dad219790009b34feaf04cb62342b7c53260d307bd72ffffd8edeaa73141"
+  },
+  "assets/fonts/NotoSansTC.ttf": {
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/NotoSansTC%5Bwght%5D.ttf",
+    "sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f"
+  },
+  "licenses/NotoSansTC-OFL.txt": {
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/OFL.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  "assets/textures/asphalt_02_albedo.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
+    "sha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed"
+  },
+  "assets/textures/asphalt_02_normal.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg",
+    "sha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3"
+  },
+  "assets/textures/asphalt_02_roughness.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
+    "sha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712"
+  },
+  "assets/textures/pavement_02_albedo.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/pavement_02/pavement_02_diff_1k.jpg",
+    "sha256": "791d39aadbd48b483468d2ed68d21efce5be197c1d91cf7f3fad7e561c8e7675"
+  },
+  "assets/textures/pavement_02_normal.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/pavement_02/pavement_02_nor_gl_1k.jpg",
+    "sha256": "a7c962384c155498d1878cda1dca7a4ad738cb15fdb06e3c3ec11238be355b37"
+  },
+  "assets/textures/pavement_02_roughness.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/pavement_02/pavement_02_rough_1k.jpg",
+    "sha256": "128302c7d47c1273c8e1e1891d11556ebef8aa317f9b5bb111b49aba0dedc7d2"
+  },
+  "assets/textures/brown_brick_02_albedo.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_brick_02/brown_brick_02_diff_1k.jpg",
+    "sha256": "d769443de69cc16482d25a8a1777b1fa826ada8b4175c7c29d7abb08a91f8ac2"
+  },
+  "assets/textures/brown_brick_02_normal.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_brick_02/brown_brick_02_nor_gl_1k.jpg",
+    "sha256": "c4ca57e17a7ebfa27b561b126a6579e90b09a852c94ffa83a0b68d4ed62b46af"
+  },
+  "assets/textures/brown_brick_02_roughness.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_brick_02/brown_brick_02_rough_1k.jpg",
+    "sha256": "4f76762b9ae52f3d411e9902a2064bdba3de1eaf5c852df98b930716eaa7e17c"
+  },
+  "assets/textures/aerial_grass_rock_albedo.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_grass_rock/aerial_grass_rock_diff_1k.jpg",
+    "sha256": "57b8041bfe0d0f01430e4dbaad45e7ddddf0a9fc97317f90dbc51f7b0d9e1b5d"
+  },
+  "assets/textures/aerial_grass_rock_normal.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_grass_rock/aerial_grass_rock_nor_gl_1k.jpg",
+    "sha256": "1aa3e23bff453f152e089b9f83aa36b4901651e019f7e2ca01d5331a9bbbda78"
+  },
+  "assets/textures/aerial_grass_rock_roughness.jpg": {
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_grass_rock/aerial_grass_rock_rough_1k.jpg",
+    "sha256": "b9f3f76aba74007f708333c0dbe73c52eb83ea0c4187a13e2e994f888a25114a"
+  }
+}

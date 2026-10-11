@@ -1,0 +1,70 @@
+蓋亞造界 · 政大校園 / Godot 3D Edition
+====================================
+
+啟動
+  Play-Desktop.cmd：直接開始桌面遊戲。
+  Open-Editor.cmd：開啟 Godot 專案，按 F5 執行。
+  Play-Web.cmd：啟動本機網頁版 http://127.0.0.1:8790（需 Python）。
+  project.godot：可在 Godot 專案管理員中匯入。
+
+操作
+  WASD 移動，滑鼠轉視角，Shift 跑步，Space 跳躍。
+  滾輪調整鏡頭距離，E 對話／拾取故事／進出四維堂／上下車。
+  M 展開地圖，Esc 開啟選單並釋放滑鼠。
+  地圖可搜尋、依任務／地點／人物篩選、拖曳平移、縮放與點選目的地。
+  紫色步行導航會繞開建築與河道，並自動導向四維堂出入口。
+  手機：左側類比搖桿移動、右側空白處拖曳轉視角，可同時雙指操作。
+  跑步需按住，另有跳躍、互動、地圖與選單按鈕，支援直橫向。
+  駕車時 W/S 前進倒車，A/D 轉向，E 下車。
+  選單的「回到校門」可從任何位置返回起點。
+
+內容
+  原網頁的政大校園建築、四維堂室內、12 位 NPC 與原始對話。
+  三段校園記憶：校名碑、醉夢溪、四維堂。
+  收集完成後向四維堂內的校長回報。
+  校園記者徽章、穿山甲互動、巡邏車、任務地圖與自動存檔。
+  人物使用有骨架與走跑動畫的 GLB，路面採用 PBR 材質。
+  午後光影、鏡頭避障、距離霧、色調與暗角處理。
+
+開發
+  Godot 4.7.2 Standard / GDScript / Compatibility renderer。
+  scenes/campus.tscn：主場景，Architecture 是從原網頁轉出的建築。
+  scripts/campus.gd：場景、材質、碰撞、互動與存檔。
+  scripts/player.gd、actor.gd：角色操作與骨架動畫。
+  scripts/hud.gd、map.gd：介面與地圖。
+  assets/data/campus.json：遷移的碰撞、任務與 NPC 資料。
+  tools/migrate_scene.py：從原網頁重新產生場景，需 Playwright。
+  tools/download_assets.py：下載外部素材並記錄來源與 SHA-256。
+  export_presets.cfg：Web 與 Windows 匯出設定。
+
+驗證
+  Godot --headless --path . --script tools/test_game.gd -- --test
+  tools/capture_native.py 產生實際渲染截圖。
+  tools/test_web.py 驗證網頁載入、開始遊戲、行走與地圖。
+  測試存檔與正常玩家存檔分開，不覆寫玩家進度。
+
+存檔
+  Windows：%APPDATA%\Godot\app_userdata\蓋亞造界 · 政大校園\campus_save.json
+  網頁：瀏覽器該網站的儲存空間；清除網站資料會清除進度。
+
+目前範圍
+  這是可遊玩的 Godot 移植與視覺原型，尚非 GTA／3A 成品。
+  建築與植栽仍包含原網頁的簡化幾何；角色採用兩套共用模型，
+  尚未逐一製作人物肖像、表情與手指動作；待機姿勢由走路動畫合成。
+  原網頁的追逐 AI、交通車流與煙火尚未完整移植。
+  網頁版首載包含約 42 MB 的壓縮遊戲包與約 38 MB 的引擎，需 WebGL 2。
+  手機預設流暢畫質，入口可選均衡或細緻；提供全螢幕按鈕。
+  瀏覽器版已用 Edge 軟體 WebGL 後端完成載入與操作檢查；
+  這台 Intel UHD 630 的瀏覽器硬體渲染曾發生逾時，效能仍需優化。
+  建議優先用桌面版體驗，桌面版已在 Intel UHD 630 實際渲染驗證。
+  手機以觸控瀏覽器模擬驗證；尚未在實體 iPhone／Android 測量效能。
+  外部來源與授權請看 CREDITS.txt 及 licenses/。
+
+原網頁仍在 ../nccu100playplay/，Godot 專案獨立存放。
+
+GitHub Pages 部署網址
+  https://wenzhotw.github.io/nccu-exchange-map/campus3d/
+  上傳資料夾為儲存庫根目錄的 campus3d/，不取代原網站。
+  tools/stage_publish.py 準備發布檔案，version.json 記錄各檔案 SHA-256。
+  重新發布需先匯出 Web 至 build/web/index.html，
+  再用 --export-pack Web build/web/campus.zip 匯出壓縮資源包。

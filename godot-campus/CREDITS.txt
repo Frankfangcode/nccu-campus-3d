@@ -1,0 +1,36 @@
+Campus geometry, layout, stories and dialogue
+  Migrated from this repository's nccu100playplay/index.html and visuals.js.
+  Original project ownership and permissions remain with their respective authors.
+
+Characters: Grab3D (CC0)
+  https://grab3d.com/models/characters/man/
+  https://grab3d.com/models/characters/woman/
+  Rigged GLB with walk/run clips. AI-assisted source art with Blender cleanup.
+  Exact license texts: licenses/Grab3D-man.txt, licenses/Grab3D-woman.txt.
+  Character assets represent generic students; they are not portraits of real people.
+
+PBR textures: Poly Haven (CC0)
+  https://polyhaven.com/a/asphalt_02
+  https://polyhaven.com/a/pavement_02
+  https://polyhaven.com/a/brown_brick_02
+  https://polyhaven.com/a/aerial_grass_rock
+  https://polyhaven.com/license
+  Albedo, OpenGL normal and roughness maps, 1K resolution.
+
+Font: Noto Sans Traditional Chinese (SIL Open Font License)
+  https://github.com/google/fonts/tree/main/ofl/notosanstc
+  Full license: licenses/NotoSansTC-OFL.txt.
+
+Engine: Godot Engine (MIT)
+  https://godotengine.org/license/
+  Engine third-party notices: https://godotengine.org/license/thirdparty/
+
+Migration tooling: Three.js r149 (MIT)
+  https://github.com/mrdoob/three.js/tree/r149
+  Runtime does not depend on Three.js or any remote CDN.
+
+Development reference skill: godot-gdscript-patterns (MIT)
+  https://github.com/vl4dt/godot-skills/tree/main/skills/godot-gdscript-patterns
+  Installed separately in the local Codex skills directory; not required to run.
+
+Download URLs and checksums: licenses/download-manifest.json.

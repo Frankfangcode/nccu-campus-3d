@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101d25"><meta name="description" content="走進政大校園：第三人稱 3D 探索、互動地圖、故事任務與巡邏車。支援手機觸控。"><title>蓋亞造界｜政大校園 3D</title>
+<link rel="icon" href="index.icon.png"><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101d25;color:#edf0e8;font:16px system-ui,sans-serif}#canvas{display:block;width:100%;height:100%;outline:0;touch-action:none}#entry{position:fixed;inset:0;display:flex;align-items:center;padding:clamp(24px,6vw,90px);background:linear-gradient(90deg,#0b1724f5,#101d2590),url(preview.png) center/cover}article{max-width:550px;width:100%}.eyebrow{font-size:12px;letter-spacing:.3em;color:#d3b985}h1{font-size:clamp(36px,7vw,74px);font-weight:650;letter-spacing:.12em;margin:20px 0 12px}.lead{font-size:21px;color:#d7dace;margin:0 0 26px;line-height:1.6}.features{color:#a8bdc2;font-size:14px;line-height:1.8}.actions{display:flex;gap:12px;margin:28px 0 18px;flex-wrap:wrap}button,select,a.link{font:inherit;border:1px solid #526069;background:#162a32;color:#f3f0e5;border-radius:5px;padding:15px 20px}button{cursor:pointer}button.primary{background:#e0c087;color:#11212b;border-color:#e0c087;font-weight:700;min-width:160px}button:disabled{opacity:.55;cursor:wait}a{color:#d3b985}#status{min-height:48px;color:#c4d0cf;font-size:14px;line-height:1.7}progress{width:100%;height:5px;accent-color:#d9b778;border:0;margin:10px 0}footer{font-size:12px;color:#98adb4;line-height:1.8;margin-top:18px}.hint{color:#dfc690}#error{color:#ffc6b4;white-space:pre-wrap}#entry.hidden{display:none}#fs{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));font-size:12px;padding:7px;background:#132631bb;z-index:4;display:none}@media(max-height:500px){h1{font-size:38px;margin:12px 0}.lead{font-size:17px;margin-bottom:10px}.features,footer{display:none}.actions{margin:14px 0}#entry{padding:24px}}@media(prefers-reduced-motion:no-preference){button:hover{filter:brightness(1.12)}}
+</style></head><body>
+<canvas id="canvas" tabindex="0" aria-label="政大校園 3D 遊戲"></canvas>
+<div id="entry"><article><div class="eyebrow">NCCU / GAIA · CAMPUS STORIES</div><h1>蓋亞造界</h1><p class="lead">午後的政大，等你自由探索。</p><div class="features">第三人稱探索 · 互動導航地圖 · 校園故事 · 巡邏車<br><span class="hint">手機建議橫向遊玩｜左手移動、右手轉視角</span></div><div class="actions"><button id="start" class="primary">進入 3D 校園 →</button><select id="quality" aria-label="畫質"><option value="balanced">均衡畫質</option><option value="low">流暢／省電</option><option value="high">細緻畫質</option></select></div><progress id="progress" max="1" value="0" hidden></progress><div id="status">第一次開啟需要下載遊戲。請保持此頁開啟。</div><div id="error" role="alert"></div><footer>電腦：WASD 移動、滑鼠轉向、E 互動、M 地圖。<br>進度保存在這台裝置的瀏覽器中。<a href="../nccu100playplay/">開啟原網頁版</a> · <a href="CREDITS.txt">素材授權</a></footer></article></div>
+<button id="fs" aria-label="切換全螢幕">⛶ 全螢幕</button><script src="index.js"></script><script>
+const config={"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":64740472,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const canvas=document.getElementById('canvas'),entry=document.getElementById('entry'),status=document.getElementById('status'),progress=document.getElementById('progress'),startButton=document.getElementById('start'),quality=document.getElementById('quality');
+const params=new URLSearchParams(location.search),mobile=matchMedia('(pointer:coarse)').matches||params.has('mobile');
+if(mobile)quality.value='low';
+if(params.get('quality'))quality.value=params.get('quality');
+let started=false;
+async function fullscreen(){try{if(!document.fullscreenElement){await document.documentElement.requestFullscreen();try{await screen.orientation.lock('landscape')}catch(_){}}else await document.exitFullscreen()}catch(_){}}
+document.getElementById('fs').onclick=fullscreen;
+async function start(){if(started)return;started=true;startButton.disabled=true;quality.disabled=true;progress.hidden=false;status.textContent='正在下載校園與引擎…';
+try{
+if(!Engine.isWebGLAvailable(2))throw new Error('這個瀏覽器沒有啟用 WebGL 2。請改用較新的 Safari／Chrome，或開啟原網頁版。');
+const engine=new Engine({...config,mainPack:'campus.zip',canvas,canvasResizePolicy:2,args:['--','--quality-'+quality.value,...(mobile?['--mobile-test']:[])],onPrint:(...args)=>{console.log(...args);if(args.join(' ').includes('CAMPUS_READY')){entry.classList.add('hidden');document.getElementById('fs').style.display='block';canvas.focus();window.campusReady=true}},onPrintError:(...args)=>console.warn(...args),onProgress:(current,total)=>{if(total>0){progress.value=current/total;status.textContent=`正在載入 ${Math.min(100,Math.round(current/total*100))}% · ${(current/1048576).toFixed(1)} MB`}else status.textContent='正在準備 3D 場景…'}});
+window.campusEngine=engine;await engine.startGame(params.has('test')?{args:['--','--test-browser','--quality-'+quality.value,...(mobile?['--mobile-test']:[])]}:{});status.textContent='正在準備材質與角色，首次啟動可能稍久…';
+}catch(error){console.error(error);document.getElementById('error').textContent=String(error.message||error);status.textContent='無法完成載入。請重新整理，或使用下方的原網頁版。';startButton.disabled=false;quality.disabled=false;started=false}}
+startButton.onclick=start;
+if(params.has('autostart'))start();
+canvas.addEventListener('contextmenu',e=>e.preventDefault());
+window.addEventListener('pagehide',()=>{if(document.pointerLockElement)document.exitPointerLock()});
+</script></body></html>
+

@@ -1,0 +1,6 @@
+.godot/
+build/
+*.tmp
+*.log
+tools/vendor/
+artifacts/
