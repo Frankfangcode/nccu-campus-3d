@@ -51,12 +51,25 @@ with sync_playwright() as p:
     assert abs(during.get('yaw',0)-before.get('yaw',0))>0.05,('Camera did not respond to second touch',before,during)
     assert abs(during['z']-before['z'])+abs(during['x']-before['x'])>0.5,('Character did not move',before,during)
     assert state.get('stick',1)==0,('Joystick stayed pressed',state)
+    # Release and place the look finger elsewhere: no delta from the old contact.
+    held_yaw=state['yaw']
+    touches('touchStart',[(3,680,185)])
+    page.wait_for_timeout(2200)
+    assert abs(state['yaw']-held_yaw)<0.001,('Camera jumped on a new contact',held_yaw,state)
+    touches('touchStart',[(3,680,185),(4,600,200)])
+    touches('touchMove',[(3,680,185),(4,630,200)])
+    page.wait_for_timeout(2200)
+    assert abs(state['yaw']-held_yaw)<0.001,('Extra finger stole camera',held_yaw,state)
+    touches('touchEnd',[])
     page.screenshot(path=str(ROOT/'artifacts/mobile-landscape.png'),timeout=60000)
     # The map button is anchored to the right edge in logical pixels.
     page.touchscreen.tap(844-147*scale,162*scale);page.wait_for_timeout(1200)
     assert state.get('map'),('Map touch did not open',state)
     page.screenshot(path=str(ROOT/'artifacts/mobile-map.png'),timeout=60000)
-    page.touchscreen.tap(844-92*scale,40*scale);page.wait_for_timeout(1200)
+    page.touchscreen.tap(844-92*scale,40*scale)
+    for _ in range(20):
+        page.wait_for_timeout(500)
+        if not state.get('map'):break
     assert not state.get('map'),('Map did not close',state)
     page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(1800)
     page.screenshot(path=str(ROOT/'artifacts/mobile-portrait.png'),timeout=60000)
