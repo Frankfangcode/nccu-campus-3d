@@ -2,8 +2,8 @@
   "edition": "Godot mobile exploration",
   "files": {
     "index.html": {
-      "bytes": 6284,
-      "sha256": "fe6a5972e0a8a8e35dea155c854c1040b2db3e47c119259aa9022ee59d9130ca"
+      "bytes": 6282,
+      "sha256": "03e34a938acfda556c5b4ec5c2a93a2f11861222eff9600958dd679c05c8388d"
     },
     "index.js": {
       "bytes": 279815,
@@ -33,9 +33,9 @@
       "bytes": 1613664,
       "sha256": "035bf5cd613d1110983dd103e9cfc9c02a9fa3ebb781c5b86f36307cc70c9f6c"
     },
-    "campus-touch-20261012.zip": {
-      "bytes": 44836658,
-      "sha256": "5d5215009c81c95a6f6f746277df0cac300759d136a3a7a6c80fa70261119011"
+    "campus-v124-04965b7.zip": {
+      "bytes": 45417493,
+      "sha256": "80f52b8b56d2b77c3b0d71408e23ad7a104525a7c0ba3ffed24a3cfb024a2995"
     }
   }
 }

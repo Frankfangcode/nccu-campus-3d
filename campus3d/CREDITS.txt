@@ -56,3 +56,12 @@ Law College to Education College walking survey (2026-10-12)
   Original photos and local thumbnail galleries are not uploaded or packaged.
   Facade tile shader and geometry are procedural; foliage reuses the original
   project's generated leaf texture. Parked vehicles are unbranded primitives.
+
+Web v1.24 gameplay integration (2026-10-12)
+  Source: https://github.com/wenzhotw/nccu100 at 9fde140 (main).
+  Weather and old-principal dialogue/data are copied from src/content.
+  Stone lion and mounted principal GLBs are converted from the source game's
+  procedural geometry, with original author attribution retained here.
+  Godot-native event UI, rain particles, umbrella protection, police turn-based
+  encounter and history quiz: scripts/web_events.gd.
+  Source dialogue and quiz answers are preserved as game content, not fact-checked.
