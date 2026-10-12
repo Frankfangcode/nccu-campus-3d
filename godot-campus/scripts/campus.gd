@@ -466,7 +466,8 @@ func update_car(delta: float) -> void:
 			car_speed *= 0.6
 			break
 	player.position = car.position + Vector3(0, 1, 0)
-	player.yaw = lerp_angle(player.yaw, car.rotation.y, delta * 2)
+	if Time.get_ticks_msec() > player.manual_look_until and absf(car_speed)>0.5 and (not is_instance_valid(hud.touch) or hud.touch.look_id == -1):
+		player.yaw = lerp_angle(player.yaw, car.rotation.y, 1.0-exp(-delta*1.2))
 	player.arm.spring_length = 7
 
 func candidate(kind: String, pos: Vector3, text: String, index: int = -1, radius: float = 3.0) -> void:

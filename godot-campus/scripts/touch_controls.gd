@@ -8,11 +8,14 @@ var origin := Vector2.ZERO
 var stick := Vector2.ZERO
 var buttons: Dictionary = {}
 var radius := 62.0
+var look_last := Vector2.ZERO
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func layout(dimensions: Vector2) -> void:
+	if size != dimensions and is_instance_valid(game):
+		reset()
 	size = dimensions
 	origin = Vector2(100,size.y-112)
 	buttons = {"interact":Vector2(size.x-82,size.y-108),"jump":Vector2(size.x-82,size.y-220),"sprint":Vector2(size.x-195,size.y-100)}
@@ -27,11 +30,16 @@ func reset() -> void:
 	game.player.touch_sprint = false
 	queue_redraw()
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(game):
+		reset()
+
 func _input(event: InputEvent) -> void:
 	if not visible or not game.player.enabled:
 		return
 	if event is InputEventScreenTouch:
-		if not event.pressed:
+		var owned: bool = event.index == move_id or event.index == look_id or action_ids.has(event.index)
+		if not event.pressed or event.canceled:
 			if event.index==move_id:
 				move_id = -1
 				stick = Vector2.ZERO
@@ -57,14 +65,26 @@ func _input(event: InputEvent) -> void:
 					get_viewport().set_input_as_handled()
 					queue_redraw()
 					return
-			if event.pressed and event.position.x>size.x*0.42 and look_id==-1:
+			# 頂端 HUD 按鈕留給 GUI；手勢開始後不因跨區或其他手指而換擁有者。
+			if event.pressed and event.position.x>size.x*0.42 and event.position.y>230 and look_id==-1:
 				look_id = event.index
+				look_last = event.position
+		if owned or event.index == move_id or event.index == look_id:
+			get_viewport().set_input_as_handled()
 	if event is InputEventScreenDrag:
 		if event.index==move_id:
 			move_stick(event.position)
+			get_viewport().set_input_as_handled()
 		elif event.index==look_id:
-			game.player.yaw -= event.relative.x*0.005
-			game.player.pitch = clampf(game.player.pitch-event.relative.y*0.005,-0.9,0.35)
+			var drag: Vector2 = event.position-look_last
+			look_last = event.position
+			var short_edge := maxf(1,minf(size.x,size.y))
+			# 以畫面短邊計算角度，避免直橫向縮放造成靈敏度改變及事件跳點。
+			if drag.length() < short_edge*0.3:
+				game.player.yaw -= drag.x/short_edge*2.2
+				game.player.pitch = clampf(game.player.pitch-drag.y/short_edge*1.7,-0.85,0.3)
+				game.player.manual_look_until = Time.get_ticks_msec()+1800
+			get_viewport().set_input_as_handled()
 	queue_redraw()
 
 func move_stick(at: Vector2) -> void:

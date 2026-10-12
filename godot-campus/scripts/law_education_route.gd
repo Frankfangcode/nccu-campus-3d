@@ -101,47 +101,7 @@ func secondary_windows(width: float, depth: float, floors: int, spacing: float =
 				b.box("glass",Vector3(side*(width/2+0.16),y,z),Vector3(0.035,1.4,1.4))
 
 func swimming_pool() -> void:
-	b.begin("SwimmingPool","游泳館",Vector3(-123,0,-120))
-	b.landmark("游泳館",Vector3.ZERO,Vector2(38,20),Vector3(-9,0,15))
-	# 071–080: long pink-tile hall, sloping metal shell and high glazed end wall.
-	b.box("brick",Vector3(0,0.035,4),Vector3(47,0.07,32))
-	mass("tile",Vector3(0,1.0,0),Vector3(38,2,20))
-	mass("pink",Vector3(0,3.6,0),Vector3(38,3.2,20))
-	b.box("roof",Vector3(0,7.2,-0.4),Vector3(39.2,0.26,22),Vector3(0.13,0,0))
-	for x in range(-18,19,2):
-		b.box("metal",Vector3(x,7.38,-0.4),Vector3(0.035,0.10,22),Vector3(0.13,0,0))
-	# Clerestory at the front and full glass strips on both gable ends.
-	for x in range(-17,18,2):
-		b.window_front(x,6.1,10.03,1.7,1.45)
-		b.box("stone",Vector3(x,4.30,10.12),Vector3(1.8,0.55,0.12))
-	for side in [-1.0,1.0]:
-		for col in range(8):
-			var z := -8.7+col*2.45
-			b.box("frame",Vector3(side*19.08,5.15,z),Vector3(0.15,3.4,2.35))
-			b.box("glass",Vector3(side*19.18,5.15,z),Vector3(0.04,3.2,2.15))
-			b.box("trim",Vector3(side*19.26,4.0,z),Vector3(0.20,0.13,2.42))
-		b.box("trim",Vector3(side*19.45,4.25,0),Vector3(0.50,7.9,0.4),Vector3(0,0,side*-0.10))
-	# Staircase / shallow entry canopy / accessible side ramp from photos 077–079.
-	b.box("dark",Vector3(-9,2.0,10.17),Vector3(8.8,3.4,0.1))
-	for x in [-11.5,-9,-6.5]:
-		b.window_front(x,2.4,10.27,2.0,2.5)
-	steps(Vector3(-9,0,14),11,0.14,7)
-	b.box("tile",Vector3(-9,4.15,11.3),Vector3(13,0.35,3.2))
-	for x in [-14.8,-3.2]:
-		mass("tile",Vector3(x,2.0,12.25),Vector3(0.45,4.0,0.5))
-	b.sign_text("游 泳 館",Vector3(-9,4.62,11.9),0.014,Color("544a41"))
-	for x in [-15.7,-2.3]:
-		rail(Vector3(x,0,14.5),Vector3(x,1.0,11.5))
-	b.box("stone",Vector3(8,0.52,11.7),Vector3(14,0.2,1.8),Vector3(0,0,-0.065))
-	b.solid(Vector3(8,0.52,11.7),Vector3(14,0.2,1.8),Vector3(0,0,-0.065),true)
-	rail(Vector3(1,1.0,12.65),Vector3(15,0.1,12.65))
-	for x in [1.0,15.0]:
-		b.box("blue",Vector3(x,0.95,12.78),Vector3(0.5,0.55,0.04))
-	# Front information panels and tiled expansion joints.
-	for x in [0.0,11.0]:
-		b.box("blue",Vector3(x,2.25,10.16),Vector3(4.0,2.5,0.05))
-	for x in range(-18,19,4):
-		b.box("stone",Vector3(x,2.0,10.19),Vector3(0.06,3.7,0.08))
+	load("res://scripts/photo_landmarks.gd").new().pool(b,self)
 
 func dormitory() -> void:
 	b.begin("DormitoryCourtyard","莊敬宿舍與候車亭",Vector3(-111,0,-34),PI)

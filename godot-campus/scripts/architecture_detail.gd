@@ -136,75 +136,7 @@ func window_front(x: float, y: float, z: float, width: float, height: float) -> 
 	box("trim",Vector3(x,y-height/2-0.10,z+0.18),Vector3(width+0.23,0.10,0.38))
 
 func law_college() -> void:
-	begin("LawCollege","法學院",Vector3(-110,0,-78),PI)
-	active_group.scale.x = 1.18
-	built.append("法學院")
-	# Approximate proportions from the user's completed-building photographs.
-	# The supplied architectural rendering is not treated as as-built evidence.
-	box("paving",Vector3(0,0.045,4),Vector3(44,0.09,34))
-	box("wall",Vector3(0,15,-1.0),Vector3(35,24,19))
-	box("dark",Vector3(0,1.5,-3),Vector3(35,3,15))
-	solid(Vector3(0,13.5,-1),Vector3(35,27,19))
-	box("trim",Vector3(0,27.1,-1),Vector3(38,0.55,22))
-	box("wall",Vector3(-11,28.1,-4),Vector3(7,1.8,7))
-	# Double-height glazed podium and recessed entrance.
-	box("dark",Vector3(0,1.6,9.0),Vector3(23,3.2,0.5))
-	for x in [-15.4,-10.2,-5.1,5.1,10.2,15.4]:
-		box("wall",Vector3(x,1.6,10.2),Vector3(0.55,3.2,2.4))
-		solid(Vector3(x,1.6,10.2),Vector3(0.55,3.2,2.4))
-	for x in range(-15,16):
-		window_front(x,5.5,8.65,0.83,3.5)
-	box("trim",Vector3(0,3.15,9.45),Vector3(36,0.45,2.4))
-	box("trim",Vector3(0,7.8,9.1),Vector3(36,0.40,1.8))
-	box("trim",Vector3(17.7,5.45,9.1),Vector3(0.6,4.8,1.8))
-	# Five upper rows; narrow mullions and protruding warm-colored fins.
-	for row in range(5):
-		var y := 10.0+row*3.3
-		for col in range(14):
-			var x := -15.6+col*2.4
-			window_front(x,y,8.62,1.15,2.1)
-			box("fins",Vector3(x-0.88,y,9.0),Vector3(0.20,3.25,0.9))
-		box("trim",Vector3(0,y-1.6,8.97),Vector3(35.7,0.13,1.1))
-	# A dense screen across the left central bay.
-	for i in range(20):
-		box("fins",Vector3(-15.8+i*0.60,11.4,9.65),Vector3(0.14,6.25,0.8))
-	# Framed side balconies and the College of LAW identity.
-	for side in [-1.0,1.0]:
-		box("trim",Vector3(side*17.8,15.0,-6.0),Vector3(0.55,21,0.6))
-		box("trim",Vector3(side*17.8,15.0,0.0),Vector3(0.55,21,0.6))
-		box("trim",Vector3(side*17.8,25.3,-3),Vector3(0.55,0.55,6.6))
-		for row in range(6):
-			var y := 5.5+row*3.3
-			box("glass",Vector3(side*17.56,y,-3),Vector3(0.12,2.5,5.3))
-			box("frame",Vector3(side*17.7,y,-3),Vector3(0.15,2.6,0.06))
-			if row in [1,3]:
-				box("fins",Vector3(side*18.05,y-0.7,-3),Vector3(0.85,1.05,5.2))
-		for col in range(3):
-			for row in range(7):
-				box("glass",Vector3(side*17.57,3.2+row*3.25,2.0+col*2.0),Vector3(0.08,1.85,0.70))
-		sign_text("College of\nLAW",Vector3(side*18.0,26.1,-3),0.020,Color.WHITE,side*PI/2)
-	sign_text("College of Law",Vector3(0,3.25,10.69),0.012)
-	box("stone",Vector3(10,1.05,14.4),Vector3(7,2.1,0.65))
-	solid(Vector3(10,1.05,14.4),Vector3(7,2.1,0.65))
-	sign_text("法 學 院",Vector3(10,1.25,14.75),0.022,Color("685843"))
-	for i in range(3):
-		box("stone",Vector3(0,0.09+i*0.07,11.6-i*0.5),Vector3(9,0.18+i*0.14,0.5))
-	# Low planted beds and seating, kept outside the approach path.
-	for x in [-14.0,15.0]:
-		box("stone",Vector3(x,0.32,17.5),Vector3(6,0.64,1.8))
-		solid(Vector3(x,0.32,17.5),Vector3(6,0.64,1.8))
-		box("green",Vector3(x,0.72,17.5),Vector3(5.8,0.45,1.6))
-		box("fins",Vector3(x,0.55,15.4),Vector3(4.0,0.14,0.55))
-	landmark("法學院",Vector3(0,0,-1),Vector2(35,19),Vector3(0,0,21))
-	# The street-side rear facade is visible in photos 062, 083 and 091.
-	for row in range(7):
-		var y := 4.5+row*3.2
-		for col in range(14):
-			var x := -15.6+col*2.4
-			box("frame",Vector3(x,y,-10.59),Vector3(1.5,2.2,0.15))
-			box("glass",Vector3(x,y,-10.70),Vector3(1.3,2,0.05))
-			box("fins",Vector3(x+0.95,y,-10.9),Vector3(0.15,3.2,0.6))
-		box("trim",Vector3(0,y-1.55,-10.7),Vector3(35,0.18,0.5))
+	load("res://scripts/photo_landmarks.gd").new().law(self)
 
 func journalism() -> void:
 	begin("Journalism","新聞館",Vector3(112,0,-25))

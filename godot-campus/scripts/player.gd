@@ -13,6 +13,8 @@ var touch_sprint := false
 var touch_jump := false
 var stamina := 100.0
 var driving := false
+var manual_look_until := 0
+var rendered_camera_distance := 4.8
 
 func _ready() -> void:
 	collision_layer = 2
@@ -37,20 +39,34 @@ func _ready() -> void:
 	arm.margin = 0.2
 	arm.collision_mask = 1
 	arm.add_excluded_object(get_rid())
+	var camera_clearance := SphereShape3D.new()
+	camera_clearance.radius = 0.22
+	arm.shape = camera_clearance
 	pivot.add_child(arm)
+	var camera_mount := Node3D.new()
+	arm.add_child(camera_mount)
 	camera = Camera3D.new()
 	camera.fov = 64.0
 	camera.near = 0.12
 	camera.far = 950.0
-	arm.add_child(camera)
+	camera_mount.add_child(camera)
 	camera.current = true
+
+func _process(delta: float) -> void:
+	# 接近牆壁立即避讓，離開遮擋後緩慢拉遠，避免轉頭時忽近忽遠。
+	var available := arm.get_hit_length()
+	rendered_camera_distance = minf(available,lerpf(rendered_camera_distance,available,1.0-exp(-7.0*delta)))
+	camera.position.z = rendered_camera_distance-available
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not enabled:
 		return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if event.device == InputEvent.DEVICE_ID_EMULATION:
+			return
 		yaw -= event.relative.x * 0.0025
 		pitch = clampf(pitch - event.relative.y * 0.0025, -0.9, 0.35)
+		manual_look_until = Time.get_ticks_msec()+1800
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			arm.spring_length = maxf(2.0, arm.spring_length - 0.4)
@@ -58,7 +74,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			arm.spring_length = minf(8.0, arm.spring_length + 0.4)
 
 func _physics_process(delta: float) -> void:
-	pivot.rotation = Vector3(pitch, yaw, 0)
+	var camera_weight := 1.0-exp(-20.0*delta)
+	pivot.rotation.x = lerp_angle(pivot.rotation.x,pitch,camera_weight)
+	pivot.rotation.y = lerp_angle(pivot.rotation.y,yaw,camera_weight)
 	if driving:
 		visual.visible = false
 		return
