@@ -15,6 +15,8 @@ var hud: CanvasLayer
 var collected: Array = []
 var completed := false
 var badge := false
+var have_letter := false
+var web_events: Node3D
 var npcs: Array = []
 var markers: Array = []
 var pangolin: Node3D
@@ -77,6 +79,9 @@ func _ready() -> void:
 	hud.game = self
 	print("CAMPUS_BUILD hud")
 	add_child(hud)
+	web_events = load("res://scripts/web_events.gd").new()
+	web_events.game = self
+	add_child(web_events)
 	if "--capture" in OS.get_cmdline_user_args() or "--smoke" in OS.get_cmdline_user_args():
 		set_playing(true)
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -384,6 +389,8 @@ func return_to_gate() -> void:
 	player.pitch = -0.16
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(web_events) and web_events.modal:
+		return
 	if event.is_action_pressed("menu"):
 		if hud.map_large:
 			hud.toggle_map()
@@ -409,7 +416,7 @@ func _physics_process(delta: float) -> void:
 			test_clock = 0
 			var route_button: Rect2 = hud.route_visit_button.get_global_rect()
 			print("TEST_STATE ",JSON.stringify({"x":player.position.x,"z":player.position.z,"yaw":player.yaw,"map":hud.map_large,"playing":playing,"mobile":mobile,"stick":player.touch_move.length(),"sprint":player.touch_sprint,"fps":Engine.get_frames_per_second(),"destination":navigation.destination_name,"route_button":[route_button.position.x,route_button.position.y,route_button.size.x,route_button.size.y]}))
-	if playing:
+	if playing and not (is_instance_valid(web_events) and web_events.modal):
 		update_npcs(delta)
 		if player.driving:
 			update_car(delta)
@@ -489,10 +496,15 @@ func update_interaction() -> void:
 		candidate("exit", Vector3(300, 0, 22), "E  返回校園", -1, 3)
 		candidate("car", car.position, "E  駕駛巡邏車", -1, 4)
 		candidate("pangolin", pangolin.position, "E  放下穿山甲" if carrying else "E  抱起穿山甲", -1, 2.5)
+		if is_instance_valid(web_events): web_events.candidates()
 	hud.prompt.text = str(target.get("text", "")) if not hud.dialogue.visible else ""
 
 func interact() -> void:
+	if is_instance_valid(web_events) and web_events.modal:
+		return
 	if target.is_empty():
+		return
+	if is_instance_valid(web_events) and web_events.interact(str(target.kind)):
 		return
 	match target.kind:
 		"story":
@@ -558,7 +570,7 @@ func save_progress() -> void:
 		pos = Vector3(-2, 0.2, 21)
 	var file := FileAccess.open(save_path, FileAccess.WRITE)
 	if file:
-		file.store_string(JSON.stringify({"version":1,"collected":collected,"completed":completed,"badge":badge,"position":[pos.x,pos.y,pos.z],"discovered":navigation.discovered if is_instance_valid(navigation) else []}))
+		file.store_string(JSON.stringify({"version":1,"collected":collected,"completed":completed,"badge":badge,"have_letter":have_letter,"position":[pos.x,pos.y,pos.z],"discovered":navigation.discovered if is_instance_valid(navigation) else []}))
 
 func load_progress() -> void:
 	if "--smoke" in OS.get_cmdline_user_args() or "--capture" in OS.get_cmdline_user_args() or "--test" in OS.get_cmdline_user_args():
@@ -568,6 +580,7 @@ func load_progress() -> void:
 	var saved = JSON.parse_string(FileAccess.get_file_as_string(save_path))
 	if not saved is Dictionary or saved.get("version",0) != 1:
 		return
+	have_letter = saved.get("have_letter",false)
 	for index in saved.get("collected", []):
 		if int(index) >= 0 and int(index) < 3 and not int(index) in collected:
 			collected.append(int(index))

@@ -151,7 +151,7 @@ func _ready() -> void:
 	route_visit_button = button("探索法學院 → 教育學院", game.visit_photo_route)
 	ml.add_child(route_visit_button)
 	ml.add_child(button("回到校門", func(): game.return_to_gate(); game.set_playing(true)))
-	ml.add_child(label("進度自動儲存 · Godot 3D Edition", 13, Color("9aaaa6")))
+	ml.add_child(label("進度自動儲存 · Godot / 網頁內容 v1.24", 13, Color("9aaaa6")))
 	route_label = label("",16,Color("d7afff"))
 	route_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	root.add_child(route_label)

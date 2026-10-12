@@ -39,6 +39,8 @@ func _input(event: InputEvent) -> void:
 	if not visible or not game.player.enabled:
 		return
 	if event is InputEventScreenTouch:
+		if event.pressed and is_instance_valid(game.web_events) and game.web_events.letter_button.visible and game.web_events.letter_button.get_global_rect().has_point(event.position):
+			return
 		var owned: bool = event.index == move_id or event.index == look_id or action_ids.has(event.index)
 		if not event.pressed or event.canceled:
 			if event.index==move_id:

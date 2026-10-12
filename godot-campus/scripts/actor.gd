@@ -2,6 +2,8 @@ extends Node3D
 ## Shared skinned character with looping walk/run and a relaxed frozen walk pose.
 var animation: AnimationPlayer
 var current := ""
+var umbrella_active := false
+var skeleton: Skeleton3D
 static var idle_cache: Dictionary = {}
 
 func setup(female: bool = false) -> void:
@@ -10,6 +12,9 @@ func setup(female: bool = false) -> void:
 		path = path.replace(".glb","_mobile.glb")
 	var model: Node3D = load(path).instantiate()
 	add_child(model)
+	for node in model.find_children("*", "Skeleton3D", true, false):
+		skeleton = node
+	process_priority = 100
 	for node in model.find_children("*", "AnimationPlayer", true, false):
 		animation = node
 	for mesh in model.find_children("*", "MeshInstance3D", true, false):
@@ -26,6 +31,15 @@ func setup(female: bool = false) -> void:
 		animation.add_animation_library("campus", library)
 		animation.play("campus/idle")
 		animation.advance(0)
+
+func _process(_delta: float) -> void:
+	if umbrella_active and is_instance_valid(skeleton):
+		var upper := skeleton.find_bone("RightArm")
+		var lower := skeleton.find_bone("RightForeArm")
+		if upper >= 0:
+			skeleton.set_bone_pose_rotation(upper,Quaternion.from_euler(Vector3(-0.9,0,-0.4)))
+		if lower >= 0:
+			skeleton.set_bone_pose_rotation(lower,Quaternion.from_euler(Vector3(-1.1,0,0)))
 
 func make_idle(walk: Animation) -> Animation:
 	# Average a complete stride into a balanced standing pose, retaining relaxed arms.
