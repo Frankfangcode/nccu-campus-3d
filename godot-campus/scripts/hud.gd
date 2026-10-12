@@ -217,6 +217,10 @@ func _process(delta: float) -> void:
 	if game.completed:
 		mission.text = "✓ 校園記憶已完成\n自由探索，留下你的故事"
 	place.text = "四維堂・大禮堂" if game.player.position.x > 250 else ("政大・醉夢溪畔" if game.player.position.z < -120 else "政大・林蔭大道" if game.player.position.z < -15 else "政大・指南路校門")
+	if game.player.position.x < 250 and game.player.position.z > 32:
+		place.text = "指南路・街區"
+	elif game.player.position.distance_to(Vector3(-200,0,-66)) < 45:
+		place.text = "政大・法學院"
 	note_time -= delta
 	notification.visible = note_time > 0
 	minimap.queue_redraw()

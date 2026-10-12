@@ -15,7 +15,7 @@ var pois: Array = []
 var discovered: Array = []
 
 func _ready() -> void:
-	grid.region = Rect2i(0,0,225,137)
+	grid.region = Rect2i(0,0,225,165)
 	grid.cell_size = Vector2.ONE*CELL
 	grid.offset = ORIGIN
 	grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
@@ -37,7 +37,7 @@ func _ready() -> void:
 		var lo := cell(center-half)-Vector2i.ONE
 		var hi := cell(center+half)+Vector2i.ONE
 		for x in range(maxi(0,lo.x),mini(225,hi.x+1)):
-			for y in range(maxi(0,lo.y),mini(137,hi.y+1)):
+			for y in range(maxi(0,lo.y),mini(grid.region.size.y,hi.y+1)):
 				var p: Vector2 = grid.get_point_position(Vector2i(x,y))-center
 				var blocked := false
 				if c.get("c",false):
@@ -51,7 +51,10 @@ func _ready() -> void:
 					grid.set_point_solid(Vector2i(x,y))
 	pois = [{"name":"政大校門","pos":Vector3(-2,0,18),"kind":"place"},{"name":"四維堂","pos":Vector3(0,0,-72),"kind":"place"},{"name":"中央圖書館","pos":Vector3(-46,0,-78),"kind":"place"},{"name":"噴水池","pos":Vector3(0,0,-24),"kind":"place"},{"name":"田徑場","pos":Vector3(80,0,-126),"kind":"place"},{"name":"醉夢溪畔","pos":Vector3(-45,0,-158),"kind":"place"}]
 	for lot in game.data.lots:
-		pois.append({"name":lot.name,"pos":Vector3(lot.x,0,lot.z+lot.d/2+2),"kind":"place"})
+		if lot.get("map_only",false):
+			continue
+		pois.append({"name":lot.name,"pos":Vector3(lot.x,0,lot.get("approach_z",lot.z+lot.d/2+2)),"kind":"place"})
+	pois.append({"name":"指南路街區","pos":Vector3(0,0,51),"kind":"place"})
 	for i in range(game.data.stories.size()):
 		var a: Array = game.data.stories[i].position
 		pois.append({"name":game.data.stories[i].name,"pos":Vector3(a[0],0,a[2]),"kind":"story","index":i})

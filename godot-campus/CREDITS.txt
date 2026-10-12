@@ -34,3 +34,13 @@ Development reference skill: godot-gdscript-patterns (MIT)
   Installed separately in the local Codex skills directory; not required to run.
 
 Download URLs and checksums: licenses/download-manifest.json.
+
+Photo-referenced architecture expansion (2026-10-12)
+  New procedural exterior geometry: scripts/architecture_detail.gd.
+  Law College: user-provided photographs, retained in the local reference library.
+  Jing Tang / Journalism / Social Science Information Center:
+  Wikimedia Commons photographs; individual authors, URLs and license names are
+  recorded in assets/data/architecture_sources.json.
+  Reference photographs are not included as game textures or in web exports.
+  Zhinan streetscape is an interpretation, not a reconstruction of named shops.
+  Building dimensions, back facades and map coordinates are approximate.

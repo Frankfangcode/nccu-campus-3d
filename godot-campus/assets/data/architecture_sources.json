@@ -1,0 +1,1271 @@
+{
+  "notes": [
+    "照片日期與現況可能不同。",
+    "現有遊戲座標為風格化配置，並非實測校園 GIS。",
+    "模型未確認的背面、尺度、地形須標示為推估。"
+  ],
+  "coverage": [
+    {
+      "name": "法學院",
+      "area": "山下校區",
+      "reference_count": 9,
+      "reference_ids": [
+        "80272a11e742",
+        "74f3ba9e5636",
+        "a43bc3ff4b44",
+        "S__56434700_0",
+        "S__56434701_0",
+        "S__56434702_0",
+        "S__56434703_0",
+        "S__56434704_0",
+        "S__56434705_0"
+      ],
+      "status": "已建立照片參考模型，尺寸與位置為推估"
+    },
+    {
+      "name": "四維堂",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "0c8a575cde17",
+        "a05f4b42f50b"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "行政大樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "9a2c42772e8d",
+        "e053ba168192"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "中正圖書館",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "ec724a0d43dc",
+        "4b2db2971216",
+        "3910b70a575b"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "商學院",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "af63704b5eeb",
+        "6ff1d111f5fc",
+        "5a64ae1a0d37"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "井塘樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "da2725ca1c7a",
+        "3cc1e550bd96"
+      ],
+      "status": "已建立照片參考模型，尺寸與位置為推估"
+    },
+    {
+      "name": "新聞館",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "7ce5261892ff",
+        "3399b293f617"
+      ],
+      "status": "已建立照片參考模型，尺寸與位置為推估"
+    },
+    {
+      "name": "資訊大樓／電算中心",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "6162aa43b681",
+        "595e14401ce9"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "社資中心",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "9db890983ead",
+        "7f25697b031d"
+      ],
+      "status": "已建立照片參考模型，尺寸與位置為推估"
+    },
+    {
+      "name": "果夫樓",
+      "area": "山下校區",
+      "reference_count": 4,
+      "reference_ids": [
+        "0c8a575cde17",
+        "0e43531586dc",
+        "3fc60bd49ded",
+        "db12b9699468"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "志希樓",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "0c8a575cde17",
+        "532f434f335c",
+        "e782d4f6a1f2"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "綜合院館",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "1401f57ee2a0",
+        "ec173d1013b1",
+        "8b45aed853b7"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "體育館",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "97f80a55bd13",
+        "40074306022f",
+        "cd605d8d696c"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "莊敬宿舍",
+      "area": "山下校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "614eb222d459",
+        "e6937da22954",
+        "437ae3267811"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "校門",
+      "area": "山下校區",
+      "reference_count": 4,
+      "reference_ids": [
+        "096c8e9f48cc",
+        "5f99fa4e2cdb",
+        "932a8983df73",
+        "39bfdd6343d9"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "風雩樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "34a9e4b009c1",
+        "b8b50109b998"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "逸仙樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "77666ec3aea6",
+        "5a3607c1d673"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "研究大樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "ccdc0dce1bd4",
+        "bcb1670f6bc6"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "學思樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "bdfcc54aeae5",
+        "f524959de608"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "大仁樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "73a6fcb26880",
+        "b982ac5b825f"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "大智樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "6a15b284f8d1",
+        "0a8a292501e6"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "大勇樓",
+      "area": "山下校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "0adfa32f8052",
+        "caeb4c30a313"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "憩賢樓",
+      "area": "山下校區",
+      "reference_count": 1,
+      "reference_ids": [
+        "66afe9fb7008"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "道藩樓",
+      "area": "山上校區",
+      "reference_count": 5,
+      "reference_ids": [
+        "946eb7755029",
+        "a69c0e846bca",
+        "fa2b3d5ac06b",
+        "d3033466f81e",
+        "f041677642d2"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "百年樓",
+      "area": "山上校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "a0876f5c0cc1",
+        "b7ad7640fe19",
+        "5a9b38d67a24"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "季陶樓",
+      "area": "山上校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "84209f471da0",
+        "c1aa0a0eaf11"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "傳播學院",
+      "area": "山上校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "e99510269371",
+        "380737d6a7ed",
+        "7ce5261892ff"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "藝文中心",
+      "area": "山上校區",
+      "reference_count": 2,
+      "reference_ids": [
+        "ae489f3ec075",
+        "8d1fd1b571a2"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "國際大樓",
+      "area": "山上校區",
+      "reference_count": 1,
+      "reference_ids": [
+        "8eaae55e5513"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "自強十舍",
+      "area": "山上校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "5b2dd30c03e3",
+        "e06baf358e79",
+        "08c24fd5fa3c"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "達賢圖書館",
+      "area": "指南校區",
+      "reference_count": 10,
+      "reference_ids": [
+        "157a5a31e127",
+        "869b189f0d0c",
+        "647d07f204e0",
+        "509cf7c2bc32",
+        "410025f89f58",
+        "57d5a4ccee82",
+        "609fc8af76c0",
+        "83a0b41fd53a",
+        "12e5a89e7388",
+        "d0351511156a"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "國關中心",
+      "area": "指南校區",
+      "reference_count": 3,
+      "reference_ids": [
+        "02e7d3a26993",
+        "7769a2a7d78c",
+        "ee71f67f5c53"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "身心健康中心",
+      "area": "指南校區",
+      "reference_count": 1,
+      "reference_ids": [
+        "a4a26cfb8e54"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "醉夢溪／指南溪",
+      "area": "校園周邊",
+      "reference_count": 5,
+      "reference_ids": [
+        "aa11e1940d5f",
+        "ae489f3ec075",
+        "c06f2d930c15",
+        "cd605d8d696c",
+        "d1c90930d734"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "指南路／政大街",
+      "area": "校園周邊",
+      "reference_count": 1,
+      "reference_ids": [
+        "956a7552e6fd"
+      ],
+      "status": "已建立概略街廓；非逐店還原"
+    },
+    {
+      "name": "萬壽橋",
+      "area": "校園周邊",
+      "reference_count": 3,
+      "reference_ids": [
+        "f8d7daa56fec",
+        "e02bae4f6197",
+        "7a5365c87943"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "景美溪",
+      "area": "校園周邊",
+      "reference_count": 2,
+      "reference_ids": [
+        "d1c90930d734",
+        "f802845999e5"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "指南宮",
+      "area": "校園周邊",
+      "reference_count": 2,
+      "reference_ids": [
+        "416a814dec5c",
+        "3ee4361d4dd6"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "恆光橋",
+      "area": "校園周邊",
+      "reference_count": 1,
+      "reference_ids": [
+        "cd13016748b3"
+      ],
+      "status": "已收集，待精細建模"
+    },
+    {
+      "name": "全校配置／空拍",
+      "area": "全校",
+      "reference_count": 9,
+      "reference_ids": [
+        "dcfdcf7d690c",
+        "e334e5a9826e",
+        "617484a25e22",
+        "f805fcb578c1",
+        "157a5a31e127",
+        "42f0a242a867",
+        "5b2dd30c03e3",
+        "e06baf358e79",
+        "08c24fd5fa3c"
+      ],
+      "status": "已收集，待精細建模"
+    }
+  ],
+  "sources": [
+    {
+      "id": "dcfdcf7d690c",
+      "title": "File:NCCU aerialphoto 20250208 01 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_aerialphoto_20250208_01_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e334e5a9826e",
+      "title": "File:NCCU aerialphoto 20250208 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_aerialphoto_20250208_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "617484a25e22",
+      "title": "File:NCCU aerialphoto 20250208 03 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_aerialphoto_20250208_03_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "f805fcb578c1",
+      "title": "File:NCCU Zhinan campus aerialphoto 20250208.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Zhinan_campus_aerialphoto_20250208.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "a4a26cfb8e54",
+      "title": "File:NCCU Physical & Mental Health Center.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Physical_%26_Mental_Health_Center.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "157a5a31e127",
+      "title": "File:NCCU station and Dah Hsian Library aerialphoto.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_station_and_Dah_Hsian_Library_aerialphoto.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "946eb7755029",
+      "title": "File:NCCU Dao Fan Building 20231108.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dao_Fan_Building_20231108.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "a69c0e846bca",
+      "title": "File:NCCU Dao Fan Building 20231121.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dao_Fan_Building_20231121.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "0c8a575cde17",
+      "title": "File:NCCU Shiwei Hall, Zhixi Building, Guofu Building 2024.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Shiwei_Hall,_Zhixi_Building,_Guofu_Building_2024.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "42f0a242a867",
+      "title": "File:NCCU aerialphoto 20250208 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_aerialphoto_20250208_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "aa11e1940d5f",
+      "title": "File:NCCU Waterfront Elevator 20231107.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Waterfront_Elevator_20231107.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "ae489f3ec075",
+      "title": "File:NCCU Waterfront Elevator and Art & Culture Center 20240712.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Waterfront_Elevator_and_Art_%26_Culture_Center_20240712.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "c06f2d930c15",
+      "title": "File:Zhinan River 20221027.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhinan_River_20221027.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "869b189f0d0c",
+      "title": "File:Dah Hsian Seetoo Library 20221003.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_20221003.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "647d07f204e0",
+      "title": "File:Dah Hsian Seetoo Library 20231214 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_20231214_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "509cf7c2bc32",
+      "title": "File:Dah Hsian Seetoo Library 20231214 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_20231214_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "02e7d3a26993",
+      "title": "File:NCCU IIR 20230913 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_IIR_20230913_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "7769a2a7d78c",
+      "title": "File:NCCU IIR 20230913 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_IIR_20230913_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "ee71f67f5c53",
+      "title": "File:NCCU IIR 20230914.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_IIR_20230914.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "614eb222d459",
+      "title": "File:NCCU Dormitory JhuangJing 4-8 20230913 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_JhuangJing_4-8_20230913_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e6937da22954",
+      "title": "File:NCCU Dormitory JhuangJing 4-8 20230913 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_JhuangJing_4-8_20230913_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "437ae3267811",
+      "title": "File:NCCU Dormitory JhuangJing 4-8 20231211.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_JhuangJing_4-8_20231211.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e99510269371",
+      "title": "File:Building of Communication College,National Chengchi University 20231012.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Building_of_Communication_College,National_Chengchi_University_20231012.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "380737d6a7ed",
+      "title": "File:NCCU Communication College Building 20230919.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Communication_College_Building_20230919.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "7ce5261892ff",
+      "title": "File:Journalism building.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Journalism_building.jpg",
+      "license": "Copyrighted free use",
+      "author": "Polarbear0627 at Chinese Wikipedia"
+    },
+    {
+      "id": "6162aa43b681",
+      "title": "File:NCCU Information Building 20240320.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Information_Building_20240320.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "da2725ca1c7a",
+      "title": "File:NCCU Jing tan Building 20220819.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Jing_tan_Building_20220819.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "3cc1e550bd96",
+      "title": "File:Jing tan.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Jing_tan.jpg",
+      "license": "Copyrighted free use",
+      "author": "Polarbear0627 at Chinese Wikipedia"
+    },
+    {
+      "id": "594cbb0d4846",
+      "title": "File:NCCU Covered Corridor 20140601 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Covered_Corridor_20140601_01.jpg",
+      "license": "CC BY 2.0",
+      "author": "dabing626"
+    },
+    {
+      "id": "595e14401ce9",
+      "title": "File:NCCU Information building and Computer center building.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Information_building_and_Computer_center_building.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "3399b293f617",
+      "title": "File:NCCU Journalism Building.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Journalism_Building.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "66afe9fb7008",
+      "title": "File:NCCU Qi Xian Building.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Qi_Xian_Building.jpg",
+      "license": "CC BY 2.0",
+      "author": "dabing626"
+    },
+    {
+      "id": "9db890983ead",
+      "title": "File:NCCU Social Science Information Center.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Social_Science_Information_Center.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "096c8e9f48cc",
+      "title": "File:National Chengchi University (39177963401).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:National_Chengchi_University_(39177963401).jpg",
+      "license": "CC BY-SA 2.0",
+      "author": "Felix Filnkoessl"
+    },
+    {
+      "id": "5f99fa4e2cdb",
+      "title": "File:National Chengchi University maingate 20090904.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:National_Chengchi_University_maingate_20090904.jpg",
+      "license": "CC BY 2.0",
+      "author": "joke chien"
+    },
+    {
+      "id": "7f25697b031d",
+      "title": "File:Social science archive nccu.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Social_science_archive_nccu.jpg",
+      "license": "Public domain",
+      "author": "Polarbear0627 at Chinese Wikipedia"
+    },
+    {
+      "id": "fa2b3d5ac06b",
+      "title": "File:NCCU Dao Fan Building 20221027 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dao_Fan_Building_20221027_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "d3033466f81e",
+      "title": "File:NCCU Dao Fan Building 20221027.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dao_Fan_Building_20221027.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "f041677642d2",
+      "title": "File:NCCU Dao Fan Building 20231121 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dao_Fan_Building_20231121_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "5b2dd30c03e3",
+      "title": "File:NCCU Dormitory ZihCiang 10 aerialphoto 20250208 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_ZihCiang_10_aerialphoto_20250208_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e06baf358e79",
+      "title": "File:NCCU Dormitory ZihCiang 10 aerialphoto 20250208 02 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_ZihCiang_10_aerialphoto_20250208_02_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "08c24fd5fa3c",
+      "title": "File:NCCU Dormitory ZihCiang 10 aerialphoto 20250208 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Dormitory_ZihCiang_10_aerialphoto_20250208_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "4cafae782ee2",
+      "title": "File:NCCU RIICenter 20240904.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_RIICenter_20240904.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "8d1fd1b571a2",
+      "title": "File:NCCU art and culture center 20221117.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_art_and_culture_center_20221117.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "8eaae55e5513",
+      "title": "File:2017-07-02 International Building (NCCU).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:2017-07-02_International_Building_(NCCU).jpg",
+      "license": "CC BY-SA 2.0",
+      "author": "Felix Filnkoessl"
+    },
+    {
+      "id": "cc1fc3f64db5",
+      "title": "File:NCCU Covered Corridor 20140601 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Covered_Corridor_20140601_02.jpg",
+      "license": "CC BY 2.0",
+      "author": "dabing626"
+    },
+    {
+      "id": "932a8983df73",
+      "title": "File:NCCU Main Gate 20220815.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Main_Gate_20220815.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "39bfdd6343d9",
+      "title": "File:Main gate nccu.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Main_gate_nccu.jpg",
+      "license": "Copyrighted free use",
+      "author": "Polarbear0627 at Chinese Wikipedia"
+    },
+    {
+      "id": "410025f89f58",
+      "title": "File:Dah Hsian Seetoo Library book wall 20231106.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_book_wall_20231106.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "57d5a4ccee82",
+      "title": "File:Dah Hsian Seetoo Library book wall 1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_book_wall_1.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "609fc8af76c0",
+      "title": "File:Dah Hsian Seetoo Library book wall 2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_book_wall_2.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "83a0b41fd53a",
+      "title": "File:Dah Hsian Seetoo Library Lakeside Reading House 20221121.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_Lakeside_Reading_House_20221121.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "12e5a89e7388",
+      "title": "File:Dah Hsian Seetoo Library Lakeside Reading House 20221222.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Dah_Hsian_Seetoo_Library_Lakeside_Reading_House_20221222.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "d0351511156a",
+      "title": "File:Lakeside Reading House interer 20221216.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Lakeside_Reading_House_interer_20221216.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "a38765c57a5a",
+      "title": "File:NCCU Station 20241017 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Station_20241017_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "c7b67608cd00",
+      "title": "File:NCCU Station 20241017 02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Station_20241017_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "1658a36d2f53",
+      "title": "File:NCCU Station 20241017 03.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Station_20241017_03.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "af63704b5eeb",
+      "title": "File:NCCU College of Commerce 20220819.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_College_of_Commerce_20220819.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "6ff1d111f5fc",
+      "title": "File:NCCU College of Commerce 20220929.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_College_of_Commerce_20220929.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "5a64ae1a0d37",
+      "title": "File:NCCU College of Commerce 20221026.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_College_of_Commerce_20221026.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "80272a11e742",
+      "title": "File:NCCU Law building 20240318.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Law_building_20240318.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "74f3ba9e5636",
+      "title": "File:NCCU Law building 20240509.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Law_building_20240509.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "a43bc3ff4b44",
+      "title": "File:NCCU Law building 20240918.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Law_building_20240918.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "ec724a0d43dc",
+      "title": "File:NCCU Chiang Kai-shek Library 20220813.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Chiang_Kai-shek_Library_20220813.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "4b2db2971216",
+      "title": "File:NCCU Chiang Kai-shek Library 20220908.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Chiang_Kai-shek_Library_20220908.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "3910b70a575b",
+      "title": "File:NCCU Chiang Kai-shek Library 20221020 (cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Chiang_Kai-shek_Library_20221020_(cropped).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "1401f57ee2a0",
+      "title": "File:NCCU General Building 20240417.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_General_Building_20240417.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "ec173d1013b1",
+      "title": "File:NCCU General Building 20240503.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_General_Building_20240503.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "8b45aed853b7",
+      "title": "File:NCCU General Building of Colleges 20221027.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_General_Building_of_Colleges_20221027.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "0e43531586dc",
+      "title": "File:NCCU Guofu Building 20220815.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Guofu_Building_20220815.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "3fc60bd49ded",
+      "title": "File:NCCU Guofu Building 20221026.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Guofu_Building_20221026.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "db12b9699468",
+      "title": "File:NCCU Guofu Building 20230926 01.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Guofu_Building_20230926_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "9a2c42772e8d",
+      "title": "File:NCCU Admin Building 20240417.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Admin_Building_20240417.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e053ba168192",
+      "title": "File:NCCU Administration Building 20220815.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Administration_Building_20220815.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "97f80a55bd13",
+      "title": "File:NCCU Gymnasium 20220815.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Gymnasium_20220815.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "40074306022f",
+      "title": "File:NCCU Gymnasium 20231018.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Gymnasium_20231018.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "cd605d8d696c",
+      "title": "File:Zhinan River 20240709.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhinan_River_20240709.jpg",
+      "license": "Attribution",
+      "author": "臺北市政府工務局水利工程處"
+    },
+    {
+      "id": "a05f4b42f50b",
+      "title": "File:NCCU Shiwei Hall 20220815.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Shiwei_Hall_20220815.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "532f434f335c",
+      "title": "File:NCCU Zhixi Building 20220819.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Zhixi_Building_20220819.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "e782d4f6a1f2",
+      "title": "File:NCCU Zhixi Building 20221121.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Zhixi_Building_20221121.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "a0876f5c0cc1",
+      "title": "File:NCCU Bai Nian Building 20221020.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Bai_Nian_Building_20221020.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "b7ad7640fe19",
+      "title": "File:NCCU Bai Nian Building 20221109.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Bai_Nian_Building_20221109.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "5a9b38d67a24",
+      "title": "File:NCCU Bai Nian Building 20230307.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:NCCU_Bai_Nian_Building_20230307.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "956a7552e6fd",
+      "title": "File:Zhengda Street and Zhinan Road intersection, Taipei 20130828.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhengda_Street_and_Zhinan_Road_intersection,_Taipei_20130828.jpg",
+      "license": "CC BY 2.0",
+      "author": "Ken Marshall"
+    },
+    {
+      "id": "f8d7daa56fec",
+      "title": "File:Taipei Wanshou Bridge.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Taipei_Wanshou_Bridge.jpg",
+      "license": "CC BY-SA 3.0",
+      "author": "玄史生"
+    },
+    {
+      "id": "e02bae4f6197",
+      "title": "File:Wanshou Bridge 三峽萬壽橋 - panoramio.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Wanshou_Bridge_%E4%B8%89%E5%B3%BD%E8%90%AC%E5%A3%BD%E6%A9%8B_-_panoramio.jpg",
+      "license": "CC BY 3.0",
+      "author": "lienyuan lee"
+    },
+    {
+      "id": "7a5365c87943",
+      "title": "File:Wanshou Bridge, Muzha 木柵萬壽橋 - panoramio.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Wanshou_Bridge,_Muzha_%E6%9C%A8%E6%9F%B5%E8%90%AC%E5%A3%BD%E6%A9%8B_-_panoramio.jpg",
+      "license": "CC BY 3.0",
+      "author": "lienyuan lee"
+    },
+    {
+      "id": "d1c90930d734",
+      "title": "File:Zhinan River and Jingmai River 20230323.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhinan_River_and_Jingmai_River_20230323.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "f802845999e5",
+      "title": "File:Jingmei River 景美溪 - panoramio.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Jingmei_River_%E6%99%AF%E7%BE%8E%E6%BA%AA_-_panoramio.jpg",
+      "license": "CC BY 3.0",
+      "author": "lienyuan lee"
+    },
+    {
+      "id": "416a814dec5c",
+      "title": "File:Zhinan Temple 20231108.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhinan_Temple_20231108.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "3ee4361d4dd6",
+      "title": "File:Zhinan Temple 20231121.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhinan_Temple_20231121.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Yu tptw"
+    },
+    {
+      "id": "S__56434700_0",
+      "title": "法學院 S__56434700_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "S__56434701_0",
+      "title": "法學院 S__56434701_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "S__56434702_0",
+      "title": "法學院 S__56434702_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "S__56434703_0",
+      "title": "法學院 S__56434703_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "S__56434704_0",
+      "title": "法學院 S__56434704_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "S__56434705_0",
+      "title": "法學院 S__56434705_0.jpg",
+      "source": "",
+      "license": "未確認；僅建模參考",
+      "author": "使用者提供，原攝影者待確認"
+    },
+    {
+      "id": "73a6fcb26880",
+      "title": "大仁樓 / 檔案:大仁樓 側面.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%A4%A7%E4%BB%81%E6%A8%93_%E5%81%B4%E9%9D%A2.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "b982ac5b825f",
+      "title": "大仁樓 / 檔案:大仁樓 正面.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%A4%A7%E4%BB%81%E6%A8%93_%E6%AD%A3%E9%9D%A2.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "0adfa32f8052",
+      "title": "大勇樓 / 檔案:大勇樓 1966.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%A4%A7%E5%8B%87%E6%A8%93_1966.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "caeb4c30a313",
+      "title": "大勇樓 / 檔案:大勇樓 1973.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%A4%A7%E5%8B%87%E6%A8%93_1973.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "6a15b284f8d1",
+      "title": "大智樓 / 檔案:By-nc.png",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:By-nc.png",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "0a8a292501e6",
+      "title": "大智樓 / 檔案:大智樓.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%A4%A7%E6%99%BA%E6%A8%93.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "84209f471da0",
+      "title": "季陶樓 / 檔案:季陶樓＿全景.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%AD%A3%E9%99%B6%E6%A8%93%EF%BC%BF%E5%85%A8%E6%99%AF.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "c1aa0a0eaf11",
+      "title": "季陶樓 / 檔案:季陶樓＿右側.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%AD%A3%E9%99%B6%E6%A8%93%EF%BC%BF%E5%8F%B3%E5%81%B4.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "bdfcc54aeae5",
+      "title": "學思樓 / 檔案:IMG 1635.JPG",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:IMG_1635.JPG",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "f524959de608",
+      "title": "學思樓 / 檔案:學思樓 正門.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E5%AD%B8%E6%80%9D%E6%A8%93_%E6%AD%A3%E9%96%80.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "ccdc0dce1bd4",
+      "title": "研究大樓 / 檔案:研究大樓 左面.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E7%A0%94%E7%A9%B6%E5%A4%A7%E6%A8%93_%E5%B7%A6%E9%9D%A2.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "bcb1670f6bc6",
+      "title": "研究大樓 / 檔案:研究大樓 正面.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E7%A0%94%E7%A9%B6%E5%A4%A7%E6%A8%93_%E6%AD%A3%E9%9D%A2.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "77666ec3aea6",
+      "title": "逸仙樓 / 檔案:逸仙樓 1986.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E9%80%B8%E4%BB%99%E6%A8%93_1986.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "5a3607c1d673",
+      "title": "逸仙樓 / 檔案:逸仙樓 全貌.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E9%80%B8%E4%BB%99%E6%A8%93_%E5%85%A8%E8%B2%8C.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "34a9e4b009c1",
+      "title": "風雩樓 / 檔案:雲岫廳土語之夜S.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E9%9B%B2%E5%B2%AB%E5%BB%B3%E5%9C%9F%E8%AA%9E%E4%B9%8B%E5%A4%9CS.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "b8b50109b998",
+      "title": "風雩樓 / 檔案:風雩樓 1966.jpg",
+      "source": "https://nccuwiki.lib.nccu.edu.tw/index.php/%E6%AA%94%E6%A1%88:%E9%A2%A8%E9%9B%A9%E6%A8%93_1966.jpg",
+      "license": "未確認開放授權；僅本機建模參考",
+      "author": "來源：政治大學記憶網；原攝影者詳見來源頁"
+    },
+    {
+      "id": "cd13016748b3",
+      "title": "File:恆光橋.JPG",
+      "source": "https://commons.wikimedia.org/wiki/File:%E6%81%86%E5%85%89%E6%A9%8B.JPG",
+      "license": "CC BY-SA 4.0",
+      "author": "Ianbu"
+    }
+  ],
+  "models": [
+    {
+      "name": "法學院",
+      "builder": "scripts/architecture_detail.gd:law_college",
+      "position": [
+        -200,
+        0,
+        -66
+      ],
+      "measured": false,
+      "reference": "使用者提供實景照片；背面尚未測量"
+    },
+    {
+      "name": "指南路街廓",
+      "builder": "scripts/architecture_detail.gd:street",
+      "position": [
+        0,
+        0,
+        53
+      ],
+      "measured": false,
+      "reference": "街景氛圍重建；店名為一般類型，非真實商家"
+    }
+  ]
+}

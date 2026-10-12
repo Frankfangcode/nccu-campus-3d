@@ -3,7 +3,7 @@
   "files": {
     "index.html": {
       "bytes": 6269,
-      "sha256": "a2f239777f6b0c28ffe0f3f72acf9aa8bfba9329fb3f7f1ec6ddc67a4e44e42a"
+      "sha256": "38f01ae9d9bfd5dc318615117b0b487a8bb9a58dd2da540246a4082792b2a43d"
     },
     "index.js": {
       "bytes": 279815,
@@ -30,8 +30,8 @@
       "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
     },
     "campus.zip": {
-      "bytes": 43390357,
-      "sha256": "7e65e60996d9e06e897bc5ba4ebbdac724965dab0ec0f880217cb30a89d3e4ae"
+      "bytes": 43404309,
+      "sha256": "874a2b56caf2e507a9c5bb0d5e0c3f245b90bfdfd778e1451412ee0e6d61ef7c"
     },
     "preview.png": {
       "bytes": 1613664,

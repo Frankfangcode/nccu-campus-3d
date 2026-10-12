@@ -3,7 +3,7 @@ signal selected(title: String)
 var game: Node3D
 var expanded := false
 var zoom := 1.0
-var center := Vector2(-20,-93)
+var center := Vector2(-20,-66)
 var drag_start := Vector2.ZERO
 var dragged := false
 var filter := "all"
@@ -14,7 +14,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP if expanded else Control.MOUSE_FILTER_IGNORE
 
 func scale_factor() -> float:
-	return minf(size.x/450.0,size.y/275.0)*zoom if expanded else size.x/100.0
+	return minf(size.x/450.0,size.y/330.0)*zoom if expanded else size.x/100.0
 
 func map_center() -> Vector2:
 	if game.player.position.x>250:
@@ -70,9 +70,10 @@ func _draw() -> void:
 			line_world(road,Color("263943"),5.5)
 			line_world(road,Color("587078"),1.3)
 		for lot in game.data.lots:
-			building(Vector2(lot.x,lot.z),Vector2(lot.w,lot.d),lot.name)
-		building(Vector2(-23,-32),Vector2(19,35),"行政大樓")
-		building(Vector2(23,-32),Vector2(19,35),"研究大樓")
+			building(Vector2(lot.x,lot.z),Vector2(lot.w,lot.d),"" if lot.get("map_only",false) else lot.name)
+		line_world([[-150,42],[149,42]],Color("587078"),8.0)
+		building(Vector2(45,-90),Vector2(34,26),"行政大樓")
+		building(Vector2(-54,-27),Vector2(34,32),"商學院")
 		building(Vector2(0,-86),Vector2(29,23),"四維堂")
 		building(Vector2(-46,-109),Vector2(40,25),"中央圖書館")
 		draw_arc(point(Vector2(80,-126)),20*scale_factor(),0,TAU,64,Color("93564b"),5*scale_factor(),true)

@@ -4,6 +4,8 @@ const Player = preload("res://scripts/player.gd")
 const Actor = preload("res://scripts/actor.gd")
 const Hud = preload("res://scripts/hud.gd")
 const Navigation = preload("res://scripts/navigation.gd")
+const ArchitectureDetail = preload("res://scripts/architecture_detail.gd")
+var architecture_detail: Node3D
 var navigation: Node
 var saved_discoveries: Array = []
 var test_clock := 0.0
@@ -51,6 +53,10 @@ func _ready() -> void:
 	build_grading()
 	print("CAMPUS_BUILD collision")
 	build_collisions()
+	architecture_detail = ArchitectureDetail.new()
+	architecture_detail.game = self
+	architecture_detail.name = "PhotoReferencedArchitecture"
+	add_child(architecture_detail)
 	player = Player.new()
 	player.name = "Player"
 	add_child(player)
@@ -63,6 +69,13 @@ func _ready() -> void:
 	navigation.game = self
 	add_child(navigation)
 	navigation.discovered = saved_discoveries.duplicate()
+	# A previously saved position may now be inside a newly constructed building.
+	if player.position.x < 250:
+		var saved_cell: Vector2i = navigation.cell(Vector2(player.position.x,player.position.z))
+		if navigation.grid.is_in_boundsv(saved_cell) and navigation.grid.is_point_solid(saved_cell):
+			var safe_cell: Vector2i = navigation.nearest_open(Vector2(player.position.x,player.position.z))
+			var safe_point: Vector2 = navigation.grid.get_point_position(safe_cell)
+			player.position = Vector3(safe_point.x,0.2,safe_point.y)
 	hud = Hud.new()
 	hud.game = self
 	print("CAMPUS_BUILD hud")
@@ -77,6 +90,28 @@ func _ready() -> void:
 			player.position = Vector3(300, 0.2, 18)
 		if "--atlas" in OS.get_cmdline_user_args():
 			hud.toggle_map.call_deferred()
+		if "--law" in OS.get_cmdline_user_args():
+			player.position = Vector3(-184,0.2,-28)
+			player.yaw = 0.30
+			player.pitch = 0.22
+			player.arm.spring_length = 8.0
+			var architecture_camera := Camera3D.new()
+			add_child(architecture_camera)
+			architecture_camera.position = Vector3(-157,15,-23)
+			architecture_camera.look_at(Vector3(-200,13,-66))
+			architecture_camera.fov = 60
+			architecture_camera.current = true
+		if "--street" in OS.get_cmdline_user_args():
+			player.position = Vector3(6,0.2,33)
+			player.yaw = PI-0.7
+			player.pitch = 0.05
+		if "--jing-tang" in OS.get_cmdline_user_args() or "--journalism" in OS.get_cmdline_user_args():
+			var reference_camera := Camera3D.new()
+			add_child(reference_camera)
+			var journalism_view := "--journalism" in OS.get_cmdline_user_args()
+			reference_camera.position = Vector3(126,11,-7) if journalism_view else Vector3(-136,15,-87)
+			reference_camera.look_at(Vector3(112,4,-25) if journalism_view else Vector3(-165,7,-118))
+			reference_camera.current = true
 	print("CAMPUS_READY npc=", npcs.size(), " stories=", markers.size())
 	if "--quality-low" in OS.get_cmdline_user_args():
 		get_viewport().scaling_3d_scale = 0.65
@@ -525,6 +560,14 @@ func capture() -> void:
 	var filename := "interior" if "--interior" in OS.get_cmdline_user_args() else ("avenue" if "--avenue" in OS.get_cmdline_user_args() else "campus")
 	if "--atlas" in OS.get_cmdline_user_args():
 		filename = "atlas"
+	if "--law" in OS.get_cmdline_user_args():
+		filename = "law-college"
+	if "--street" in OS.get_cmdline_user_args():
+		filename = "zhinan-street"
+	if "--jing-tang" in OS.get_cmdline_user_args():
+		filename = "jing-tang"
+	if "--journalism" in OS.get_cmdline_user_args():
+		filename = "journalism"
 	if mobile:
 		filename += "-mobile"
 	get_viewport().get_texture().get_image().save_png("res://artifacts/" + filename + ".png")
