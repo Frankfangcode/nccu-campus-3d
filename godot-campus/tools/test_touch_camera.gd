@@ -55,5 +55,9 @@ func run() -> void:
 	game.player.yaw = 1.1
 	game.update_car(0.016)
 	assert(is_equal_approx(game.player.yaw,1.1),"右手看方向時不可被車輛自動回正")
+	game.player.manual_look_until = 0
+	game.car_speed = 8.0
+	game.update_car(0.016)
+	assert(is_equal_approx(game.player.yaw,1.1),"手機放開右手後不可自動拉回鏡頭")
 	print("TOUCH_CAMERA_PASS: ownership, multitouch, jump rejection, release, orientation, focus, vehicle")
 	quit()

@@ -466,7 +466,7 @@ func update_car(delta: float) -> void:
 			car_speed *= 0.6
 			break
 	player.position = car.position + Vector3(0, 1, 0)
-	if Time.get_ticks_msec() > player.manual_look_until and absf(car_speed)>0.5 and (not is_instance_valid(hud.touch) or hud.touch.look_id == -1):
+	if not mobile and Time.get_ticks_msec() > player.manual_look_until and absf(car_speed)>0.5 and (not is_instance_valid(hud.touch) or hud.touch.look_id == -1):
 		player.yaw = lerp_angle(player.yaw, car.rotation.y, 1.0-exp(-delta*1.2))
 	player.arm.spring_length = 7
 

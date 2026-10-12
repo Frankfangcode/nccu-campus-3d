@@ -28,6 +28,7 @@ func reset() -> void:
 	stick = Vector2.ZERO
 	game.player.touch_move = Vector2.ZERO
 	game.player.touch_sprint = false
+	game.player.touch_jump = false
 	queue_redraw()
 
 func _notification(what: int) -> void:
@@ -84,6 +85,9 @@ func _input(event: InputEvent) -> void:
 				game.player.yaw -= drag.x/short_edge*2.2
 				game.player.pitch = clampf(game.player.pitch-drag.y/short_edge*1.7,-0.85,0.3)
 				game.player.manual_look_until = Time.get_ticks_msec()+1800
+			get_viewport().set_input_as_handled()
+		elif action_ids.has(event.index):
+			# 按鈕手指滑出範圍後仍屬於原按鈕，不能交給其他介面。
 			get_viewport().set_input_as_handled()
 	queue_redraw()
 
