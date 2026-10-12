@@ -69,7 +69,11 @@ func _draw() -> void:
 		for road in [[[-240,25],[195,25]],[[-80,6],[100,6]],[[0,15],[0,-73]],[[-34,-60],[115,-60]],[[-120,-72],[150,-72]],[[35,5],[35,-132]],[[-77,7],[-77,-123]],[[-35,-130],[44,-150]]]:
 			line_world(road,Color("263943"),5.5)
 			line_world(road,Color("587078"),1.3)
+		for road in [[[-77,-57],[-232,-57]],[[-79,-25],[-79,-133]],[[-144,-57],[-144,-98]],[[-144,-98],[-228,-87]],[[-228,-57],[-228,-119]],[[-191,-88],[-193,-97]]]:
+			line_world(road,Color("587078"),5.5)
 		for lot in game.data.lots:
+			if lot.name in ["教育學院","李園","鳳凰林"]:
+				continue
 			building(Vector2(lot.x,lot.z),Vector2(lot.w,lot.d),"" if lot.get("map_only",false) else lot.name)
 		line_world([[-150,42],[149,42]],Color("587078"),8.0)
 		building(Vector2(45,-90),Vector2(34,26),"行政大樓")

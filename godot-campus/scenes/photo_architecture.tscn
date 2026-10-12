@@ -1,0 +1,2577 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/architecture_detail.gd" id="1_sfffc"]
+[ext_resource type="FontFile" path="res://assets/fonts/NotoSansTC-Game.ttf" id="2_oko8h"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_paving_box.res" id="3_6slir"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_wall_box.res" id="4_s47ow"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_dark_box.res" id="5_iyvju"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_trim_box.res" id="6_h2he2"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_frame_box.res" id="7_devep"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_glass_box.res" id="8_tp1is"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_fins_box.res" id="9_g4quk"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_stone_box.res" id="10_vo572"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawCollege_green_box.res" id="11_ro44k"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_cream_box.res" id="12_jiwoe"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_trim_box.res" id="13_ql7ny"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_frame_box.res" id="14_m61wx"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_glass_box.res" id="15_kdv5h"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_brick_box.res" id="16_uhg7a"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Journalism_dark_box.res" id="17_ish3p"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_paving_box.res" id="18_83fvq"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_road_box.res" id="19_66sxg"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_yellow_box.res" id="20_0js3p"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_white_box.res" id="21_7u1gs"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_cream_box.res" id="22_w6ywa"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_dark_box.res" id="23_cwnqr"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_frame_box.res" id="24_sk6ec"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_stone_box.res" id="25_w4c44"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_glass_box.res" id="26_v1i4a"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_trim_box.res" id="27_e30ix"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_green_box.res" id="28_1288o"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_wall_box.res" id="29_4a18l"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_red_box.res" id="30_gf7tv"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_brick_box.res" id="31_d28x4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/ZhinanStreet_fins_box.res" id="32_5rxjr"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_brick_box.res" id="33_7ig3r"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_tile_box.res" id="34_5x2rm"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_pink_box.res" id="35_fwgd4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_roof_box.res" id="36_wvx7q"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_metal_box.res" id="37_4j4oi"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_frame_box.res" id="38_rj3n3"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_glass_box.res" id="39_qufpw"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_trim_box.res" id="40_d5mor"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_stone_box.res" id="41_vqkjk"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_dark_box.res" id="42_5hcyl"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_metal_cylinder.res" id="43_55ixl"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SwimmingPool_blue_box.res" id="44_n26t1"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_wall_box.res" id="45_poj2q"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_frame_box.res" id="46_r03ax"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_glass_box.res" id="47_8usq3"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_stone_box.res" id="48_vijai"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_trim_box.res" id="49_f7c0o"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_dark_box.res" id="50_mk3ff"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_metal_box.res" id="51_oo8tf"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_metal_cylinder.res" id="52_s7hsu"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_fins_cylinder.res" id="53_pepfn"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_cream_box.res" id="54_68fvg"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_fins_box.res" id="55_ok4fa"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_green_box.res" id="56_1cn4u"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryCourtyard_blue_box.res" id="57_5immh"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_pink_box.res" id="58_ootmf"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_frame_box.res" id="59_s34mb"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_glass_box.res" id="60_eshod"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_stone_box.res" id="61_qda5l"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_pink_cylinder.res" id="62_okv2o"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_trim_box.res" id="63_uceiq"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_blue_box.res" id="64_1dsh1"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_yellow_box.res" id="65_h1bsk"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_fins_box.res" id="66_r16it"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_playgreen_box.res" id="67_3buab"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_rose_cylinder.res" id="68_71tbs"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_cream_box.res" id="69_kcxkj"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_paving_box.res" id="70_tayw0"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_playgreen_cylinder.res" id="71_qa1a4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_metal_cylinder.res" id="72_dq2f5"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_rubber_box.res" id="73_0nb64"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_red_box.res" id="74_ychvd"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/Kindergarten_playgreen_sphere.res" id="75_wwfh6"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_pink_box.res" id="76_k8rr3"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_frame_box.res" id="77_rt1nd"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_glass_box.res" id="78_dyvv7"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_stone_box.res" id="79_o03er"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_trim_box.res" id="80_r280g"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_dark_box.res" id="81_y4x4r"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_metal_box.res" id="82_xdumk"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/DormitoryNine_metal_cylinder.res" id="83_sxhi4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_tile_box.res" id="84_d13nm"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_roof_box.res" id="85_f2gqh"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_trim_box.res" id="86_4g5bb"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_trim_cylinder.res" id="87_4qq1r"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_frame_box.res" id="88_kwsrv"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_glass_box.res" id="89_ocdps"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_green_box.res" id="90_fm0b6"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_dark_box.res" id="91_6xqc4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_stone_box.res" id="92_ebu6k"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_paving_box.res" id="93_k2y75"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_white_box.res" id="94_bfpbv"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_carblue_box.res" id="95_7b7xy"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/JingTang_rubber_cylinder.res" id="96_gh4v4"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_wall_box.res" id="97_0a4fd"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_trim_box.res" id="98_fwqns"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_frame_box.res" id="99_45fsx"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_glass_box.res" id="100_4f80o"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_brick_box.res" id="101_uwgwh"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/SocialScience_dark_box.res" id="102_vwokp"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_lawn_box.res" id="103_jm7u0"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_road_box.res" id="104_y5a2m"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_brick_box.res" id="105_46b85"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_paving_box.res" id="106_rbp0t"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_stone_box.res" id="107_10ess"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_white_box.res" id="108_kjpbo"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_dark_box.res" id="109_b0mhr"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_metal_box.res" id="110_kmlho"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_red_box.res" id="111_au0ru"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_bark_cylinder.res" id="112_gocgj"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_leaf_quad.res" id="113_hb4fe"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_leaflight_quad.res" id="114_uf3m1"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_leafdark_quad.res" id="115_dalku"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_roof_box.res" id="116_0kjnk"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_fins_box.res" id="117_edh5o"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_frame_box.res" id="118_q53c7"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_frame_cylinder.res" id="119_w06fv"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_cream_box.res" id="120_df7qo"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_carblue_box.res" id="121_o28rx"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_glass_box.res" id="122_wu3sh"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_rubber_cylinder.res" id="123_0t0kt"]
+[ext_resource type="MultiMesh" path="res://assets/architecture_meshes/LawEducationWalk_green_box.res" id="124_obca2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_le6y2"]
+size = Vector3(35, 27, 19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4hrve"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdrw3"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdbsw"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18wxm"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r36jf"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7fhw"]
+size = Vector3(0.55, 3.2, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35wxt"]
+size = Vector3(7, 2.1, 0.65)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k6kk"]
+size = Vector3(6, 0.64, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwthk"]
+size = Vector3(6, 0.64, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crjyb"]
+size = Vector3(20, 9, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0w6xo"]
+size = Vector3(16, 12, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7itj8"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akthm"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7d8v"]
+size = Vector3(16, 21, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkrgi"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mso1k"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5h5m"]
+size = Vector3(16, 18, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bpd0"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qs5os"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnpby"]
+size = Vector3(16, 15, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cylyp"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hkpm7"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60lpj"]
+size = Vector3(16, 12, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygoir"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lbrf"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o614a"]
+size = Vector3(16, 21, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i6q5"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ydpj7"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2eq6s"]
+size = Vector3(16, 18, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11edb"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4kt4"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtmxt"]
+size = Vector3(16, 15, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqu38"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpgeu"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyiqh"]
+size = Vector3(16, 12, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3k847"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xn7h"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2txth"]
+size = Vector3(16, 21, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6j2g"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alrpa"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hb4ha"]
+size = Vector3(16, 18, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwtks"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uldpq"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_to3se"]
+size = Vector3(16, 15, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djyvf"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqmp8"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2jux"]
+size = Vector3(16, 12, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_splgm"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ue2y"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_533jb"]
+size = Vector3(16, 21, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2thri"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18g6l"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cv7fp"]
+size = Vector3(16, 18, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3ac6"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fagwv"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfbjy"]
+size = Vector3(16, 15, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v46ys"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhadj"]
+size = Vector3(0.3, 3.7, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hu3j3"]
+size = Vector3(38, 2, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g6uki"]
+size = Vector3(38, 3.2, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_evmf0"]
+size = Vector3(11, 0.18, 2.5738688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ync52"]
+size = Vector3(0.45, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmn3u"]
+size = Vector3(0.45, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56qwr"]
+size = Vector3(14, 0.2, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpyhr"]
+size = Vector3(39, 20, 17)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xn6qb"]
+size = Vector3(0.14, 2.8, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an22g"]
+size = Vector3(0.14, 2.8, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_281fb"]
+size = Vector3(0.14, 2.8, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnjey"]
+size = Vector3(0.14, 2.8, 0.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qkd7b"]
+size = Vector3(4.5, 2.8, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djrxh"]
+size = Vector3(27, 15, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bb2h4"]
+size = Vector3(8, 15, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxd1s"]
+size = Vector3(0.6, 3.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wu3fb"]
+size = Vector3(0.6, 3.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmw6g"]
+size = Vector3(28, 1.2, 0.12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_647vb"]
+size = Vector3(23, 27, 19)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s77nf"]
+size = Vector3(0.65, 6.4, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7rte"]
+size = Vector3(0.65, 6.4, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_new2p"]
+size = Vector3(8, 0.18, 2.184033)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeit8"]
+size = Vector3(2.7544742, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljrm7"]
+size = Vector3(2.674648, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhamo"]
+size = Vector3(2.6051934, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfwxn"]
+size = Vector3(2.5469582, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hijf"]
+size = Vector3(2.500727, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u350"]
+size = Vector3(2.4671743, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxjgb"]
+size = Vector3(2.446822, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u42u4"]
+size = Vector3(2.44, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ict5i"]
+size = Vector3(2.446822, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ugekt"]
+size = Vector3(2.4671743, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mw1tm"]
+size = Vector3(2.500727, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0cda"]
+size = Vector3(2.5469582, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgw1r"]
+size = Vector3(2.6051934, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5feyh"]
+size = Vector3(2.674648, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cv3in"]
+size = Vector3(2.7544742, 14.2, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_movab"]
+size = Vector3(2.6, 14.4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s71gr"]
+size = Vector3(2.6, 14.4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4aew"]
+size = Vector3(9, 0.18, 2.2061732)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rgme"]
+size = Vector3(0.28, 3.6, 0.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2aiy6"]
+size = Vector3(0.28, 3.6, 0.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11evj"]
+size = Vector3(1.9, 1.6, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmp24"]
+size = Vector3(1.9, 1.6, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dotkm"]
+size = Vector3(24, 13, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2k6g4"]
+size = Vector3(0.5775, 4.2, 0.5775)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cfl26"]
+size = Vector3(0.605, 4.4, 0.605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7t6f"]
+size = Vector3(0.495, 3.6, 0.495)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vylro"]
+size = Vector3(0.44000003, 3.2, 0.44000003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q542b"]
+size = Vector3(0.5775, 4.2, 0.5775)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axh4p"]
+size = Vector3(0.55, 4, 0.55)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdskw"]
+size = Vector3(0.44000003, 3.2, 0.44000003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rho7a"]
+size = Vector3(0.495, 3.6, 0.495)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_olw3i"]
+size = Vector3(0.41250002, 3, 0.41250002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bmov"]
+size = Vector3(0.44000003, 3.2, 0.44000003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0idib"]
+size = Vector3(0.41250002, 3, 0.41250002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s44lv"]
+size = Vector3(0.495, 3.6, 0.495)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sga0i"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anp1u"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vde8"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3lxaf"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mxwa"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqaq7"]
+size = Vector3(0.39600003, 2.88, 0.39600003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyt7d"]
+size = Vector3(1.5, 2, 0.65)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qool"]
+size = Vector3(1.5, 1.4, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2pp6"]
+size = Vector3(0.22, 2.9, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6pkv8"]
+size = Vector3(0.22, 2.9, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7hmc"]
+size = Vector3(0.22, 2.9, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grl1s"]
+size = Vector3(0.22, 2.9, 0.22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rsd4c"]
+size = Vector3(2.5, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkp5u"]
+size = Vector3(2.5, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glhut"]
+size = Vector3(2.5, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8hs2"]
+size = Vector3(2.5, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5yev"]
+size = Vector3(1.9, 1.6, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xown"]
+size = Vector3(1.9, 1.6, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tll6w"]
+size = Vector3(1.9, 1.6, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7o338"]
+size = Vector3(0.1, 3.2, 0.1)
+
+[node name="PhotoReferencedArchitecture" type="Node3D" unique_id=445081490]
+script = ExtResource("1_sfffc")
+use_baked_visuals = true
+
+[node name="LawCollege" type="Node3D" parent="." unique_id=1589667537]
+transform = Transform3D(-1.18, 0, -8.742278e-08, 0, 1, 0, 1.03158875e-07, 0, -1, -110, 0, -78)
+metadata/building_name = "法學院"
+
+[node name="@StaticBody3D@4" type="StaticBody3D" parent="LawCollege" unique_id=903917321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.5, -1)
+
+[node name="@CollisionShape3D@3" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@4" unique_id=1967949436]
+shape = SubResource("BoxShape3D_le6y2")
+metadata/walkable = false
+
+[node name="@StaticBody3D@6" type="StaticBody3D" parent="LawCollege" unique_id=1181113216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4, 1.6, 10.2)
+
+[node name="@CollisionShape3D@5" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@6" unique_id=726488954]
+shape = SubResource("BoxShape3D_4hrve")
+metadata/walkable = false
+
+[node name="@StaticBody3D@8" type="StaticBody3D" parent="LawCollege" unique_id=263840293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2, 1.6, 10.2)
+
+[node name="@CollisionShape3D@7" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@8" unique_id=189447610]
+shape = SubResource("BoxShape3D_jdrw3")
+metadata/walkable = false
+
+[node name="@StaticBody3D@10" type="StaticBody3D" parent="LawCollege" unique_id=845541965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 1.6, 10.2)
+
+[node name="@CollisionShape3D@9" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@10" unique_id=1151938173]
+shape = SubResource("BoxShape3D_qdbsw")
+metadata/walkable = false
+
+[node name="@StaticBody3D@12" type="StaticBody3D" parent="LawCollege" unique_id=799226386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 1.6, 10.2)
+
+[node name="@CollisionShape3D@11" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@12" unique_id=52804457]
+shape = SubResource("BoxShape3D_18wxm")
+metadata/walkable = false
+
+[node name="@StaticBody3D@14" type="StaticBody3D" parent="LawCollege" unique_id=1761847055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2, 1.6, 10.2)
+
+[node name="@CollisionShape3D@13" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@14" unique_id=1543588371]
+shape = SubResource("BoxShape3D_r36jf")
+metadata/walkable = false
+
+[node name="@StaticBody3D@16" type="StaticBody3D" parent="LawCollege" unique_id=938798066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4, 1.6, 10.2)
+
+[node name="@CollisionShape3D@15" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@16" unique_id=268581457]
+shape = SubResource("BoxShape3D_o7fhw")
+metadata/walkable = false
+
+[node name="@Label3D@17" type="Label3D" parent="LawCollege" unique_id=1828350803]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18, 26.1, -3)
+visibility_range_end = 110.0
+pixel_size = 0.02
+text = "College of
+LAW"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawCollege"
+
+[node name="@Label3D@18" type="Label3D" parent="LawCollege" unique_id=1549361378]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 26.1, -3)
+visibility_range_end = 110.0
+pixel_size = 0.02
+text = "College of
+LAW"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawCollege"
+
+[node name="@Label3D@19" type="Label3D" parent="LawCollege" unique_id=978608471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 10.69)
+visibility_range_end = 110.0
+pixel_size = 0.012
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "College of Law"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawCollege"
+
+[node name="@StaticBody3D@21" type="StaticBody3D" parent="LawCollege" unique_id=1815525415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.05, 14.4)
+
+[node name="@CollisionShape3D@20" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@21" unique_id=497603619]
+shape = SubResource("BoxShape3D_35wxt")
+metadata/walkable = false
+
+[node name="@Label3D@22" type="Label3D" parent="LawCollege" unique_id=465022696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.25, 14.75)
+visibility_range_end = 110.0
+pixel_size = 0.022
+modulate = Color(0.40784314, 0.34509805, 0.2627451, 1)
+text = "法 學 院"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawCollege"
+
+[node name="@StaticBody3D@24" type="StaticBody3D" parent="LawCollege" unique_id=757366963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.32, 17.5)
+
+[node name="@CollisionShape3D@23" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@24" unique_id=386524262]
+shape = SubResource("BoxShape3D_7k6kk")
+metadata/walkable = false
+
+[node name="@StaticBody3D@26" type="StaticBody3D" parent="LawCollege" unique_id=1055070345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.32, 17.5)
+
+[node name="@CollisionShape3D@25" type="CollisionShape3D" parent="LawCollege/@StaticBody3D@26" unique_id=1446770235]
+shape = SubResource("BoxShape3D_xwthk")
+metadata/walkable = false
+
+[node name="Entrance" type="Marker3D" parent="LawCollege" unique_id=1233388621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
+metadata/lot_name = "法學院"
+metadata/lot_center = Vector3(0, 0, -1)
+metadata/lot_size = Vector2(35, 19)
+metadata/map_only = false
+
+[node name="LawCollege_paving_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=696403010]
+visibility_range_end = 290.0
+multimesh = ExtResource("3_6slir")
+
+[node name="LawCollege_wall_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=1862910061]
+visibility_range_end = 290.0
+multimesh = ExtResource("4_s47ow")
+
+[node name="LawCollege_dark_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=440132456]
+visibility_range_end = 290.0
+multimesh = ExtResource("5_iyvju")
+
+[node name="LawCollege_trim_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=335189011]
+visibility_range_end = 290.0
+multimesh = ExtResource("6_h2he2")
+
+[node name="LawCollege_frame_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=394864167]
+visibility_range_end = 290.0
+multimesh = ExtResource("7_devep")
+
+[node name="LawCollege_glass_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=2015923221]
+visibility_range_end = 290.0
+multimesh = ExtResource("8_tp1is")
+
+[node name="LawCollege_fins_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=1114275215]
+visibility_range_end = 290.0
+multimesh = ExtResource("9_g4quk")
+
+[node name="LawCollege_stone_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=812328932]
+visibility_range_end = 290.0
+multimesh = ExtResource("10_vo572")
+
+[node name="LawCollege_green_box" type="MultiMeshInstance3D" parent="LawCollege" unique_id=649475934]
+visibility_range_end = 290.0
+multimesh = ExtResource("11_ro44k")
+
+[node name="Journalism" type="Node3D" parent="." unique_id=1794823947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -25)
+metadata/building_name = "新聞館"
+
+[node name="Entrance" type="Marker3D" parent="Journalism" unique_id=1373311222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+metadata/lot_name = "新聞館"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(20, 8)
+metadata/map_only = false
+
+[node name="@StaticBody3D@28" type="StaticBody3D" parent="Journalism" unique_id=1132329605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+
+[node name="@CollisionShape3D@27" type="CollisionShape3D" parent="Journalism/@StaticBody3D@28" unique_id=697786220]
+shape = SubResource("BoxShape3D_crjyb")
+metadata/walkable = false
+
+[node name="@Label3D@29" type="Label3D" parent="Journalism" unique_id=1084626408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4.96)
+visibility_range_end = 110.0
+pixel_size = 0.016
+modulate = Color(0.43529412, 0.32941177, 0.25490198, 1)
+text = "新 聞 館"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "Journalism"
+
+[node name="Journalism_cream_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=788167366]
+visibility_range_end = 290.0
+multimesh = ExtResource("12_jiwoe")
+
+[node name="Journalism_trim_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=13356645]
+visibility_range_end = 290.0
+multimesh = ExtResource("13_ql7ny")
+
+[node name="Journalism_frame_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=1159554511]
+visibility_range_end = 290.0
+multimesh = ExtResource("14_m61wx")
+
+[node name="Journalism_glass_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=1489018802]
+visibility_range_end = 290.0
+multimesh = ExtResource("15_kdv5h")
+
+[node name="Journalism_brick_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=933821104]
+visibility_range_end = 290.0
+multimesh = ExtResource("16_uhg7a")
+
+[node name="Journalism_dark_box" type="MultiMeshInstance3D" parent="Journalism" unique_id=1059295566]
+visibility_range_end = 290.0
+multimesh = ExtResource("17_ish3p")
+
+[node name="ZhinanStreet" type="Node3D" parent="." unique_id=2010960568]
+metadata/building_name = "指南路街廓"
+
+[node name="@StaticBody3D@31" type="StaticBody3D" parent="ZhinanStreet" unique_id=1192368543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136, 6, 63)
+
+[node name="@CollisionShape3D@30" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@31" unique_id=512706304]
+shape = SubResource("BoxShape3D_0w6xo")
+metadata/walkable = false
+
+[node name="@StaticBody3D@33" type="StaticBody3D" parent="ZhinanStreet" unique_id=775950788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@32" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@33" unique_id=200990771]
+shape = SubResource("BoxShape3D_7itj8")
+metadata/walkable = false
+
+[node name="@StaticBody3D@35" type="StaticBody3D" parent="ZhinanStreet" unique_id=1469199473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@34" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@35" unique_id=195830209]
+shape = SubResource("BoxShape3D_akthm")
+metadata/walkable = false
+
+[node name="@Label3D@36" type="Label3D" parent="ZhinanStreet" unique_id=1981160828]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -136, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "書店"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance" type="Marker3D" parent="ZhinanStreet" unique_id=212959084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136, 0, 51)
+metadata/lot_name = "指南路街廓 01"
+metadata/lot_center = Vector3(-136, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@38" type="StaticBody3D" parent="ZhinanStreet" unique_id=858331432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118, 10.5, 63)
+
+[node name="@CollisionShape3D@37" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@38" unique_id=1868768619]
+shape = SubResource("BoxShape3D_t7d8v")
+metadata/walkable = false
+
+[node name="@StaticBody3D@40" type="StaticBody3D" parent="ZhinanStreet" unique_id=1653362728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@39" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@40" unique_id=1067689355]
+shape = SubResource("BoxShape3D_jkrgi")
+metadata/walkable = false
+
+[node name="@StaticBody3D@42" type="StaticBody3D" parent="ZhinanStreet" unique_id=1795975337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@41" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@42" unique_id=762162782]
+shape = SubResource("BoxShape3D_mso1k")
+metadata/walkable = false
+
+[node name="@Label3D@43" type="Label3D" parent="ZhinanStreet" unique_id=116440720]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -118, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "咖啡 · 輕食"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance9" type="Marker3D" parent="ZhinanStreet" unique_id=779491623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118, 0, 51)
+metadata/lot_name = "指南路街廓 02"
+metadata/lot_center = Vector3(-118, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@45" type="StaticBody3D" parent="ZhinanStreet" unique_id=106761056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 9, 63)
+
+[node name="@CollisionShape3D@44" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@45" unique_id=1783007955]
+shape = SubResource("BoxShape3D_o5h5m")
+metadata/walkable = false
+
+[node name="@StaticBody3D@47" type="StaticBody3D" parent="ZhinanStreet" unique_id=1622715913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@46" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@47" unique_id=521054952]
+shape = SubResource("BoxShape3D_1bpd0")
+metadata/walkable = false
+
+[node name="@StaticBody3D@49" type="StaticBody3D" parent="ZhinanStreet" unique_id=1630626442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@48" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@49" unique_id=1469617349]
+shape = SubResource("BoxShape3D_qs5os")
+metadata/walkable = false
+
+[node name="@Label3D@50" type="Label3D" parent="ZhinanStreet" unique_id=1631950394]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -100, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "日常食堂"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance14" type="Marker3D" parent="ZhinanStreet" unique_id=193845214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0, 51)
+metadata/lot_name = "指南路街廓 03"
+metadata/lot_center = Vector3(-100, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@52" type="StaticBody3D" parent="ZhinanStreet" unique_id=1326180702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 7.5, 63)
+
+[node name="@CollisionShape3D@51" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@52" unique_id=130892998]
+shape = SubResource("BoxShape3D_bnpby")
+metadata/walkable = false
+
+[node name="@StaticBody3D@54" type="StaticBody3D" parent="ZhinanStreet" unique_id=2040399545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@53" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@54" unique_id=2066360671]
+shape = SubResource("BoxShape3D_cylyp")
+metadata/walkable = false
+
+[node name="@StaticBody3D@56" type="StaticBody3D" parent="ZhinanStreet" unique_id=2037476203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@55" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@56" unique_id=142267300]
+shape = SubResource("BoxShape3D_hkpm7")
+metadata/walkable = false
+
+[node name="@Label3D@57" type="Label3D" parent="ZhinanStreet" unique_id=617283468]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -82, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "文具 · 影印"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance19" type="Marker3D" parent="ZhinanStreet" unique_id=442308565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, 51)
+metadata/lot_name = "指南路街廓 04"
+metadata/lot_center = Vector3(-82, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@59" type="StaticBody3D" parent="ZhinanStreet" unique_id=1256086909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 6, 63)
+
+[node name="@CollisionShape3D@58" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@59" unique_id=194558807]
+shape = SubResource("BoxShape3D_60lpj")
+metadata/walkable = false
+
+[node name="@StaticBody3D@61" type="StaticBody3D" parent="ZhinanStreet" unique_id=1846418627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@60" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@61" unique_id=749217010]
+shape = SubResource("BoxShape3D_ygoir")
+metadata/walkable = false
+
+[node name="@StaticBody3D@63" type="StaticBody3D" parent="ZhinanStreet" unique_id=1789600448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@62" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@63" unique_id=707878434]
+shape = SubResource("BoxShape3D_1lbrf")
+metadata/walkable = false
+
+[node name="@Label3D@64" type="Label3D" parent="ZhinanStreet" unique_id=581766804]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -64, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "書店"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance24" type="Marker3D" parent="ZhinanStreet" unique_id=743156702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 51)
+metadata/lot_name = "指南路街廓 05"
+metadata/lot_center = Vector3(-64, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@66" type="StaticBody3D" parent="ZhinanStreet" unique_id=1207988607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 10.5, 63)
+
+[node name="@CollisionShape3D@65" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@66" unique_id=1985148729]
+shape = SubResource("BoxShape3D_o614a")
+metadata/walkable = false
+
+[node name="@StaticBody3D@68" type="StaticBody3D" parent="ZhinanStreet" unique_id=199487886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@67" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@68" unique_id=334835390]
+shape = SubResource("BoxShape3D_7i6q5")
+metadata/walkable = false
+
+[node name="@StaticBody3D@70" type="StaticBody3D" parent="ZhinanStreet" unique_id=494685096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@69" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@70" unique_id=171928775]
+shape = SubResource("BoxShape3D_ydpj7")
+metadata/walkable = false
+
+[node name="@Label3D@71" type="Label3D" parent="ZhinanStreet" unique_id=1665102520]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -46, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "咖啡 · 輕食"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance29" type="Marker3D" parent="ZhinanStreet" unique_id=1534741713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, 51)
+metadata/lot_name = "指南路街廓 06"
+metadata/lot_center = Vector3(-46, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@73" type="StaticBody3D" parent="ZhinanStreet" unique_id=979921979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 9, 63)
+
+[node name="@CollisionShape3D@72" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@73" unique_id=1481490529]
+shape = SubResource("BoxShape3D_2eq6s")
+metadata/walkable = false
+
+[node name="@StaticBody3D@75" type="StaticBody3D" parent="ZhinanStreet" unique_id=133480779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@74" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@75" unique_id=315175181]
+shape = SubResource("BoxShape3D_11edb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@77" type="StaticBody3D" parent="ZhinanStreet" unique_id=1375425240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@76" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@77" unique_id=624570924]
+shape = SubResource("BoxShape3D_e4kt4")
+metadata/walkable = false
+
+[node name="@Label3D@78" type="Label3D" parent="ZhinanStreet" unique_id=72981708]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -28, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "日常食堂"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance34" type="Marker3D" parent="ZhinanStreet" unique_id=1198313409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 51)
+metadata/lot_name = "指南路街廓 07"
+metadata/lot_center = Vector3(-28, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@80" type="StaticBody3D" parent="ZhinanStreet" unique_id=1493829743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.5, 63)
+
+[node name="@CollisionShape3D@79" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@80" unique_id=648856451]
+shape = SubResource("BoxShape3D_mtmxt")
+metadata/walkable = false
+
+[node name="@StaticBody3D@82" type="StaticBody3D" parent="ZhinanStreet" unique_id=799009223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@81" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@82" unique_id=341146152]
+shape = SubResource("BoxShape3D_bqu38")
+metadata/walkable = false
+
+[node name="@StaticBody3D@84" type="StaticBody3D" parent="ZhinanStreet" unique_id=1245674815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@83" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@84" unique_id=1596850221]
+shape = SubResource("BoxShape3D_fpgeu")
+metadata/walkable = false
+
+[node name="@Label3D@85" type="Label3D" parent="ZhinanStreet" unique_id=1905184319]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "文具 · 影印"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance39" type="Marker3D" parent="ZhinanStreet" unique_id=102003141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 51)
+metadata/lot_name = "指南路街廓 08"
+metadata/lot_center = Vector3(-10, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@87" type="StaticBody3D" parent="ZhinanStreet" unique_id=763713605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 63)
+
+[node name="@CollisionShape3D@86" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@87" unique_id=1436797616]
+shape = SubResource("BoxShape3D_nyiqh")
+metadata/walkable = false
+
+[node name="@StaticBody3D@89" type="StaticBody3D" parent="ZhinanStreet" unique_id=440243665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@88" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@89" unique_id=1164693403]
+shape = SubResource("BoxShape3D_3k847")
+metadata/walkable = false
+
+[node name="@StaticBody3D@91" type="StaticBody3D" parent="ZhinanStreet" unique_id=943390009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@90" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@91" unique_id=233813314]
+shape = SubResource("BoxShape3D_1xn7h")
+metadata/walkable = false
+
+[node name="@Label3D@92" type="Label3D" parent="ZhinanStreet" unique_id=317145230]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "書店"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance44" type="Marker3D" parent="ZhinanStreet" unique_id=1015067253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 51)
+metadata/lot_name = "指南路街廓 09"
+metadata/lot_center = Vector3(8, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@94" type="StaticBody3D" parent="ZhinanStreet" unique_id=1138547553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 10.5, 63)
+
+[node name="@CollisionShape3D@93" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@94" unique_id=918834410]
+shape = SubResource("BoxShape3D_2txth")
+metadata/walkable = false
+
+[node name="@StaticBody3D@96" type="StaticBody3D" parent="ZhinanStreet" unique_id=1865094336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@95" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@96" unique_id=1671140591]
+shape = SubResource("BoxShape3D_e6j2g")
+metadata/walkable = false
+
+[node name="@StaticBody3D@98" type="StaticBody3D" parent="ZhinanStreet" unique_id=1258766601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@97" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@98" unique_id=1867379735]
+shape = SubResource("BoxShape3D_alrpa")
+metadata/walkable = false
+
+[node name="@Label3D@99" type="Label3D" parent="ZhinanStreet" unique_id=1605987184]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "咖啡 · 輕食"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance49" type="Marker3D" parent="ZhinanStreet" unique_id=1935616741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 51)
+metadata/lot_name = "指南路街廓 10"
+metadata/lot_center = Vector3(26, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@101" type="StaticBody3D" parent="ZhinanStreet" unique_id=375713987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 9, 63)
+
+[node name="@CollisionShape3D@100" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@101" unique_id=556891592]
+shape = SubResource("BoxShape3D_hb4ha")
+metadata/walkable = false
+
+[node name="@StaticBody3D@103" type="StaticBody3D" parent="ZhinanStreet" unique_id=1019945796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@102" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@103" unique_id=832112197]
+shape = SubResource("BoxShape3D_bwtks")
+metadata/walkable = false
+
+[node name="@StaticBody3D@105" type="StaticBody3D" parent="ZhinanStreet" unique_id=1159097695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@104" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@105" unique_id=332963352]
+shape = SubResource("BoxShape3D_uldpq")
+metadata/walkable = false
+
+[node name="@Label3D@106" type="Label3D" parent="ZhinanStreet" unique_id=546985747]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 44, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "日常食堂"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance54" type="Marker3D" parent="ZhinanStreet" unique_id=1704493065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 51)
+metadata/lot_name = "指南路街廓 11"
+metadata/lot_center = Vector3(44, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@108" type="StaticBody3D" parent="ZhinanStreet" unique_id=1741456487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 7.5, 63)
+
+[node name="@CollisionShape3D@107" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@108" unique_id=1523245600]
+shape = SubResource("BoxShape3D_to3se")
+metadata/walkable = false
+
+[node name="@StaticBody3D@110" type="StaticBody3D" parent="ZhinanStreet" unique_id=1563908946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@109" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@110" unique_id=1807906635]
+shape = SubResource("BoxShape3D_djyvf")
+metadata/walkable = false
+
+[node name="@StaticBody3D@112" type="StaticBody3D" parent="ZhinanStreet" unique_id=1395245632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@111" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@112" unique_id=54618438]
+shape = SubResource("BoxShape3D_iqmp8")
+metadata/walkable = false
+
+[node name="@Label3D@113" type="Label3D" parent="ZhinanStreet" unique_id=726821296]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 62, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "文具 · 影印"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance59" type="Marker3D" parent="ZhinanStreet" unique_id=2090721318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 51)
+metadata/lot_name = "指南路街廓 12"
+metadata/lot_center = Vector3(62, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@115" type="StaticBody3D" parent="ZhinanStreet" unique_id=1779226894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 6, 63)
+
+[node name="@CollisionShape3D@114" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@115" unique_id=1093060954]
+shape = SubResource("BoxShape3D_h2jux")
+metadata/walkable = false
+
+[node name="@StaticBody3D@117" type="StaticBody3D" parent="ZhinanStreet" unique_id=1923033551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@116" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@117" unique_id=372883698]
+shape = SubResource("BoxShape3D_splgm")
+metadata/walkable = false
+
+[node name="@StaticBody3D@119" type="StaticBody3D" parent="ZhinanStreet" unique_id=1710567210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@118" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@119" unique_id=1858196583]
+shape = SubResource("BoxShape3D_3ue2y")
+metadata/walkable = false
+
+[node name="@Label3D@120" type="Label3D" parent="ZhinanStreet" unique_id=2002054084]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 80, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "書店"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance64" type="Marker3D" parent="ZhinanStreet" unique_id=2045675907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 51)
+metadata/lot_name = "指南路街廓 13"
+metadata/lot_center = Vector3(80, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@122" type="StaticBody3D" parent="ZhinanStreet" unique_id=1869550243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 10.5, 63)
+
+[node name="@CollisionShape3D@121" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@122" unique_id=752325889]
+shape = SubResource("BoxShape3D_533jb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@124" type="StaticBody3D" parent="ZhinanStreet" unique_id=458685868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@123" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@124" unique_id=848933209]
+shape = SubResource("BoxShape3D_2thri")
+metadata/walkable = false
+
+[node name="@StaticBody3D@126" type="StaticBody3D" parent="ZhinanStreet" unique_id=927210327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@125" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@126" unique_id=1084134794]
+shape = SubResource("BoxShape3D_18g6l")
+metadata/walkable = false
+
+[node name="@Label3D@127" type="Label3D" parent="ZhinanStreet" unique_id=1900276214]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 98, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "咖啡 · 輕食"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance69" type="Marker3D" parent="ZhinanStreet" unique_id=1421456378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 51)
+metadata/lot_name = "指南路街廓 14"
+metadata/lot_center = Vector3(98, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@129" type="StaticBody3D" parent="ZhinanStreet" unique_id=680619361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 9, 63)
+
+[node name="@CollisionShape3D@128" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@129" unique_id=2019841861]
+shape = SubResource("BoxShape3D_cv7fp")
+metadata/walkable = false
+
+[node name="@StaticBody3D@131" type="StaticBody3D" parent="ZhinanStreet" unique_id=1264909442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@130" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@131" unique_id=1263578099]
+shape = SubResource("BoxShape3D_v3ac6")
+metadata/walkable = false
+
+[node name="@StaticBody3D@133" type="StaticBody3D" parent="ZhinanStreet" unique_id=1794270947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@132" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@133" unique_id=1293015936]
+shape = SubResource("BoxShape3D_fagwv")
+metadata/walkable = false
+
+[node name="@Label3D@134" type="Label3D" parent="ZhinanStreet" unique_id=9774069]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 116, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "日常食堂"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance74" type="Marker3D" parent="ZhinanStreet" unique_id=709842149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, 51)
+metadata/lot_name = "指南路街廓 15"
+metadata/lot_center = Vector3(116, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@StaticBody3D@136" type="StaticBody3D" parent="ZhinanStreet" unique_id=64273567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134, 7.5, 63)
+
+[node name="@CollisionShape3D@135" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@136" unique_id=491422583]
+shape = SubResource("BoxShape3D_tfbjy")
+metadata/walkable = false
+
+[node name="@StaticBody3D@138" type="StaticBody3D" parent="ZhinanStreet" unique_id=1765387410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@137" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@138" unique_id=1487177997]
+shape = SubResource("BoxShape3D_v46ys")
+metadata/walkable = false
+
+[node name="@StaticBody3D@140" type="StaticBody3D" parent="ZhinanStreet" unique_id=205346130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.5, 1.85, 51.8)
+
+[node name="@CollisionShape3D@139" type="CollisionShape3D" parent="ZhinanStreet/@StaticBody3D@140" unique_id=1476699999]
+shape = SubResource("BoxShape3D_lhadj")
+metadata/walkable = false
+
+[node name="@Label3D@141" type="Label3D" parent="ZhinanStreet" unique_id=1650708254]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 134, 3.05, 53.78)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.9372549, 0.90588236, 0.8392157, 1)
+text = "文具 · 影印"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance79" type="Marker3D" parent="ZhinanStreet" unique_id=1253738209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134, 0, 51)
+metadata/lot_name = "指南路街廓 16"
+metadata/lot_center = Vector3(134, 0, 63)
+metadata/lot_size = Vector2(16, 17)
+metadata/map_only = true
+
+[node name="@Label3D@142" type="Label3D" parent="ZhinanStreet" unique_id=1605505531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 2.62, 30.72)
+visibility_range_end = 110.0
+pixel_size = 0.012
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "政大 · 指南路"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "ZhinanStreet"
+
+[node name="Entrance81" type="Marker3D" parent="ZhinanStreet" unique_id=113141213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 30)
+metadata/lot_name = "指南路公車候車亭"
+metadata/lot_center = Vector3(31, 0, 32)
+metadata/lot_size = Vector2(9, 2.4)
+metadata/map_only = false
+
+[node name="ZhinanStreet_paving_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=360217223]
+visibility_range_end = 290.0
+multimesh = ExtResource("18_83fvq")
+
+[node name="ZhinanStreet_road_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=1123885153]
+visibility_range_end = 290.0
+multimesh = ExtResource("19_66sxg")
+
+[node name="ZhinanStreet_yellow_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=1736795019]
+visibility_range_end = 290.0
+multimesh = ExtResource("20_0js3p")
+
+[node name="ZhinanStreet_white_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=238151416]
+visibility_range_end = 290.0
+multimesh = ExtResource("21_7u1gs")
+
+[node name="ZhinanStreet_cream_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=632467789]
+visibility_range_end = 290.0
+multimesh = ExtResource("22_w6ywa")
+
+[node name="ZhinanStreet_dark_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=1723925148]
+visibility_range_end = 290.0
+multimesh = ExtResource("23_cwnqr")
+
+[node name="ZhinanStreet_frame_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=1758008198]
+visibility_range_end = 290.0
+multimesh = ExtResource("24_sk6ec")
+
+[node name="ZhinanStreet_stone_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=1304842436]
+visibility_range_end = 290.0
+multimesh = ExtResource("25_w4c44")
+
+[node name="ZhinanStreet_glass_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=838875770]
+visibility_range_end = 290.0
+multimesh = ExtResource("26_v1i4a")
+
+[node name="ZhinanStreet_trim_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=340235978]
+visibility_range_end = 290.0
+multimesh = ExtResource("27_e30ix")
+
+[node name="ZhinanStreet_green_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=952577515]
+visibility_range_end = 290.0
+multimesh = ExtResource("28_1288o")
+
+[node name="ZhinanStreet_wall_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=777520938]
+visibility_range_end = 290.0
+multimesh = ExtResource("29_4a18l")
+
+[node name="ZhinanStreet_red_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=72811320]
+visibility_range_end = 290.0
+multimesh = ExtResource("30_gf7tv")
+
+[node name="ZhinanStreet_brick_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=194347376]
+visibility_range_end = 290.0
+multimesh = ExtResource("31_d28x4")
+
+[node name="ZhinanStreet_fins_box" type="MultiMeshInstance3D" parent="ZhinanStreet" unique_id=479640129]
+visibility_range_end = 290.0
+multimesh = ExtResource("32_5rxjr")
+
+[node name="SwimmingPool" type="Node3D" parent="." unique_id=1570489127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 0, -120)
+metadata/building_name = "游泳館"
+
+[node name="Entrance" type="Marker3D" parent="SwimmingPool" unique_id=894153251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 15)
+metadata/lot_name = "游泳館"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(38, 20)
+metadata/map_only = false
+
+[node name="@StaticBody3D@144" type="StaticBody3D" parent="SwimmingPool" unique_id=1108925141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="@CollisionShape3D@143" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@144" unique_id=212629365]
+shape = SubResource("BoxShape3D_hu3j3")
+metadata/walkable = false
+
+[node name="@StaticBody3D@146" type="StaticBody3D" parent="SwimmingPool" unique_id=1041187572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
+
+[node name="@CollisionShape3D@145" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@146" unique_id=1204386472]
+shape = SubResource("BoxShape3D_g6uki")
+metadata/walkable = false
+
+[node name="@StaticBody3D@148" type="StaticBody3D" parent="SwimmingPool" unique_id=829173375]
+transform = Transform3D(1, 0, 0, 0, 0.9246781, -0.3807498, 0, 0.3807498, 0.9246781, -9, 0.4, 12.98)
+
+[node name="@CollisionShape3D@147" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@148" unique_id=1361150941]
+shape = SubResource("BoxShape3D_evmf0")
+metadata/walkable = true
+
+[node name="@StaticBody3D@150" type="StaticBody3D" parent="SwimmingPool" unique_id=1112839675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8, 2, 12.25)
+
+[node name="@CollisionShape3D@149" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@150" unique_id=1963792040]
+shape = SubResource("BoxShape3D_ync52")
+metadata/walkable = false
+
+[node name="@StaticBody3D@152" type="StaticBody3D" parent="SwimmingPool" unique_id=412640570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 2, 12.25)
+
+[node name="@CollisionShape3D@151" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@152" unique_id=1458621570]
+shape = SubResource("BoxShape3D_nmn3u")
+metadata/walkable = false
+
+[node name="@Label3D@153" type="Label3D" parent="SwimmingPool" unique_id=1625168892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4.62, 11.9)
+visibility_range_end = 110.0
+pixel_size = 0.014
+modulate = Color(0.32941177, 0.2901961, 0.25490198, 1)
+text = "游 泳 館"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "SwimmingPool"
+
+[node name="@StaticBody3D@155" type="StaticBody3D" parent="SwimmingPool" unique_id=1035027545]
+transform = Transform3D(0.99788827, 0.064954236, 0, -0.064954236, 0.99788827, 0, 0, 0, 1, 8, 0.52, 11.7)
+
+[node name="@CollisionShape3D@154" type="CollisionShape3D" parent="SwimmingPool/@StaticBody3D@155" unique_id=979630572]
+shape = SubResource("BoxShape3D_56qwr")
+metadata/walkable = true
+
+[node name="SwimmingPool_brick_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=797895048]
+visibility_range_end = 290.0
+multimesh = ExtResource("33_7ig3r")
+
+[node name="SwimmingPool_tile_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=117393437]
+visibility_range_end = 290.0
+multimesh = ExtResource("34_5x2rm")
+
+[node name="SwimmingPool_pink_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=2037745890]
+visibility_range_end = 290.0
+multimesh = ExtResource("35_fwgd4")
+
+[node name="SwimmingPool_roof_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=872054829]
+visibility_range_end = 290.0
+multimesh = ExtResource("36_wvx7q")
+
+[node name="SwimmingPool_metal_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=468864630]
+visibility_range_end = 290.0
+multimesh = ExtResource("37_4j4oi")
+
+[node name="SwimmingPool_frame_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=1163081519]
+visibility_range_end = 290.0
+multimesh = ExtResource("38_rj3n3")
+
+[node name="SwimmingPool_glass_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=1310676396]
+visibility_range_end = 290.0
+multimesh = ExtResource("39_qufpw")
+
+[node name="SwimmingPool_trim_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=1272044226]
+visibility_range_end = 290.0
+multimesh = ExtResource("40_d5mor")
+
+[node name="SwimmingPool_stone_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=341814037]
+visibility_range_end = 290.0
+multimesh = ExtResource("41_vqkjk")
+
+[node name="SwimmingPool_dark_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=15009553]
+visibility_range_end = 290.0
+multimesh = ExtResource("42_5hcyl")
+
+[node name="SwimmingPool_metal_cylinder" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=8314195]
+visibility_range_end = 290.0
+multimesh = ExtResource("43_55ixl")
+
+[node name="SwimmingPool_blue_box" type="MultiMeshInstance3D" parent="SwimmingPool" unique_id=1375251065]
+visibility_range_end = 290.0
+multimesh = ExtResource("44_n26t1")
+
+[node name="DormitoryCourtyard" type="Node3D" parent="." unique_id=1716005832]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -111, 0, -34)
+metadata/building_name = "莊敬宿舍與候車亭"
+
+[node name="Entrance" type="Marker3D" parent="DormitoryCourtyard" unique_id=955820728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+metadata/lot_name = "莊敬內舍（1～3）"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(39, 17)
+metadata/map_only = false
+
+[node name="@StaticBody3D@157" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=1173466773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="@CollisionShape3D@156" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@157" unique_id=1985428613]
+shape = SubResource("BoxShape3D_mpyhr")
+metadata/walkable = false
+
+[node name="@Label3D@158" type="Label3D" parent="DormitoryCourtyard" unique_id=1920442146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 8.96)
+visibility_range_end = 110.0
+pixel_size = 0.012
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "莊 敬 宿 舍"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "DormitoryCourtyard"
+
+[node name="@StaticBody3D@160" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=1458426349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.4, 13.6)
+
+[node name="@CollisionShape3D@159" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@160" unique_id=1591622781]
+shape = SubResource("BoxShape3D_xn6qb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@162" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=1741377997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.4, 13.6)
+
+[node name="@CollisionShape3D@161" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@162" unique_id=1689816581]
+shape = SubResource("BoxShape3D_an22g")
+metadata/walkable = false
+
+[node name="@StaticBody3D@164" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=1458223198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.4, 13.6)
+
+[node name="@CollisionShape3D@163" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@164" unique_id=695917015]
+shape = SubResource("BoxShape3D_281fb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@166" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=1200238904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.4, 13.6)
+
+[node name="@CollisionShape3D@165" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@166" unique_id=203927144]
+shape = SubResource("BoxShape3D_fnjey")
+metadata/walkable = false
+
+[node name="@Label3D@167" type="Label3D" parent="DormitoryCourtyard" unique_id=1168964411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.6, 14.24)
+visibility_range_end = 110.0
+pixel_size = 0.009
+modulate = Color(0.28235295, 0.31764707, 0.29411766, 1)
+text = "法學院  LAW COLLEGE"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "DormitoryCourtyard"
+
+[node name="@StaticBody3D@169" type="StaticBody3D" parent="DormitoryCourtyard" unique_id=656987470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.4, 11.2)
+
+[node name="@CollisionShape3D@168" type="CollisionShape3D" parent="DormitoryCourtyard/@StaticBody3D@169" unique_id=1104076647]
+shape = SubResource("BoxShape3D_qkd7b")
+metadata/walkable = false
+
+[node name="@Label3D@170" type="Label3D" parent="DormitoryCourtyard" unique_id=1932765047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.48, 12.46)
+visibility_range_end = 110.0
+pixel_size = 0.014
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "ATM"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "DormitoryCourtyard"
+
+[node name="DormitoryCourtyard_wall_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1341955254]
+visibility_range_end = 290.0
+multimesh = ExtResource("45_poj2q")
+
+[node name="DormitoryCourtyard_frame_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1585260088]
+visibility_range_end = 290.0
+multimesh = ExtResource("46_r03ax")
+
+[node name="DormitoryCourtyard_glass_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=93340194]
+visibility_range_end = 290.0
+multimesh = ExtResource("47_8usq3")
+
+[node name="DormitoryCourtyard_stone_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=677167612]
+visibility_range_end = 290.0
+multimesh = ExtResource("48_vijai")
+
+[node name="DormitoryCourtyard_trim_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1507116752]
+visibility_range_end = 290.0
+multimesh = ExtResource("49_f7c0o")
+
+[node name="DormitoryCourtyard_dark_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=330797699]
+visibility_range_end = 290.0
+multimesh = ExtResource("50_mk3ff")
+
+[node name="DormitoryCourtyard_metal_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=2142741714]
+visibility_range_end = 290.0
+multimesh = ExtResource("51_oo8tf")
+
+[node name="DormitoryCourtyard_metal_cylinder" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1698545354]
+visibility_range_end = 290.0
+multimesh = ExtResource("52_s7hsu")
+
+[node name="DormitoryCourtyard_fins_cylinder" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1724744116]
+visibility_range_end = 290.0
+multimesh = ExtResource("53_pepfn")
+
+[node name="DormitoryCourtyard_cream_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=292414092]
+visibility_range_end = 290.0
+multimesh = ExtResource("54_68fvg")
+
+[node name="DormitoryCourtyard_fins_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1317816611]
+visibility_range_end = 290.0
+multimesh = ExtResource("55_ok4fa")
+
+[node name="DormitoryCourtyard_green_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=454172062]
+visibility_range_end = 290.0
+multimesh = ExtResource("56_1cn4u")
+
+[node name="DormitoryCourtyard_blue_box" type="MultiMeshInstance3D" parent="DormitoryCourtyard" unique_id=1975448281]
+visibility_range_end = 290.0
+multimesh = ExtResource("57_5immh")
+
+[node name="Kindergarten" type="Node3D" parent="." unique_id=446499353]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -163, 0, -31)
+metadata/building_name = "實小附設幼兒園"
+
+[node name="Entrance" type="Marker3D" parent="Kindergarten" unique_id=1624470684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27)
+metadata/lot_name = "實小附設幼兒園"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(32, 19)
+metadata/map_only = false
+
+[node name="@StaticBody3D@172" type="StaticBody3D" parent="Kindergarten" unique_id=2105145695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7.5, 0)
+
+[node name="@CollisionShape3D@171" type="CollisionShape3D" parent="Kindergarten/@StaticBody3D@172" unique_id=1244734676]
+shape = SubResource("BoxShape3D_djrxh")
+metadata/walkable = false
+
+[node name="@StaticBody3D@174" type="StaticBody3D" parent="Kindergarten" unique_id=2087508574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 7.5, 2)
+
+[node name="@CollisionShape3D@173" type="CollisionShape3D" parent="Kindergarten/@StaticBody3D@174" unique_id=1252232121]
+shape = SubResource("BoxShape3D_bb2h4")
+metadata/walkable = false
+
+[node name="@StaticBody3D@176" type="StaticBody3D" parent="Kindergarten" unique_id=1901245271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.75, 13.1)
+
+[node name="@CollisionShape3D@175" type="CollisionShape3D" parent="Kindergarten/@StaticBody3D@176" unique_id=585918403]
+shape = SubResource("BoxShape3D_vxd1s")
+metadata/walkable = false
+
+[node name="@StaticBody3D@178" type="StaticBody3D" parent="Kindergarten" unique_id=493236694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 1.75, 13.1)
+
+[node name="@CollisionShape3D@177" type="CollisionShape3D" parent="Kindergarten/@StaticBody3D@178" unique_id=316015467]
+shape = SubResource("BoxShape3D_wu3fb")
+metadata/walkable = false
+
+[node name="@Label3D@179" type="Label3D" parent="Kindergarten" unique_id=1313770499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.72, 9.3)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.24313726, 0.27450982, 0.2509804, 1)
+text = "政大實小附設幼兒園"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "Kindergarten"
+
+[node name="@StaticBody3D@181" type="StaticBody3D" parent="Kindergarten" unique_id=254249623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.6, 24)
+
+[node name="@CollisionShape3D@180" type="CollisionShape3D" parent="Kindergarten/@StaticBody3D@181" unique_id=441991200]
+shape = SubResource("BoxShape3D_fmw6g")
+metadata/walkable = false
+
+[node name="Kindergarten_pink_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1320730596]
+visibility_range_end = 290.0
+multimesh = ExtResource("58_ootmf")
+
+[node name="Kindergarten_frame_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1329858241]
+visibility_range_end = 290.0
+multimesh = ExtResource("59_s34mb")
+
+[node name="Kindergarten_glass_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=890512248]
+visibility_range_end = 290.0
+multimesh = ExtResource("60_eshod")
+
+[node name="Kindergarten_stone_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1470026430]
+visibility_range_end = 290.0
+multimesh = ExtResource("61_qda5l")
+
+[node name="Kindergarten_pink_cylinder" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1346525519]
+visibility_range_end = 290.0
+multimesh = ExtResource("62_okv2o")
+
+[node name="Kindergarten_trim_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=946490532]
+visibility_range_end = 290.0
+multimesh = ExtResource("63_uceiq")
+
+[node name="Kindergarten_blue_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1151746055]
+visibility_range_end = 290.0
+multimesh = ExtResource("64_1dsh1")
+
+[node name="Kindergarten_yellow_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1541304198]
+visibility_range_end = 290.0
+multimesh = ExtResource("65_h1bsk")
+
+[node name="Kindergarten_fins_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=647047307]
+visibility_range_end = 290.0
+multimesh = ExtResource("66_r16it")
+
+[node name="Kindergarten_playgreen_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1406085302]
+visibility_range_end = 290.0
+multimesh = ExtResource("67_3buab")
+
+[node name="Kindergarten_rose_cylinder" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=2033748533]
+visibility_range_end = 290.0
+multimesh = ExtResource("68_71tbs")
+
+[node name="Kindergarten_cream_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=745482418]
+visibility_range_end = 290.0
+multimesh = ExtResource("69_kcxkj")
+
+[node name="Kindergarten_paving_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1618939351]
+visibility_range_end = 290.0
+multimesh = ExtResource("70_tayw0")
+
+[node name="Kindergarten_playgreen_cylinder" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1220600247]
+visibility_range_end = 290.0
+multimesh = ExtResource("71_qa1a4")
+
+[node name="Kindergarten_metal_cylinder" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1225280298]
+visibility_range_end = 290.0
+multimesh = ExtResource("72_dq2f5")
+
+[node name="Kindergarten_rubber_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=394287198]
+visibility_range_end = 290.0
+multimesh = ExtResource("73_0nb64")
+
+[node name="Kindergarten_red_box" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1580317955]
+visibility_range_end = 290.0
+multimesh = ExtResource("74_ychvd")
+
+[node name="Kindergarten_playgreen_sphere" type="MultiMeshInstance3D" parent="Kindergarten" unique_id=1531086619]
+visibility_range_end = 290.0
+multimesh = ExtResource("75_wwfh6")
+
+[node name="DormitoryNine" type="Node3D" parent="." unique_id=1796467564]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -199, 0, -57)
+metadata/building_name = "莊敬九舍"
+
+[node name="Entrance" type="Marker3D" parent="DormitoryNine" unique_id=1339409169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+metadata/lot_name = "莊敬九舍"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(23, 19)
+metadata/map_only = false
+
+[node name="@StaticBody3D@183" type="StaticBody3D" parent="DormitoryNine" unique_id=731185364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.5, 0)
+
+[node name="@CollisionShape3D@182" type="CollisionShape3D" parent="DormitoryNine/@StaticBody3D@183" unique_id=1774793727]
+shape = SubResource("BoxShape3D_647vb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@185" type="StaticBody3D" parent="DormitoryNine" unique_id=2065912780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 3.2, 10.6)
+
+[node name="@CollisionShape3D@184" type="CollisionShape3D" parent="DormitoryNine/@StaticBody3D@185" unique_id=1486942577]
+shape = SubResource("BoxShape3D_s77nf")
+metadata/walkable = false
+
+[node name="@StaticBody3D@187" type="StaticBody3D" parent="DormitoryNine" unique_id=2075096653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 3.2, 10.6)
+
+[node name="@CollisionShape3D@186" type="CollisionShape3D" parent="DormitoryNine/@StaticBody3D@187" unique_id=1821543300]
+shape = SubResource("BoxShape3D_a7rte")
+metadata/walkable = false
+
+[node name="@StaticBody3D@189" type="StaticBody3D" parent="DormitoryNine" unique_id=2048639979]
+transform = Transform3D(1, 0, 0, 0, 0.9340518, -0.35713747, 0, 0.35713747, 0.9340518, 0, 0.3, 13.15)
+
+[node name="@CollisionShape3D@188" type="CollisionShape3D" parent="DormitoryNine/@StaticBody3D@189" unique_id=1610956300]
+shape = SubResource("BoxShape3D_new2p")
+metadata/walkable = true
+
+[node name="@Label3D@190" type="Label3D" parent="DormitoryNine" unique_id=864348074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 11.85)
+visibility_range_end = 110.0
+pixel_size = 0.014
+modulate = Color(0.31764707, 0.2784314, 0.24313726, 1)
+text = "莊 敬 九 舍"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "DormitoryNine"
+
+[node name="DormitoryNine_pink_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=1667285133]
+visibility_range_end = 290.0
+multimesh = ExtResource("76_k8rr3")
+
+[node name="DormitoryNine_frame_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=52829436]
+visibility_range_end = 290.0
+multimesh = ExtResource("77_rt1nd")
+
+[node name="DormitoryNine_glass_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=550249125]
+visibility_range_end = 290.0
+multimesh = ExtResource("78_dyvv7")
+
+[node name="DormitoryNine_stone_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=1717384819]
+visibility_range_end = 290.0
+multimesh = ExtResource("79_o03er")
+
+[node name="DormitoryNine_trim_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=986768496]
+visibility_range_end = 290.0
+multimesh = ExtResource("80_r280g")
+
+[node name="DormitoryNine_dark_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=1163068221]
+visibility_range_end = 290.0
+multimesh = ExtResource("81_y4x4r")
+
+[node name="DormitoryNine_metal_box" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=226915042]
+visibility_range_end = 290.0
+multimesh = ExtResource("82_xdumk")
+
+[node name="DormitoryNine_metal_cylinder" type="MultiMeshInstance3D" parent="DormitoryNine" unique_id=1958379231]
+visibility_range_end = 290.0
+multimesh = ExtResource("83_sxhi4")
+
+[node name="JingTang" type="Node3D" parent="." unique_id=873514955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193, 0, -112)
+metadata/building_name = "井塘樓・教育學院"
+
+[node name="Entrance" type="Marker3D" parent="JingTang" unique_id=783841719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+metadata/lot_name = "井塘樓"
+metadata/lot_center = Vector3(0, 0, -0.5)
+metadata/lot_size = Vector2(36, 15)
+metadata/map_only = false
+
+[node name="Entrance1" type="Marker3D" parent="JingTang" unique_id=1334951131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+metadata/lot_name = "教育學院"
+metadata/lot_center = Vector3(0, 0, -0.5)
+metadata/lot_size = Vector2(36, 15)
+metadata/map_only = true
+
+[node name="@StaticBody3D@192" type="StaticBody3D" parent="JingTang" unique_id=1881408236]
+transform = Transform3D(0.88583153, 0, 0.46400702, 0, 1, 0, -0.46400702, 0, 0.88583153, -18.888031, 7.1, 2.113758)
+
+[node name="@CollisionShape3D@191" type="CollisionShape3D" parent="JingTang/@StaticBody3D@192" unique_id=272618958]
+shape = SubResource("BoxShape3D_eeit8")
+metadata/walkable = false
+
+[node name="@StaticBody3D@194" type="StaticBody3D" parent="JingTang" unique_id=2135161998]
+transform = Transform3D(0.91226953, 0, 0.4095904, 0, 1, 0, -0.4095904, 0, 0.91226953, -16.243156, 7.1, 0.82744026)
+
+[node name="@CollisionShape3D@193" type="CollisionShape3D" parent="JingTang/@StaticBody3D@194" unique_id=1637172675]
+shape = SubResource("BoxShape3D_ljrm7")
+metadata/walkable = false
+
+[node name="@StaticBody3D@196" type="StaticBody3D" parent="JingTang" unique_id=309473291]
+transform = Transform3D(0.93659073, 0, 0.3504251, 0, 1, 0, -0.3504251, 0, 0.93659073, -13.576913, 7.1, -0.26976037)
+
+[node name="@CollisionShape3D@195" type="CollisionShape3D" parent="JingTang/@StaticBody3D@196" unique_id=1938270718]
+shape = SubResource("BoxShape3D_yhamo")
+metadata/walkable = false
+
+[node name="@StaticBody3D@198" type="StaticBody3D" parent="JingTang" unique_id=657638223]
+transform = Transform3D(0.9580055, 0, 0.28674993, 0, 1, 0, -0.28674993, 0, 0.9580055, -10.890375, 7.1, -1.17429)
+
+[node name="@CollisionShape3D@197" type="CollisionShape3D" parent="JingTang/@StaticBody3D@198" unique_id=518618538]
+shape = SubResource("BoxShape3D_wfwxn")
+metadata/walkable = false
+
+[node name="@StaticBody3D@200" type="StaticBody3D" parent="JingTang" unique_id=2104337491]
+transform = Transform3D(0.97571623, 0, 0.21903834, 0, 1, 0, -0.21903834, 0, 0.97571623, -8.185673, 7.1, -1.88256)
+
+[node name="@CollisionShape3D@199" type="CollisionShape3D" parent="JingTang/@StaticBody3D@200" unique_id=77241672]
+shape = SubResource("BoxShape3D_1hijf")
+metadata/walkable = false
+
+[node name="@StaticBody3D@202" type="StaticBody3D" parent="JingTang" unique_id=743776251]
+transform = Transform3D(0.98898566, 0, 0.14801145, 0, 1, 0, -0.14801145, 0, 0.98898566, -5.4660516, 7.1, -2.391252)
+
+[node name="@CollisionShape3D@201" type="CollisionShape3D" parent="JingTang/@StaticBody3D@202" unique_id=1362070538]
+shape = SubResource("BoxShape3D_7u350")
+metadata/walkable = false
+
+[node name="@StaticBody3D@204" type="StaticBody3D" parent="JingTang" unique_id=1328813337]
+transform = Transform3D(0.99721193, 0, 0.074621305, 0, 1, 0, -0.074621305, 0, 0.99721193, -2.735796, 7.1, -2.6976576)
+
+[node name="@CollisionShape3D@203" type="CollisionShape3D" parent="JingTang/@StaticBody3D@204" unique_id=609418279]
+shape = SubResource("BoxShape3D_mxjgb")
+metadata/walkable = false
+
+[node name="@StaticBody3D@206" type="StaticBody3D" parent="JingTang" unique_id=815254507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.1, -2.8)
+
+[node name="@CollisionShape3D@205" type="CollisionShape3D" parent="JingTang/@StaticBody3D@206" unique_id=934499590]
+shape = SubResource("BoxShape3D_u42u4")
+metadata/walkable = false
+
+[node name="@StaticBody3D@208" type="StaticBody3D" parent="JingTang" unique_id=1074669304]
+transform = Transform3D(0.99721193, 0, -0.074621305, 0, 1, 0, 0.074621305, 0, 0.99721193, 2.735796, 7.1, -2.6976576)
+
+[node name="@CollisionShape3D@207" type="CollisionShape3D" parent="JingTang/@StaticBody3D@208" unique_id=1727483323]
+shape = SubResource("BoxShape3D_ict5i")
+metadata/walkable = false
+
+[node name="@StaticBody3D@210" type="StaticBody3D" parent="JingTang" unique_id=135034642]
+transform = Transform3D(0.98898566, 0, -0.14801145, 0, 1, 0, 0.14801145, 0, 0.98898566, 5.4660516, 7.1, -2.391252)
+
+[node name="@CollisionShape3D@209" type="CollisionShape3D" parent="JingTang/@StaticBody3D@210" unique_id=1440177815]
+shape = SubResource("BoxShape3D_ugekt")
+metadata/walkable = false
+
+[node name="@StaticBody3D@212" type="StaticBody3D" parent="JingTang" unique_id=1179065053]
+transform = Transform3D(0.97571623, 0, -0.21903834, 0, 1, 0, 0.21903834, 0, 0.97571623, 8.185673, 7.1, -1.88256)
+
+[node name="@CollisionShape3D@211" type="CollisionShape3D" parent="JingTang/@StaticBody3D@212" unique_id=256027089]
+shape = SubResource("BoxShape3D_mw1tm")
+metadata/walkable = false
+
+[node name="@StaticBody3D@214" type="StaticBody3D" parent="JingTang" unique_id=1193044516]
+transform = Transform3D(0.9580055, 0, -0.28674993, 0, 1, 0, 0.28674993, 0, 0.9580055, 10.890375, 7.1, -1.17429)
+
+[node name="@CollisionShape3D@213" type="CollisionShape3D" parent="JingTang/@StaticBody3D@214" unique_id=938072222]
+shape = SubResource("BoxShape3D_b0cda")
+metadata/walkable = false
+
+[node name="@StaticBody3D@216" type="StaticBody3D" parent="JingTang" unique_id=177095153]
+transform = Transform3D(0.93659073, 0, -0.3504251, 0, 1, 0, 0.3504251, 0, 0.93659073, 13.576913, 7.1, -0.26976037)
+
+[node name="@CollisionShape3D@215" type="CollisionShape3D" parent="JingTang/@StaticBody3D@216" unique_id=710963869]
+shape = SubResource("BoxShape3D_pgw1r")
+metadata/walkable = false
+
+[node name="@StaticBody3D@218" type="StaticBody3D" parent="JingTang" unique_id=1641523141]
+transform = Transform3D(0.91226953, 0, -0.4095904, 0, 1, 0, 0.4095904, 0, 0.91226953, 16.243156, 7.1, 0.82744026)
+
+[node name="@CollisionShape3D@217" type="CollisionShape3D" parent="JingTang/@StaticBody3D@218" unique_id=408741177]
+shape = SubResource("BoxShape3D_5feyh")
+metadata/walkable = false
+
+[node name="@StaticBody3D@220" type="StaticBody3D" parent="JingTang" unique_id=520467382]
+transform = Transform3D(0.88583153, 0, -0.46400702, 0, 1, 0, 0.46400702, 0, 0.88583153, 18.888031, 7.1, 2.113758)
+
+[node name="@CollisionShape3D@219" type="CollisionShape3D" parent="JingTang/@StaticBody3D@220" unique_id=1346630887]
+shape = SubResource("BoxShape3D_cv3in")
+metadata/walkable = false
+
+[node name="@StaticBody3D@222" type="StaticBody3D" parent="JingTang" unique_id=2096511963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 7.2, 2.1)
+
+[node name="@CollisionShape3D@221" type="CollisionShape3D" parent="JingTang/@StaticBody3D@222" unique_id=2089424933]
+shape = SubResource("BoxShape3D_movab")
+metadata/walkable = false
+
+[node name="@StaticBody3D@224" type="StaticBody3D" parent="JingTang" unique_id=18571769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 7.2, 2.1)
+
+[node name="@CollisionShape3D@223" type="CollisionShape3D" parent="JingTang/@StaticBody3D@224" unique_id=1875974763]
+shape = SubResource("BoxShape3D_s71gr")
+metadata/walkable = false
+
+[node name="@StaticBody3D@226" type="StaticBody3D" parent="JingTang" unique_id=576456432]
+transform = Transform3D(1, 0, 0, 0, 0.9246781, -0.3807498, 0, 0.3807498, 0.9246781, 0, 0.33, 7.15)
+
+[node name="@CollisionShape3D@225" type="CollisionShape3D" parent="JingTang/@StaticBody3D@226" unique_id=38004874]
+shape = SubResource("BoxShape3D_m4aew")
+metadata/walkable = true
+
+[node name="@StaticBody3D@228" type="StaticBody3D" parent="JingTang" unique_id=492976069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.8, 5.5)
+
+[node name="@CollisionShape3D@227" type="CollisionShape3D" parent="JingTang/@StaticBody3D@228" unique_id=136135254]
+shape = SubResource("BoxShape3D_6rgme")
+metadata/walkable = false
+
+[node name="@StaticBody3D@230" type="StaticBody3D" parent="JingTang" unique_id=376114638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.8, 5.5)
+
+[node name="@CollisionShape3D@229" type="CollisionShape3D" parent="JingTang/@StaticBody3D@230" unique_id=2120924305]
+shape = SubResource("BoxShape3D_2aiy6")
+metadata/walkable = false
+
+[node name="@Label3D@231" type="Label3D" parent="JingTang" unique_id=1764802041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35, 5)
+visibility_range_end = 110.0
+pixel_size = 0.016
+modulate = Color(0.7137255, 0.59607846, 0.34901962, 1)
+text = "教 育 學 院"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "JingTang"
+
+[node name="@Label3D@232" type="Label3D" parent="JingTang" unique_id=153182600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.52, 6.07)
+visibility_range_end = 110.0
+pixel_size = 0.007
+modulate = Color(0.34901962, 0.34901962, 0.30588236, 1)
+text = "井塘樓  JING TANG"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "JingTang"
+
+[node name="@StaticBody3D@234" type="StaticBody3D" parent="JingTang" unique_id=217636369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.8, 12)
+
+[node name="@CollisionShape3D@233" type="CollisionShape3D" parent="JingTang/@StaticBody3D@234" unique_id=99905230]
+shape = SubResource("BoxShape3D_11evj")
+metadata/walkable = false
+
+[node name="@StaticBody3D@236" type="StaticBody3D" parent="JingTang" unique_id=1571341196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.8, 12)
+
+[node name="@CollisionShape3D@235" type="CollisionShape3D" parent="JingTang/@StaticBody3D@236" unique_id=821379183]
+shape = SubResource("BoxShape3D_gmp24")
+metadata/walkable = false
+
+[node name="JingTang_tile_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=1390102499]
+visibility_range_end = 290.0
+multimesh = ExtResource("84_d13nm")
+
+[node name="JingTang_roof_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=450794020]
+visibility_range_end = 290.0
+multimesh = ExtResource("85_f2gqh")
+
+[node name="JingTang_trim_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=1544407930]
+visibility_range_end = 290.0
+multimesh = ExtResource("86_4g5bb")
+
+[node name="JingTang_trim_cylinder" type="MultiMeshInstance3D" parent="JingTang" unique_id=861117170]
+visibility_range_end = 290.0
+multimesh = ExtResource("87_4qq1r")
+
+[node name="JingTang_frame_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=395391044]
+visibility_range_end = 290.0
+multimesh = ExtResource("88_kwsrv")
+
+[node name="JingTang_glass_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=1448015175]
+visibility_range_end = 290.0
+multimesh = ExtResource("89_ocdps")
+
+[node name="JingTang_green_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=642374259]
+visibility_range_end = 290.0
+multimesh = ExtResource("90_fm0b6")
+
+[node name="JingTang_dark_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=1692658962]
+visibility_range_end = 290.0
+multimesh = ExtResource("91_6xqc4")
+
+[node name="JingTang_stone_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=2077533870]
+visibility_range_end = 290.0
+multimesh = ExtResource("92_ebu6k")
+
+[node name="JingTang_paving_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=628780792]
+visibility_range_end = 290.0
+multimesh = ExtResource("93_k2y75")
+
+[node name="JingTang_white_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=914475340]
+visibility_range_end = 290.0
+multimesh = ExtResource("94_bfpbv")
+
+[node name="JingTang_carblue_box" type="MultiMeshInstance3D" parent="JingTang" unique_id=1972344485]
+visibility_range_end = 290.0
+multimesh = ExtResource("95_7b7xy")
+
+[node name="JingTang_rubber_cylinder" type="MultiMeshInstance3D" parent="JingTang" unique_id=207876015]
+visibility_range_end = 290.0
+multimesh = ExtResource("96_gh4v4")
+
+[node name="SocialScience" type="Node3D" parent="." unique_id=1837818810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -238, 0, -105)
+metadata/building_name = "社資中心"
+
+[node name="Entrance" type="Marker3D" parent="SocialScience" unique_id=1089121969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+metadata/lot_name = "社資中心"
+metadata/lot_center = Vector3(0, 0, 0)
+metadata/lot_size = Vector2(24, 18)
+metadata/map_only = false
+
+[node name="@StaticBody3D@238" type="StaticBody3D" parent="SocialScience" unique_id=958050026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
+
+[node name="@CollisionShape3D@237" type="CollisionShape3D" parent="SocialScience/@StaticBody3D@238" unique_id=1097286534]
+shape = SubResource("BoxShape3D_dotkm")
+metadata/walkable = false
+
+[node name="@Label3D@239" type="Label3D" parent="SocialScience" unique_id=1994351017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 11.52)
+visibility_range_end = 110.0
+pixel_size = 0.011
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "社會科學資料中心"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "SocialScience"
+
+[node name="SocialScience_wall_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=633126189]
+visibility_range_end = 290.0
+multimesh = ExtResource("97_0a4fd")
+
+[node name="SocialScience_trim_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=1980933791]
+visibility_range_end = 290.0
+multimesh = ExtResource("98_fwqns")
+
+[node name="SocialScience_frame_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=1053180679]
+visibility_range_end = 290.0
+multimesh = ExtResource("99_45fsx")
+
+[node name="SocialScience_glass_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=1240689700]
+visibility_range_end = 290.0
+multimesh = ExtResource("100_4f80o")
+
+[node name="SocialScience_brick_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=1021028156]
+visibility_range_end = 290.0
+multimesh = ExtResource("101_uwgwh")
+
+[node name="SocialScience_dark_box" type="MultiMeshInstance3D" parent="SocialScience" unique_id=201805999]
+visibility_range_end = 290.0
+multimesh = ExtResource("102_vwokp")
+
+[node name="LawEducationWalk" type="Node3D" parent="." unique_id=1611007069]
+metadata/building_name = "法學院－教育學院步行街區"
+
+[node name="Entrance" type="Marker3D" parent="LawEducationWalk" unique_id=594261003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148, 0, -89)
+metadata/lot_name = "李園"
+metadata/lot_center = Vector3(-169, 0, -83)
+metadata/lot_size = Vector2(28, 28)
+metadata/map_only = true
+
+[node name="Entrance1" type="Marker3D" parent="LawEducationWalk" unique_id=578699207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -101)
+metadata/lot_name = "鳳凰林"
+metadata/lot_center = Vector3(-99, 0, -103)
+metadata/lot_size = Vector2(14, 10)
+metadata/map_only = true
+
+[node name="@StaticBody3D@241" type="StaticBody3D" parent="LawEducationWalk" unique_id=265409607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156, 2.1, -73)
+
+[node name="@CollisionShape3D@240" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@241" unique_id=1276503920]
+shape = SubResource("BoxShape3D_2k6g4")
+metadata/walkable = false
+
+[node name="@StaticBody3D@243" type="StaticBody3D" parent="LawEducationWalk" unique_id=1279034283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171, 2.2, -70)
+
+[node name="@CollisionShape3D@242" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@243" unique_id=392755603]
+shape = SubResource("BoxShape3D_cfl26")
+metadata/walkable = false
+
+[node name="@StaticBody3D@245" type="StaticBody3D" parent="LawEducationWalk" unique_id=874413253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180, 1.8, -85)
+
+[node name="@CollisionShape3D@244" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@245" unique_id=1325051635]
+shape = SubResource("BoxShape3D_b7t6f")
+metadata/walkable = false
+
+[node name="@StaticBody3D@247" type="StaticBody3D" parent="LawEducationWalk" unique_id=422615144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154, 1.6, -90)
+
+[node name="@CollisionShape3D@246" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@247" unique_id=1040208232]
+shape = SubResource("BoxShape3D_vylro")
+metadata/walkable = false
+
+[node name="@StaticBody3D@249" type="StaticBody3D" parent="LawEducationWalk" unique_id=1380635857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -216, 2.1, -78)
+
+[node name="@CollisionShape3D@248" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@249" unique_id=1015094345]
+shape = SubResource("BoxShape3D_q542b")
+metadata/walkable = false
+
+[node name="@StaticBody3D@251" type="StaticBody3D" parent="LawEducationWalk" unique_id=1367058927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, 2, -103)
+
+[node name="@CollisionShape3D@250" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@251" unique_id=1093634602]
+shape = SubResource("BoxShape3D_axh4p")
+metadata/walkable = false
+
+[node name="@StaticBody3D@253" type="StaticBody3D" parent="LawEducationWalk" unique_id=1310381469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 1.6, -99)
+
+[node name="@CollisionShape3D@252" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@253" unique_id=577618785]
+shape = SubResource("BoxShape3D_wdskw")
+metadata/walkable = false
+
+[node name="@StaticBody3D@255" type="StaticBody3D" parent="LawEducationWalk" unique_id=1670430875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87, 1.8, -112)
+
+[node name="@CollisionShape3D@254" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@255" unique_id=1119769531]
+shape = SubResource("BoxShape3D_rho7a")
+metadata/walkable = false
+
+[node name="@StaticBody3D@257" type="StaticBody3D" parent="LawEducationWalk" unique_id=1634576697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 1.5, -117)
+
+[node name="@CollisionShape3D@256" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@257" unique_id=896983994]
+shape = SubResource("BoxShape3D_olw3i")
+metadata/walkable = false
+
+[node name="@StaticBody3D@259" type="StaticBody3D" parent="LawEducationWalk" unique_id=893431138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 1.6, -41)
+
+[node name="@CollisionShape3D@258" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@259" unique_id=1470357486]
+shape = SubResource("BoxShape3D_4bmov")
+metadata/walkable = false
+
+[node name="@StaticBody3D@261" type="StaticBody3D" parent="LawEducationWalk" unique_id=813584131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146, 1.5, -46)
+
+[node name="@CollisionShape3D@260" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@261" unique_id=410720367]
+shape = SubResource("BoxShape3D_0idib")
+metadata/walkable = false
+
+[node name="@StaticBody3D@263" type="StaticBody3D" parent="LawEducationWalk" unique_id=1851366541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 1.8, -35)
+
+[node name="@CollisionShape3D@262" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@263" unique_id=311265363]
+shape = SubResource("BoxShape3D_s44lv")
+metadata/walkable = false
+
+[node name="@StaticBody3D@265" type="StaticBody3D" parent="LawEducationWalk" unique_id=1883935346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.44, -63.7)
+
+[node name="@CollisionShape3D@264" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@265" unique_id=889354626]
+shape = SubResource("BoxShape3D_sga0i")
+metadata/walkable = false
+
+[node name="@StaticBody3D@267" type="StaticBody3D" parent="LawEducationWalk" unique_id=2112951625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108, 1.44, -63.7)
+
+[node name="@CollisionShape3D@266" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@267" unique_id=1711711848]
+shape = SubResource("BoxShape3D_anp1u")
+metadata/walkable = false
+
+[node name="@StaticBody3D@269" type="StaticBody3D" parent="LawEducationWalk" unique_id=1653229735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122, 1.44, -63.7)
+
+[node name="@CollisionShape3D@268" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@269" unique_id=1031446801]
+shape = SubResource("BoxShape3D_3vde8")
+metadata/walkable = false
+
+[node name="@StaticBody3D@271" type="StaticBody3D" parent="LawEducationWalk" unique_id=1669390227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153, 1.44, -63.7)
+
+[node name="@CollisionShape3D@270" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@271" unique_id=1699610373]
+shape = SubResource("BoxShape3D_3lxaf")
+metadata/walkable = false
+
+[node name="@StaticBody3D@273" type="StaticBody3D" parent="LawEducationWalk" unique_id=1778132452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178, 1.44, -63.7)
+
+[node name="@CollisionShape3D@272" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@273" unique_id=579722314]
+shape = SubResource("BoxShape3D_0mxwa")
+metadata/walkable = false
+
+[node name="@StaticBody3D@275" type="StaticBody3D" parent="LawEducationWalk" unique_id=1360744968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212, 1.44, -63.7)
+
+[node name="@CollisionShape3D@274" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@275" unique_id=1276697600]
+shape = SubResource("BoxShape3D_dqaq7")
+metadata/walkable = false
+
+[node name="@StaticBody3D@277" type="StaticBody3D" parent="LawEducationWalk" unique_id=1520857508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 1, -85)
+
+[node name="@CollisionShape3D@276" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@277" unique_id=1415261505]
+shape = SubResource("BoxShape3D_yyt7d")
+metadata/walkable = false
+
+[node name="@Label3D@278" type="Label3D" parent="LawEducationWalk" unique_id=1478107318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173, 1.2, -84.65)
+visibility_range_end = 110.0
+pixel_size = 0.012
+modulate = Color(0.45490196, 0.38431373, 0.27450982, 1)
+text = "李 園"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawEducationWalk"
+
+[node name="@StaticBody3D@280" type="StaticBody3D" parent="LawEducationWalk" unique_id=1420090270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0.7, -104)
+
+[node name="@CollisionShape3D@279" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@280" unique_id=313079896]
+shape = SubResource("BoxShape3D_1qool")
+metadata/walkable = false
+
+[node name="@Label3D@281" type="Label3D" parent="LawEducationWalk" unique_id=133821954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0.8, -103.68)
+visibility_range_end = 110.0
+pixel_size = 0.009
+modulate = Color(0.7137255, 0.60784316, 0.4, 1)
+text = "鳳凰林"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawEducationWalk"
+
+[node name="@StaticBody3D@283" type="StaticBody3D" parent="LawEducationWalk" unique_id=509071633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151, 1.45, -126)
+
+[node name="@CollisionShape3D@282" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@283" unique_id=1266533822]
+shape = SubResource("BoxShape3D_o2pp6")
+metadata/walkable = false
+
+[node name="@StaticBody3D@285" type="StaticBody3D" parent="LawEducationWalk" unique_id=877519013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151, 1.45, -122)
+
+[node name="@CollisionShape3D@284" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@285" unique_id=1269583306]
+shape = SubResource("BoxShape3D_6pkv8")
+metadata/walkable = false
+
+[node name="@StaticBody3D@287" type="StaticBody3D" parent="LawEducationWalk" unique_id=1506793092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 1.45, -126)
+
+[node name="@CollisionShape3D@286" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@287" unique_id=655938235]
+shape = SubResource("BoxShape3D_x7hmc")
+metadata/walkable = false
+
+[node name="@StaticBody3D@289" type="StaticBody3D" parent="LawEducationWalk" unique_id=963139089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 1.45, -122)
+
+[node name="@CollisionShape3D@288" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@289" unique_id=556512893]
+shape = SubResource("BoxShape3D_grl1s")
+metadata/walkable = false
+
+[node name="@StaticBody3D@291" type="StaticBody3D" parent="LawEducationWalk" unique_id=1622030584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157, 0.35, -93)
+
+[node name="@CollisionShape3D@290" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@291" unique_id=34223637]
+shape = SubResource("BoxShape3D_rsd4c")
+metadata/walkable = false
+
+[node name="@StaticBody3D@293" type="StaticBody3D" parent="LawEducationWalk" unique_id=1382390701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182, 0.35, -76)
+
+[node name="@CollisionShape3D@292" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@293" unique_id=1303933920]
+shape = SubResource("BoxShape3D_xkp5u")
+metadata/walkable = false
+
+[node name="@StaticBody3D@295" type="StaticBody3D" parent="LawEducationWalk" unique_id=1770078764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0.35, -100)
+
+[node name="@CollisionShape3D@294" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@295" unique_id=214139763]
+shape = SubResource("BoxShape3D_glhut")
+metadata/walkable = false
+
+[node name="@StaticBody3D@297" type="StaticBody3D" parent="LawEducationWalk" unique_id=1884931372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 0.35, -123)
+
+[node name="@CollisionShape3D@296" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@297" unique_id=1865588739]
+shape = SubResource("BoxShape3D_u8hs2")
+metadata/walkable = false
+
+[node name="@StaticBody3D@299" type="StaticBody3D" parent="LawEducationWalk" unique_id=1350536743]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -103, 0.8, -62.8)
+
+[node name="@CollisionShape3D@298" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@299" unique_id=1700811062]
+shape = SubResource("BoxShape3D_o5yev")
+metadata/walkable = false
+
+[node name="@StaticBody3D@301" type="StaticBody3D" parent="LawEducationWalk" unique_id=79170723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -116, 0.8, -62.8)
+
+[node name="@CollisionShape3D@300" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@301" unique_id=1189791220]
+shape = SubResource("BoxShape3D_8xown")
+metadata/walkable = false
+
+[node name="@StaticBody3D@303" type="StaticBody3D" parent="LawEducationWalk" unique_id=1972694778]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -126, 0.8, -62.8)
+
+[node name="@CollisionShape3D@302" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@303" unique_id=570952910]
+shape = SubResource("BoxShape3D_tll6w")
+metadata/walkable = false
+
+[node name="@StaticBody3D@305" type="StaticBody3D" parent="LawEducationWalk" unique_id=1080609129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.2, 1.6, -64)
+
+[node name="@CollisionShape3D@304" type="CollisionShape3D" parent="LawEducationWalk/@StaticBody3D@305" unique_id=1093480769]
+shape = SubResource("BoxShape3D_7o338")
+metadata/walkable = false
+
+[node name="@Label3D@306" type="Label3D" parent="LawEducationWalk" unique_id=1886725665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.2, 2.9, -63.92)
+visibility_range_end = 110.0
+pixel_size = 0.009
+modulate = Color(0.93333334, 0.8980392, 0.8039216, 1)
+text = "法學院 · 游泳館
+教育學院／井塘樓 ←"
+font = ExtResource("2_oko8h")
+font_size = 64
+outline_size = 0
+metadata/district = "LawEducationWalk"
+
+[node name="LawEducationWalk_lawn_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1941997604]
+visibility_range_end = 290.0
+multimesh = ExtResource("103_jm7u0")
+
+[node name="LawEducationWalk_road_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1135255033]
+visibility_range_end = 290.0
+multimesh = ExtResource("104_y5a2m")
+
+[node name="LawEducationWalk_brick_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1505614813]
+visibility_range_end = 290.0
+multimesh = ExtResource("105_46b85")
+
+[node name="LawEducationWalk_paving_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1733150000]
+visibility_range_end = 290.0
+multimesh = ExtResource("106_rbp0t")
+
+[node name="LawEducationWalk_stone_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1475246616]
+visibility_range_end = 290.0
+multimesh = ExtResource("107_10ess")
+
+[node name="LawEducationWalk_white_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=132987036]
+visibility_range_end = 290.0
+multimesh = ExtResource("108_kjpbo")
+
+[node name="LawEducationWalk_dark_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=418908729]
+visibility_range_end = 290.0
+multimesh = ExtResource("109_b0mhr")
+
+[node name="LawEducationWalk_metal_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1886518069]
+visibility_range_end = 290.0
+multimesh = ExtResource("110_kmlho")
+
+[node name="LawEducationWalk_red_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=95746500]
+visibility_range_end = 290.0
+multimesh = ExtResource("111_au0ru")
+
+[node name="LawEducationWalk_bark_cylinder" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1098122996]
+visibility_range_end = 290.0
+multimesh = ExtResource("112_gocgj")
+
+[node name="LawEducationWalk_leaf_quad" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1692597696]
+visibility_range_end = 290.0
+multimesh = ExtResource("113_hb4fe")
+
+[node name="LawEducationWalk_leaflight_quad" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=167631532]
+visibility_range_end = 290.0
+multimesh = ExtResource("114_uf3m1")
+
+[node name="LawEducationWalk_leafdark_quad" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=820673976]
+visibility_range_end = 290.0
+multimesh = ExtResource("115_dalku")
+
+[node name="LawEducationWalk_roof_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=714964218]
+visibility_range_end = 290.0
+multimesh = ExtResource("116_0kjnk")
+
+[node name="LawEducationWalk_fins_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1315470822]
+visibility_range_end = 290.0
+multimesh = ExtResource("117_edh5o")
+
+[node name="LawEducationWalk_frame_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1424948476]
+visibility_range_end = 290.0
+multimesh = ExtResource("118_q53c7")
+
+[node name="LawEducationWalk_frame_cylinder" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=3119253]
+visibility_range_end = 290.0
+multimesh = ExtResource("119_w06fv")
+
+[node name="LawEducationWalk_cream_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1874867111]
+visibility_range_end = 290.0
+multimesh = ExtResource("120_df7qo")
+
+[node name="LawEducationWalk_carblue_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1774141935]
+visibility_range_end = 290.0
+multimesh = ExtResource("121_o28rx")
+
+[node name="LawEducationWalk_glass_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1171989682]
+visibility_range_end = 290.0
+multimesh = ExtResource("122_wu3sh")
+
+[node name="LawEducationWalk_rubber_cylinder" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=1623705421]
+visibility_range_end = 290.0
+multimesh = ExtResource("123_0t0kt")
+
+[node name="LawEducationWalk_green_box" type="MultiMeshInstance3D" parent="LawEducationWalk" unique_id=660271338]
+visibility_range_end = 290.0
+multimesh = ExtResource("124_obca2")

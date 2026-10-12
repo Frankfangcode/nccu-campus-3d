@@ -16,20 +16,49 @@ func frames(count: int) -> void:
 
 func run() -> void:
 	game = load("res://scenes/campus.tscn").instantiate()
+	var editor_buildings: Node = game.get_node("PhotoReferencedArchitecture")
+	check(editor_buildings.get_child_count()==10,"all ten building/landscape groups exist before the game runs")
+	check(editor_buildings.get_node("LawCollege").get_child_count()>0,"law college is serialized for editor visibility")
+	var baked_count: int = editor_buildings.find_children("*","MultiMeshInstance3D",true,false).size()
+	check(baked_count>80,"editor scene contains the expanded baked building geometry")
+	check(editor_buildings.find_children("*","CollisionShape3D",true,false).size()>100,"building collisions exist before runtime")
+	# Prove editor moves update physics, map footprint and navigation from the same source.
+	var shifted: Node3D = editor_buildings.get_node("Journalism")
+	shifted.position.x += 8
 	root.add_child(game)
+	check(editor_buildings.find_children("*","MultiMeshInstance3D",true,false).size()==baked_count,"runtime does not duplicate baked building geometry")
 	game.save_path = "user://campus_test_save.json"
 	game.set_playing(true)
 	await frames(40)
 	check(game.player.is_on_floor(), "spawn has a solid ground")
 	check(game.navigation.pois.size()>=30,"map contains landmarks, stories and characters")
 	check(game.architecture_detail.built.has("法學院"),"photo-referenced law college is instantiated")
-	game.navigation.select_destination(Vector3(-200,0,-52),"Law college")
+	game.navigation.select_destination(Vector3(-110,0,-99),"Law college")
 	check(game.navigation.route_available,"new law college has a navigable approach")
 	game.navigation.select_destination(Vector3(0,0,51),"Zhinan street")
 	check(game.navigation.route_available,"navigation reaches the expanded neighborhood")
-	check(game.navigation.grid.is_point_solid(game.navigation.cell(Vector2(-200,-66))),"law college footprint blocks navigation")
-	var ray := PhysicsRayQueryParameters3D.create(Vector3(-200,1,-48),Vector3(-200,1,-70),1)
+	check(game.navigation.grid.is_point_solid(game.navigation.cell(Vector2(-110,-78))),"law college footprint blocks navigation")
+	var ray := PhysicsRayQueryParameters3D.create(Vector3(-110,1,-99),Vector3(-110,1,-78),1)
 	check(not game.get_world_3d().direct_space_state.intersect_ray(ray).is_empty(),"law college facade blocks physical entry")
+	var moved_lots: Array = game.data.lots.filter(func(lot): return lot.name == "新聞館")
+	check(moved_lots.size()==1 and is_equal_approx(moved_lots[0].x,120),"map follows an editor-moved building without duplicate lots")
+	check(game.navigation.grid.is_point_solid(game.navigation.cell(Vector2(120,-25))),"navigation follows the editor-moved building")
+	var moved_ray := PhysicsRayQueryParameters3D.create(Vector3(120,1,-17),Vector3(120,1,-25),1)
+	check(not game.get_world_3d().direct_space_state.intersect_ray(moved_ray).is_empty(),"physical collision follows the editor-moved building")
+	game.player.position = Vector3(-80,0.2,-57)
+	for landmark_name in ["法學院","游泳館","李園","實小附設幼兒園","莊敬九舍","井塘樓","教育學院"]:
+		var matches: Array = game.navigation.pois.filter(func(poi): return poi.name==landmark_name)
+		check(matches.size()==1,"unique route destination: "+landmark_name)
+		if matches.is_empty():
+			continue
+		var entry: Vector3 = matches[0].pos
+		var entry_cell: Vector2i = game.navigation.cell(Vector2(entry.x,entry.z))
+		check(not game.navigation.grid.is_point_solid(entry_cell),"entrance is open, not silently snapped: "+landmark_name)
+		game.navigation.select_destination(entry,landmark_name)
+		check(game.navigation.route_available,"continuous route to "+landmark_name)
+	game.visit_photo_route()
+	check(game.playing and game.navigation.destination_name=="教育學院・井塘樓","new menu shortcut starts the photo route")
+	game.return_to_gate()
 	game.navigation.select_destination(Vector3(0,0,-72),"四維堂")
 	check(game.navigation.route_available,"navigation finds a route to Siwei Hall")
 	var safe := true

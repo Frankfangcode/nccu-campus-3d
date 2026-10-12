@@ -1,7 +1,7 @@
 extends Node
 signal destination_changed
 const CELL := 2.0
-const ORIGIN := Vector2(-246,-232)
+const ORIGIN := Vector2(-270,-232)
 var game: Node3D
 var grid := AStarGrid2D.new()
 var destination := Vector3.ZERO
@@ -15,7 +15,7 @@ var pois: Array = []
 var discovered: Array = []
 
 func _ready() -> void:
-	grid.region = Rect2i(0,0,225,165)
+	grid.region = Rect2i(0,0,237,165)
 	grid.cell_size = Vector2.ONE*CELL
 	grid.offset = ORIGIN
 	grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
@@ -36,7 +36,7 @@ func _ready() -> void:
 			continue
 		var lo := cell(center-half)-Vector2i.ONE
 		var hi := cell(center+half)+Vector2i.ONE
-		for x in range(maxi(0,lo.x),mini(225,hi.x+1)):
+		for x in range(maxi(0,lo.x),mini(grid.region.size.x,hi.x+1)):
 			for y in range(maxi(0,lo.y),mini(grid.region.size.y,hi.y+1)):
 				var p: Vector2 = grid.get_point_position(Vector2i(x,y))-center
 				var blocked := false
@@ -53,7 +53,10 @@ func _ready() -> void:
 	for lot in game.data.lots:
 		if lot.get("map_only",false):
 			continue
-		pois.append({"name":lot.name,"pos":Vector3(lot.x,0,lot.get("approach_z",lot.z+lot.d/2+2)),"kind":"place"})
+		pois.append({"name":lot.name,"pos":Vector3(lot.get("approach_x",lot.x),0,lot.get("approach_z",lot.z+lot.d/2+2)),"kind":"place"})
+	for marker in game.architecture_detail.find_children("*","Marker3D",true,false):
+		if marker.get_meta("map_only",false) and marker.get_meta("lot_name","") in ["李園","鳳凰林","教育學院"]:
+			pois.append({"name":marker.get_meta("lot_name"),"pos":marker.global_position,"kind":"place"})
 	pois.append({"name":"指南路街區","pos":Vector3(0,0,51),"kind":"place"})
 	for i in range(game.data.stories.size()):
 		var a: Array = game.data.stories[i].position

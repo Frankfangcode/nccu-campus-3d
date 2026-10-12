@@ -1,0 +1,364 @@
+{
+  "survey_date": "2026-10-12",
+  "photo_count": 43,
+  "coordinates_measured": false,
+  "notes": "Photos inform visible facades; dimensions and distances are estimated. The supplied downhill map labels the law building as a planned site; current photos override that old status. No original photos are packaged.",
+  "map_reference": "User-supplied NCCU downhill campus map",
+  "official_context": [
+    "https://educ.nccu.edu.tw/PageDoc/Detail?fid=9695&id=13661",
+    "https://bdmap.nccu.edu.tw/"
+  ],
+  "photo_groups": [
+    {
+      "id": "survey-20261012-059",
+      "subjects": [
+        "法學院",
+        "中正圖書館"
+      ],
+      "observations": "路口全景；全景投影會使建築變形，僅供方位辨識。"
+    },
+    {
+      "id": "survey-20261012-060",
+      "subjects": [
+        "莊敬宿舍",
+        "法學院"
+      ],
+      "observations": "宿舍灰色立面、暖色管線、候車亭與 ATM；沿四維道辨識。"
+    },
+    {
+      "id": "survey-20261012-061",
+      "subjects": [
+        "莊敬宿舍",
+        "法學院"
+      ],
+      "observations": "宿舍灰色立面、暖色管線、候車亭與 ATM；沿四維道辨識。"
+    },
+    {
+      "id": "survey-20261012-062",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-063",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-064",
+      "subjects": [
+        "中正圖書館"
+      ],
+      "observations": "圖書館側立面與通往泳館的路口；保留既有圖書館主體。"
+    },
+    {
+      "id": "survey-20261012-065",
+      "subjects": [
+        "中正圖書館"
+      ],
+      "observations": "圖書館側立面與通往泳館的路口；保留既有圖書館主體。"
+    },
+    {
+      "id": "survey-20261012-066",
+      "subjects": [
+        "中正圖書館"
+      ],
+      "observations": "圖書館側立面與通往泳館的路口；保留既有圖書館主體。"
+    },
+    {
+      "id": "survey-20261012-067",
+      "subjects": [
+        "鳳凰林",
+        "游泳館"
+      ],
+      "observations": "草地、磚鋪步道與樹蔭，連接法學院與游泳館。"
+    },
+    {
+      "id": "survey-20261012-068",
+      "subjects": [
+        "中正圖書館"
+      ],
+      "observations": "圖書館側立面與通往泳館的路口；保留既有圖書館主體。"
+    },
+    {
+      "id": "survey-20261012-069",
+      "subjects": [
+        "鳳凰林",
+        "游泳館"
+      ],
+      "observations": "草地、磚鋪步道與樹蔭，連接法學院與游泳館。"
+    },
+    {
+      "id": "survey-20261012-070",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-071",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-072",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-073",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-074",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-075",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-076",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-077",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-078",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-079",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-080",
+      "subjects": [
+        "游泳館"
+      ],
+      "observations": "泳館金屬斜屋頂、玻璃端牆、粉色磁磚、入口階梯及側邊坡道。"
+    },
+    {
+      "id": "survey-20261012-081",
+      "subjects": [
+        "鳳凰林"
+      ],
+      "observations": "鳳凰林紀念石與草地。"
+    },
+    {
+      "id": "survey-20261012-082",
+      "subjects": [
+        "莊敬宿舍",
+        "法學院"
+      ],
+      "observations": "宿舍灰色立面、暖色管線、候車亭與 ATM；沿四維道辨識。"
+    },
+    {
+      "id": "survey-20261012-083",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-084",
+      "subjects": [
+        "莊敬宿舍",
+        "法學院"
+      ],
+      "observations": "宿舍灰色立面、暖色管線、候車亭與 ATM；沿四維道辨識。"
+    },
+    {
+      "id": "survey-20261012-085",
+      "subjects": [
+        "莊敬宿舍",
+        "法學院"
+      ],
+      "observations": "宿舍灰色立面、暖色管線、候車亭與 ATM；沿四維道辨識。"
+    },
+    {
+      "id": "survey-20261012-086",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-087",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-088",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-089",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-090",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-091",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-092",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    },
+    {
+      "id": "survey-20261012-093",
+      "subjects": [
+        "法學院"
+      ],
+      "observations": "法學院側立面／入口與沿街關係；可見白色外框及暖色遮陽肋。"
+    },
+    {
+      "id": "survey-20261012-094",
+      "subjects": [
+        "李園",
+        "井塘樓"
+      ],
+      "observations": "李園開放草坪與後方井塘樓的相對位置。"
+    },
+    {
+      "id": "survey-20261012-095",
+      "subjects": [
+        "莊敬九舍"
+      ],
+      "observations": "粉色宿舍立面、窗台冷氣、石材入口與階梯。"
+    },
+    {
+      "id": "survey-20261012-096",
+      "subjects": [
+        "莊敬九舍"
+      ],
+      "observations": "粉色宿舍立面、窗台冷氣、石材入口與階梯。"
+    },
+    {
+      "id": "survey-20261012-098",
+      "subjects": [
+        "井塘樓",
+        "教育學院"
+      ],
+      "observations": "教育學院弧形正立面、四層窗列、白色立肋與前庭。"
+    },
+    {
+      "id": "survey-20261012-099",
+      "subjects": [
+        "社資中心",
+        "井塘樓"
+      ],
+      "observations": "社資中心入口、深色長立面與街角關係。"
+    },
+    {
+      "id": "survey-20261012-100",
+      "subjects": [
+        "社資中心",
+        "井塘樓"
+      ],
+      "observations": "社資中心入口、深色長立面與街角關係。"
+    },
+    {
+      "id": "survey-20261012-101",
+      "subjects": [
+        "井塘樓",
+        "教育學院"
+      ],
+      "observations": "教育學院弧形正立面、四層窗列、白色立肋與前庭。"
+    },
+    {
+      "id": "survey-20261012-102",
+      "subjects": [
+        "實小附設幼兒園"
+      ],
+      "observations": "粉色磁磚、圓弧雨棚、幾何壁飾、綠色圍欄與遊戲區。"
+    }
+  ],
+  "districts": {
+    "LawCollege": [
+      -110,
+      0,
+      -78
+    ],
+    "SwimmingPool": [
+      -123,
+      0,
+      -120
+    ],
+    "DormitoryCourtyard": [
+      -111,
+      0,
+      -34
+    ],
+    "Kindergarten": [
+      -163,
+      0,
+      -31
+    ],
+    "DormitoryNine": [
+      -199,
+      0,
+      -57
+    ],
+    "JingTang": [
+      -193,
+      0,
+      -112
+    ],
+    "SocialScience": [
+      -238,
+      0,
+      -105
+    ]
+  }
+}

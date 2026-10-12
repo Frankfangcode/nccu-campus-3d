@@ -21,12 +21,18 @@ with sync_playwright() as p:
     page.wait_for_function('window.campusReady===true',timeout=180000)
     page.wait_for_timeout(2000)
     scale=390/540
-    for y in [425,450,395,475]:
-        page.touchscreen.tap(220*scale,y*scale);page.wait_for_timeout(700)
-        if any('CAMPUS_PLAYING true' in m for m in messages):break
+    for _ in range(30):
+        if state.get('route_button'):break
+        page.wait_for_timeout(500)
+    bx,by,bw,bh=state['route_button']
+    assert by>=0 and by+bh<=540,('Route shortcut is clipped on mobile',state)
+    page.screenshot(path=str(ROOT/'artifacts/mobile-route-menu.png'),timeout=60000)
+    page.touchscreen.tap((bx+bw/2)*scale,(by+bh/2)*scale)
+    page.wait_for_timeout(1800)
     assert any('CAMPUS_PLAYING true' in m for m in messages),'Could not start from touch menu'
     page.wait_for_timeout(1200)
     assert state.get('mobile'),state
+    assert state['x'] < -70 and '井塘樓' in state['destination'],('New route shortcut did not enter the district',state)
     before=dict(state)
     cdp=context.new_cdp_session(page)
     def touches(kind,points):
@@ -55,8 +61,8 @@ with sync_playwright() as p:
     page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(1800)
     page.screenshot(path=str(ROOT/'artifacts/mobile-portrait.png'),timeout=60000)
     failures=errors+[m for m in messages if 'SCRIPT ERROR' in m or 'ERROR:' in m]
-    result={'url':url,'multitouch_move_and_look':True,'release_resets_stick':True,'touch_map':True,'portrait_rendered':True,'state':state,'errors':failures}
+    result={'url':url,'photo_route_shortcut':True,'multitouch_move_and_look':True,'release_resets_stick':True,'touch_map':True,'portrait_rendered':True,'state':state,'errors':failures}
     (ROOT/'artifacts/mobile-test.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps(result,ensure_ascii=False),flush=True)
+    print(json.dumps(result,ensure_ascii=True),flush=True)
     browser.close()
     assert not failures,failures

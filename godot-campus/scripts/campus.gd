@@ -4,7 +4,6 @@ const Player = preload("res://scripts/player.gd")
 const Actor = preload("res://scripts/actor.gd")
 const Hud = preload("res://scripts/hud.gd")
 const Navigation = preload("res://scripts/navigation.gd")
-const ArchitectureDetail = preload("res://scripts/architecture_detail.gd")
 var architecture_detail: Node3D
 var navigation: Node
 var saved_discoveries: Array = []
@@ -53,10 +52,8 @@ func _ready() -> void:
 	build_grading()
 	print("CAMPUS_BUILD collision")
 	build_collisions()
-	architecture_detail = ArchitectureDetail.new()
-	architecture_detail.game = self
-	architecture_detail.name = "PhotoReferencedArchitecture"
-	add_child(architecture_detail)
+	architecture_detail = $PhotoReferencedArchitecture
+	architecture_detail.initialize(self)
 	player = Player.new()
 	player.name = "Player"
 	add_child(player)
@@ -91,14 +88,14 @@ func _ready() -> void:
 		if "--atlas" in OS.get_cmdline_user_args():
 			hud.toggle_map.call_deferred()
 		if "--law" in OS.get_cmdline_user_args():
-			player.position = Vector3(-184,0.2,-28)
+			player.position = Vector3(-110,0.2,-100)
 			player.yaw = 0.30
 			player.pitch = 0.22
 			player.arm.spring_length = 8.0
 			var architecture_camera := Camera3D.new()
 			add_child(architecture_camera)
-			architecture_camera.position = Vector3(-157,15,-23)
-			architecture_camera.look_at(Vector3(-200,13,-66))
+			architecture_camera.position = Vector3(-155,15,-105)
+			architecture_camera.look_at(Vector3(-110,13,-78))
 			architecture_camera.fov = 60
 			architecture_camera.current = true
 		if "--street" in OS.get_cmdline_user_args():
@@ -109,9 +106,24 @@ func _ready() -> void:
 			var reference_camera := Camera3D.new()
 			add_child(reference_camera)
 			var journalism_view := "--journalism" in OS.get_cmdline_user_args()
-			reference_camera.position = Vector3(126,11,-7) if journalism_view else Vector3(-136,15,-87)
-			reference_camera.look_at(Vector3(112,4,-25) if journalism_view else Vector3(-165,7,-118))
+			reference_camera.position = Vector3(126,11,-7) if journalism_view else Vector3(-185,10,-84)
+			reference_camera.look_at(Vector3(112,4,-25) if journalism_view else Vector3(-193,6,-112))
 			reference_camera.current = true
+		for shot in ["--route","--pool","--preschool"]:
+			if shot in OS.get_cmdline_user_args():
+				var survey_camera := Camera3D.new()
+				add_child(survey_camera)
+				var eyes := {"--route":Vector3(-232,73,-20),"--pool":Vector3(-157,10,-98),"--preschool":Vector3(-178,9,-64)}
+				var targets := {"--route":Vector3(-145,0,-81),"--pool":Vector3(-123,4,-120),"--preschool":Vector3(-166,5,-33)}
+				survey_camera.position = eyes[shot]
+				survey_camera.look_at(targets[shot])
+				survey_camera.fov = 62
+				survey_camera.current = true
+		if "--walk" in OS.get_cmdline_user_args():
+			visit_photo_route()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		if "--clean" in OS.get_cmdline_user_args():
+			hud.root.hide()
 	print("CAMPUS_READY npc=", npcs.size(), " stories=", markers.size())
 	if "--quality-low" in OS.get_cmdline_user_args():
 		get_viewport().scaling_3d_scale = 0.65
@@ -124,6 +136,16 @@ func configure_mobile() -> void:
 	var dimensions := DisplayServer.window_get_size()
 	get_tree().root.content_scale_size = Vector2i(960,540) if dimensions.x>dimensions.y else Vector2i(540,960)
 	get_viewport().scaling_3d_scale = 0.7
+
+func visit_photo_route() -> void:
+	if player.driving:
+		return_to_gate()
+	player.position = Vector3(-80,0.2,-57)
+	player.velocity = Vector3.ZERO
+	player.yaw = PI/2
+	player.pitch = 0.08
+	navigation.select_destination($PhotoReferencedArchitecture/JingTang/Entrance.global_position,"教育學院・井塘樓")
+	set_playing(true)
 
 func configure_input() -> void:
 	var actions := {"forward": KEY_W, "back": KEY_S, "left": KEY_A, "right": KEY_D, "sprint": KEY_SHIFT, "jump": KEY_SPACE, "interact": KEY_E, "map": KEY_M, "menu": KEY_ESCAPE}
@@ -385,7 +407,8 @@ func _physics_process(delta: float) -> void:
 		test_clock += delta
 		if test_clock>0.5:
 			test_clock = 0
-			print("TEST_STATE ",JSON.stringify({"x":player.position.x,"z":player.position.z,"yaw":player.yaw,"map":hud.map_large,"playing":playing,"mobile":mobile,"stick":player.touch_move.length(),"sprint":player.touch_sprint,"fps":Engine.get_frames_per_second()}))
+			var route_button: Rect2 = hud.route_visit_button.get_global_rect()
+			print("TEST_STATE ",JSON.stringify({"x":player.position.x,"z":player.position.z,"yaw":player.yaw,"map":hud.map_large,"playing":playing,"mobile":mobile,"stick":player.touch_move.length(),"sprint":player.touch_sprint,"fps":Engine.get_frames_per_second(),"destination":navigation.destination_name,"route_button":[route_button.position.x,route_button.position.y,route_button.size.x,route_button.size.y]}))
 	if playing:
 		update_npcs(delta)
 		if player.driving:
@@ -568,6 +591,9 @@ func capture() -> void:
 		filename = "jing-tang"
 	if "--journalism" in OS.get_cmdline_user_args():
 		filename = "journalism"
+	for shot in ["route","pool","preschool","walk"]:
+		if "--"+shot in OS.get_cmdline_user_args():
+			filename = "photo-"+shot
 	if mobile:
 		filename += "-mobile"
 	get_viewport().get_texture().get_image().save_png("res://artifacts/" + filename + ".png")

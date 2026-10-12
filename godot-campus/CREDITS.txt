@@ -44,3 +44,15 @@ Photo-referenced architecture expansion (2026-10-12)
   Reference photographs are not included as game textures or in web exports.
   Zhinan streetscape is an interpretation, not a reconstruction of named shops.
   Building dimensions, back facades and map coordinates are approximate.
+
+Law College to Education College walking survey (2026-10-12)
+  43 additional user-provided photographs (059-102, excluding missing 097).
+  Survey index and model placement: assets/data/walking_survey.json.
+  Swimming Pool, dormitories, attached kindergarten, Li Yuan, Phoenix Grove,
+  Jing Tang and connecting paths: scripts/law_education_route.gd.
+  Relative arrangement uses the user-supplied NCCU downhill campus map.
+  The map's planned-law-building label is superseded by the supplied photos.
+  No GPS or measured dimensions were available; geometry is an interpretation.
+  Original photos and local thumbnail galleries are not uploaded or packaged.
+  Facade tile shader and geometry are procedural; foliage reuses the original
+  project's generated leaf texture. Parked vehicles are unbranded primitives.

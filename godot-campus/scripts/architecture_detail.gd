@@ -1,5 +1,5 @@
 extends Node3D
-## Photo-informed exteriors. Positions follow the existing stylized game map.
+## Photo-informed exteriors. The walking-survey district follows the supplied map.
 ## Boxes are instanced per material and district, keeping mobile draw calls low.
 var game: Node3D
 var batches: Dictionary = {}
@@ -7,16 +7,71 @@ var materials: Dictionary = {}
 var origin := Vector3.ZERO
 var district := ""
 var built: Array[String] = []
+var groups: Dictionary = {}
+var active_group: Node3D
+var part_transform := Transform3D.IDENTITY
+@export var use_baked_visuals := false
 
-func _ready() -> void:
+func initialize(context: Node3D) -> void:
+	game = context
+	if use_baked_visuals:
+		register_scene()
+		return
 	make_materials()
 	law_college()
-	jing_tang()
 	journalism()
-	social_science()
 	street()
+	var route_builder = load("res://scripts/law_education_route.gd").new()
+	route_builder.build(self)
 	flush()
-	print("ARCHITECTURE_DETAIL ready ", built.size(), " landmarks; ", batches.size(), " batches")
+
+func begin(key: String, title: String, center: Vector3, yaw: float = 0.0) -> void:
+	district = key
+	origin = Vector3.ZERO
+	part_transform = Transform3D.IDENTITY
+	active_group = Node3D.new()
+	active_group.name = key
+	active_group.position = center
+	active_group.rotation.y = yaw
+	active_group.set_meta("building_name",title)
+	add_child(active_group)
+	groups[key] = active_group
+
+func landmark(title: String, center: Vector3, dimensions: Vector2, approach: Vector3, map_only: bool = false) -> void:
+	var marker := Marker3D.new()
+	marker.name = "Entrance" if not active_group.has_node("Entrance") else "Entrance"+str(active_group.get_child_count())
+	marker.position = approach
+	marker.set_meta("lot_name",title)
+	marker.set_meta("lot_center",center)
+	marker.set_meta("lot_size",dimensions)
+	marker.set_meta("map_only",map_only)
+	active_group.add_child(marker)
+
+func register_scene() -> void:
+	# A moved/rotated building carries its collision and entrance with it.
+	# Navigation/map footprints are derived from that same saved scene.
+	for group in get_children():
+		built.append(group.get_meta("building_name",str(group.name)))
+	for marker in find_children("*","Marker3D",true,false):
+		if not marker.has_meta("lot_name"):
+			continue
+		var title: String = marker.get_meta("lot_name")
+		game.data.lots = game.data.lots.filter(func(lot): return lot.name != title)
+		var dimensions: Vector2 = marker.get_meta("lot_size")
+		var center: Vector3 = marker.get_meta("lot_center")
+		var bounds: AABB = marker.get_parent().global_transform * AABB(center-Vector3(dimensions.x/2,0,dimensions.y/2),Vector3(dimensions.x,1,dimensions.y))
+		var entry: Vector3 = marker.global_position
+		game.data.lots.append({"name":title,"x":bounds.get_center().x,"z":bounds.get_center().z,"w":bounds.size.x,"d":bounds.size.z,"approach_x":entry.x,"approach_z":entry.z,"map_only":marker.get_meta("map_only",false)})
+	for collider in find_children("*","CollisionShape3D",true,false):
+		if collider.get_meta("walkable",false) or collider.disabled:
+			continue
+		if collider.shape is BoxShape3D:
+			var size: Vector3 = collider.shape.size
+			var bounds: AABB = collider.global_transform * AABB(-size/2,size)
+			# High canopies do not obstruct pedestrians below them.
+			if bounds.position.y < 2.0 and bounds.end.y > 0.5:
+				game.data.colliders.append({"x0":bounds.position.x,"x1":bounds.end.x,"z0":bounds.position.z,"z1":bounds.end.z,"top":bounds.end.y})
+	print("ARCHITECTURE_DETAIL ready ",built.size()," saved districts")
 
 func make_materials() -> void:
 	var palette := {"wall":"555e60","trim":"dadcd4","fins":"c6a074","frame":"293b41","glass":"536b70","dark":"253236","stone":"a9aaa0","road":"42484b","paving":"a0a69d","brick":"896a56","cream":"beb7a2","green":"4a6952","yellow":"dbb963","white":"e2e1d4","red":"984f42"}
@@ -36,22 +91,28 @@ func make_materials() -> void:
 			material.uv1_scale = Vector3.ONE * 0.5
 		materials[key] = material
 
-func box(key: String, at: Vector3, dimensions: Vector3) -> void:
-	var batch := district+":"+key
+func box(key: String, at: Vector3, dimensions: Vector3, rotation: Vector3 = Vector3.ZERO) -> void:
+	if use_baked_visuals:
+		return
+	var batch := district+":"+key+":box"
 	if not batches.has(batch):
 		batches[batch] = []
-	batches[batch].append(Transform3D(Basis.from_scale(dimensions), origin+at))
+	batches[batch].append(part_transform * Transform3D(Basis.from_euler(rotation).scaled_local(dimensions), origin+at))
 
-func solid(at: Vector3, dimensions: Vector3) -> void:
-	var p := origin+at
+func solid(at: Vector3, dimensions: Vector3, rotation: Vector3 = Vector3.ZERO, walkable: bool = false) -> void:
+	var body := StaticBody3D.new()
+	body.transform = part_transform * Transform3D(Basis.from_euler(rotation),at)
+	var collider := CollisionShape3D.new()
 	var shape := BoxShape3D.new()
 	shape.size = dimensions
-	game.solid(shape,p)
-	# Navigation and physics consume the same obstacle footprint.
-	if dimensions.y > 0.5:
-		game.data.colliders.append({"x0":p.x-dimensions.x/2,"x1":p.x+dimensions.x/2,"z0":p.z-dimensions.z/2,"z1":p.z+dimensions.z/2,"top":p.y+dimensions.y/2})
+	collider.shape = shape
+	collider.set_meta("walkable",walkable)
+	body.add_child(collider)
+	active_group.add_child(body)
 
 func sign_text(caption: String, at: Vector3, pixels: float, color: Color = Color("eee5cd"), angle: float = 0.0) -> void:
+	if use_baked_visuals:
+		return
 	var label := Label3D.new()
 	label.text = caption
 	label.font = load("res://assets/fonts/NotoSansTC-Game.ttf" if OS.has_feature("web") else "res://assets/fonts/NotoSansTC.ttf")
@@ -59,11 +120,13 @@ func sign_text(caption: String, at: Vector3, pixels: float, color: Color = Color
 	label.pixel_size = pixels
 	label.position = origin+at
 	label.rotation.y = angle
+	label.transform = part_transform * label.transform
 	label.modulate = color
 	label.outline_size = 0
 	label.no_depth_test = false
 	label.visibility_range_end = 110
-	add_child(label)
+	label.set_meta("district",district)
+	active_group.add_child(label)
 
 func window_front(x: float, y: float, z: float, width: float, height: float) -> void:
 	box("frame",Vector3(x,y,z),Vector3(width+0.16,height+0.16,0.16))
@@ -73,8 +136,8 @@ func window_front(x: float, y: float, z: float, width: float, height: float) -> 
 	box("trim",Vector3(x,y-height/2-0.10,z+0.18),Vector3(width+0.23,0.10,0.38))
 
 func law_college() -> void:
-	district = "LawCollege"
-	origin = Vector3(-200,0,-66)
+	begin("LawCollege","法學院",Vector3(-110,0,-78),PI)
+	active_group.scale.x = 1.18
 	built.append("法學院")
 	# Approximate proportions from the user's completed-building photographs.
 	# The supplied architectural rendering is not treated as as-built evidence.
@@ -132,31 +195,20 @@ func law_college() -> void:
 		solid(Vector3(x,0.32,17.5),Vector3(6,0.64,1.8))
 		box("green",Vector3(x,0.72,17.5),Vector3(5.8,0.45,1.6))
 		box("fins",Vector3(x,0.55,15.4),Vector3(4.0,0.14,0.55))
-	game.data.lots.append({"name":"法學院","x":-200,"z":-67,"w":35,"d":19})
-
-func jing_tang() -> void:
-	district = "JingTang"
-	origin = Vector3(-160,0,-118)
-	built.append("井塘樓")
-	# Reference da2725ca1c7a: four floors, shallow concave facade and white ribs.
-	for col in range(11):
-		var x := -10.0+col*2.0
-		var curve := 1.8*pow(x/10.0,2)
-		box("trim",Vector3(x,6.5,curve-0.9),Vector3(2.02,13,12.0))
-		box("stone",Vector3(x,13.05,curve-0.9),Vector3(2.05,0.25,12.5))
-		box("trim",Vector3(x-0.89,6.5,curve+5.32),Vector3(0.16,13,0.45))
-		for row in range(4):
-			window_front(x,1.6+row*3.1,curve+5.2,1.25,1.55)
-	solid(Vector3(0,6.5,0),Vector3(22,13,14))
-	box("dark",Vector3(0,1.45,5.32),Vector3(2.8,2.9,0.12))
-	box("stone",Vector3(0,3.10,6.1),Vector3(6.4,0.22,3.0))
-	for x in [-2.6,2.6]:
-		box("trim",Vector3(x,1.55,7.1),Vector3(0.18,3.1,0.18))
-	sign_text("井 塘 樓",Vector3(0,3.45,7.7),0.011,Color("66544c"))
+	landmark("法學院",Vector3(0,0,-1),Vector2(35,19),Vector3(0,0,21))
+	# The street-side rear facade is visible in photos 062, 083 and 091.
+	for row in range(7):
+		var y := 4.5+row*3.2
+		for col in range(14):
+			var x := -15.6+col*2.4
+			box("frame",Vector3(x,y,-10.59),Vector3(1.5,2.2,0.15))
+			box("glass",Vector3(x,y,-10.70),Vector3(1.3,2,0.05))
+			box("fins",Vector3(x+0.95,y,-10.9),Vector3(0.15,3.2,0.6))
+		box("trim",Vector3(0,y-1.55,-10.7),Vector3(35,0.18,0.5))
 
 func journalism() -> void:
-	district = "Journalism"
-	origin = Vector3(112,0,-25)
+	begin("Journalism","新聞館",Vector3(112,0,-25))
+	landmark("新聞館",Vector3.ZERO,Vector2(20,8),Vector3(0,0,7))
 	built.append("新聞館")
 	# Reference 3399b293f617: pale vertical fins and terracotta insets.
 	box("cream",Vector3(0,4.5,0),Vector3(20,9,8))
@@ -173,8 +225,8 @@ func journalism() -> void:
 	sign_text("新 聞 館",Vector3(0,6.0,4.96),0.016,Color("6f5441"))
 
 func social_science() -> void:
-	district = "SocialScience"
-	origin = Vector3(-202,0,-114)
+	begin("SocialScience","社資中心",Vector3(-238,0,-105))
+	landmark("社資中心",Vector3.ZERO,Vector2(24,18),Vector3(0,0,14))
 	built.append("社資中心")
 	# Reference 9db890983ead: long dark facade, four window bands, pale base.
 	box("wall",Vector3(0,6.5,0),Vector3(24,13,18))
@@ -190,8 +242,7 @@ func social_science() -> void:
 	sign_text("社會科學資料中心",Vector3(0,3.45,11.52),0.011)
 
 func street() -> void:
-	district = "ZhinanStreet"
-	origin = Vector3.ZERO
+	begin("ZhinanStreet","指南路街廓",Vector3.ZERO)
 	built.append("指南路街廓")
 	# An interpreted neighborhood streetscape, not a survey of individual shops.
 	box("paving",Vector3(-1,0.035,53),Vector3(300,0.07,40))
@@ -242,7 +293,7 @@ func street() -> void:
 					box("frame",Vector3(xx+0.65,yy-1.25,53.49),Vector3(0.60,0.38,0.035))
 		box("trim",Vector3(x,height+0.15,63),Vector3(16.5,0.3,17.5))
 		box("stone",Vector3(x+3,height+0.8,64),Vector3(3,1.3,2.2))
-		game.data.lots.append({"name":"指南路街廓 %02d"%(i+1),"x":x,"z":63,"w":16,"d":17,"approach_z":51.0,"map_only":true})
+		landmark("指南路街廓 %02d"%(i+1),Vector3(x,0,63),Vector2(16,17),Vector3(x,0,51),true)
 	# Bus shelter, public seating, paving joints, drain and curb edges.
 	box("frame",Vector3(31,3.0,32.0),Vector3(9,0.18,2.4))
 	for x in [27,35]:
@@ -256,12 +307,34 @@ func street() -> void:
 		box("frame",Vector3(x,0.13,49.5),Vector3(1.2,0.03,0.6))
 		for stripe in range(5):
 			box("stone",Vector3(x-0.45+stripe*0.22,0.15,49.5),Vector3(0.04,0.018,0.6))
-	game.data.lots.append({"name":"指南路公車候車亭","x":31,"z":32,"w":9,"d":2.4})
+	landmark("指南路公車候車亭",Vector3(31,0,32),Vector2(9,2.4),Vector3(31,0,30))
 
 func flush() -> void:
 	for key in batches:
-		var mesh := BoxMesh.new()
-		mesh.size = Vector3.ONE
+		var mesh: PrimitiveMesh
+		match key.get_slice(":",2):
+			"quad":
+				var quad := QuadMesh.new()
+				quad.size = Vector2.ONE
+				mesh = quad
+			"sphere":
+				var sphere := SphereMesh.new()
+				sphere.radius = 0.5
+				sphere.height = 1.0
+				sphere.radial_segments = 12
+				sphere.rings = 6
+				mesh = sphere
+			"cylinder":
+				var cylinder := CylinderMesh.new()
+				cylinder.top_radius = 0.5
+				cylinder.bottom_radius = 0.5
+				cylinder.height = 1
+				cylinder.radial_segments = 12
+				mesh = cylinder
+			_:
+				var cube := BoxMesh.new()
+				cube.size = Vector3.ONE
+				mesh = cube
 		mesh.material = materials[key.get_slice(":",1)]
 		var multimesh := MultiMesh.new()
 		multimesh.transform_format = MultiMesh.TRANSFORM_3D
@@ -273,4 +346,18 @@ func flush() -> void:
 		node.name = key.replace(":","_")
 		node.multimesh = multimesh
 		node.visibility_range_end = 290.0
-		add_child(node)
+		groups[key.get_slice(":",0)].add_child(node)
+
+func primitive(kind: String, key: String, at: Vector3, dimensions: Vector3, rotation: Vector3 = Vector3.ZERO) -> void:
+	var batch := district+":"+key+":"+kind
+	if not batches.has(batch):
+		batches[batch] = []
+	batches[batch].append(part_transform * Transform3D(Basis.from_euler(rotation).scaled_local(dimensions),at))
+
+func beam(key: String, a: Vector3, z: Vector3, thickness: float) -> void:
+	var delta := z-a
+	var basis := Basis(Quaternion(Vector3.UP,delta.normalized()))
+	var batch := district+":"+key+":cylinder"
+	if not batches.has(batch):
+		batches[batch] = []
+	batches[batch].append(part_transform * Transform3D(basis.scaled_local(Vector3(thickness,delta.length(),thickness)),(a+z)/2))

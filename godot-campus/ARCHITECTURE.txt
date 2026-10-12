@@ -1,5 +1,21 @@
 建築素材庫與 3D 外觀 — 2026-10-12
 
+沿路實拍更新（059–102，共 43 張；未提供 097）
+  工作區／素材圖片／建築素材庫／walking-route.html：依拍攝順序查看縮圖與原始照片。
+  依使用者山下校園地圖修正法學院、泳館、李園、附幼、九舍、井塘樓與社資中心相對位置。
+  地圖仍標示法學院預定地，建築外觀以使用者最新完工照片為準。
+  照片沒有 GPS；地圖為插畫示意，所有距離與尺度仍屬推估。
+  遊戲選單「探索法學院 → 教育學院」可直接前往新增街區。
+  新增 SwimmingPool、DormitoryCourtyard、Kindergarten、DormitoryNine、LawEducationWalk 群組。
+  scripts/law_education_route.gd：沿路建築、磁磚、屋頂、入口、草地、樹木與道路生成。
+  assets/data/walking_survey.json：43 張實拍的辨識清單與建築配置，不含照片本身。
+  靜態碰撞與 Entrance 標記已存入各建築群組。移動／旋轉整個群組後，遊戲啟動會從節點的世界座標重建導航與地圖。
+  不要只移動某個 MultiMesh 外觀子節點；應移動整棟群組，才能讓實體與標記一起移動。
+  tools/test_walking_route.gd：以真實角色膠囊連續走過法學院、泳館、附幼、九舍與井塘樓，並檢查泳館階梯。
+  tools/clear_route_placeholders.py：從 artifacts 中的改版前備份清除新區域內舊預定地標牌與樹木；同步移除對應舊碰撞。
+  artifacts 中的原 GLB、JSON、建築場景備份留在本機，不發布。
+  assets/architecture_meshes/*.res：已烘焙的 MultiMesh 資源。外置可避免 Godot 主場景／子場景同時開啟時的重載錯誤（godotengine/godot#106950）；請與場景一起保留。
+
 本機素材库
   工作區／素材圖片／建築素材庫／index.html
   可直接用瀏覽器開啟，搜尋中文建築名稱、查看來源及授權。
@@ -17,12 +33,17 @@
 
 模型狀態
   目前是照片參考之外觀初版。照片無法確定的尺寸、背面與位置為推估。
-  配置沿用原遊戲座標，不是可用於現實導航的 GIS 或實測模型。
+  使用原遊戲座標系；沿路街區依提供平面圖修正相對位置，並非現實導航 GIS 或實測模型。
   法學院圖片含一張建築示意圖，主要立面依其他完工實景建模。
   指南路店名為一般店舖類型，沒有宣稱還原現有真實商家。
   其他已收集建築仍待依照片逐棟精細建模，缺圖項目已明列於素材庫。
 
 程式與維護
+  scenes/photo_architecture.tscn：正式存檔的新建築場景，已掛進 campus.tscn。
+  編輯器中展開 PhotoReferencedArchitecture，可選 LawCollege、JingTang、SwimmingPool 等十個群組。
+  選取 LawCollege 後按 F，可將編輯器視角對準法學院。
+  tools/bake_architecture_scene.gd：修改程式建模參數後重新產生場景；會覆寫此生成檔。
+  產生場景時需使用實際渲染器（不可加 --headless），以完整儲存 MultiMesh 幾何變換資料。
   scripts/architecture_detail.gd：依區塊與材質合併為 MultiMesh 的新外觀。
   實體碰撞與導航格網共用新增障礙物，避免路線穿越建築。
   assets/data/architecture_sources.json：可隨專案發布的參考來源索引，沒有原照片。

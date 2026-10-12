@@ -25,6 +25,7 @@ var route_label: Label
 var speed_label: Label
 var map_button: Button
 var pause_button: Button
+var route_visit_button: Button
 var atlas: Control
 var atlas_panel: PanelContainer
 var atlas_root: Control
@@ -147,6 +148,8 @@ func _ready() -> void:
 	ml.add_child(label("政大校園  /  自由探索", 20, Color("e7c986")))
 	ml.add_child(label("沿著午後的林蔭大道，\n找回屬於這座校園的三段故事。", 18))
 	ml.add_child(button("進入校園 / 繼續探索", func(): game.set_playing(true)))
+	route_visit_button = button("探索法學院 → 教育學院", game.visit_photo_route)
+	ml.add_child(route_visit_button)
 	ml.add_child(button("回到校門", func(): game.return_to_gate(); game.set_playing(true)))
 	ml.add_child(label("進度自動儲存 · Godot 3D Edition", 13, Color("9aaaa6")))
 	route_label = label("",16,Color("d7afff"))
@@ -219,7 +222,13 @@ func _process(delta: float) -> void:
 	place.text = "四維堂・大禮堂" if game.player.position.x > 250 else ("政大・醉夢溪畔" if game.player.position.z < -120 else "政大・林蔭大道" if game.player.position.z < -15 else "政大・指南路校門")
 	if game.player.position.x < 250 and game.player.position.z > 32:
 		place.text = "指南路・街區"
-	elif game.player.position.distance_to(Vector3(-200,0,-66)) < 45:
+	elif game.player.position.distance_to(Vector3(-193,0,-112)) < 28:
+		place.text = "教育學院・井塘樓"
+	elif game.player.position.distance_to(Vector3(-123,0,-120)) < 22:
+		place.text = "政大・游泳館"
+	elif game.player.position.distance_to(Vector3(-166,0,-82)) < 27:
+		place.text = "政大・李園"
+	elif game.player.position.distance_to(Vector3(-110,0,-78)) < 40:
 		place.text = "政大・法學院"
 	note_time -= delta
 	notification.visible = note_time > 0
@@ -343,7 +352,7 @@ func layout() -> void:
 	notification.size.x = s.x-48
 	menu.custom_minimum_size = Vector2(minf(440,s.x-48),0)
 	menu.size.x = minf(440,s.x-48)
-	menu.position = Vector2(24,maxf(110,(s.y-430)/2))
+	menu.position = Vector2(24,maxf(16,(s.y-menu.size.y)/2))
 	dialogue.custom_minimum_size.x = minf(710,s.x-48)
 	dialogue.size.x = minf(710,s.x-48)
 	dialogue.position = Vector2((s.x-dialogue.size.x)/2,s.y-230)
