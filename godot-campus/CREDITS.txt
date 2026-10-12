@@ -65,3 +65,10 @@ Web v1.24 gameplay integration (2026-10-12)
   Godot-native event UI, rain particles, umbrella protection, police turn-based
   encounter and history quiz: scripts/web_events.gd.
   Source dialogue and quiz answers are preserved as game content, not fact-checked.
+
+Latest modular web campus geometry (2026-10-12)
+  Same upstream commit 9fde140; 16 named building groups and campus roads.
+  Full static scene, collision definitions and walkable height samples are
+  migrated with tools/import_latest_world.py and tools/sync_world_data.py.
+  Godot photo-survey Law College, Swimming Pool, Journalism and western
+  campus district remain separate and are excluded from the static export.

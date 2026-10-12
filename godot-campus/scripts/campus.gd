@@ -54,6 +54,7 @@ func _ready() -> void:
 	build_grading()
 	print("CAMPUS_BUILD collision")
 	build_collisions()
+	build_web_walkable_surfaces()
 	architecture_detail = $PhotoReferencedArchitecture
 	architecture_detail.initialize(self)
 	player = Player.new()
@@ -303,6 +304,20 @@ func build_collisions() -> void:
 		var box: AABB = node.global_transform * node.get_aabb()
 		if box.position.x > 265 and box.end.x < 335 and box.size.y < 3:
 			node.create_trimesh_collision()
+
+func build_web_walkable_surfaces() -> void:
+	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/data/latest-world.json"))
+	var faces := PackedVector3Array()
+	for cell in source.heights:
+		var a := Vector3(cell[0],cell[3],cell[1])
+		var b := Vector3(cell[0]+cell[2],cell[4],cell[1])
+		var c := Vector3(cell[0]+cell[2],cell[5],cell[1]+cell[2])
+		var d := Vector3(cell[0],cell[6],cell[1]+cell[2])
+		faces.append_array(PackedVector3Array([a,d,c,a,c,b]))
+	var shape := ConcavePolygonShape3D.new()
+	shape.backface_collision = true
+	shape.set_faces(faces)
+	solid(shape,Vector3.ZERO)
 
 func build_actors() -> void:
 	for i in range(data.npcs.size()):

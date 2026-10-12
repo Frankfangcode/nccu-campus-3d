@@ -24,7 +24,7 @@ func materials() -> void:
 			material.metallic = 0.65
 			material.roughness = 0.4
 		if key in ["leaf","leaflight","leafdark"]:
-			material.albedo_texture = load("res://assets/models/campus_48.png")
+			material.albedo_texture = load("res://assets/textures/survey-leaves.png")
 			material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 			material.alpha_scissor_threshold = 0.4
 			material.cull_mode = BaseMaterial3D.CULL_DISABLED

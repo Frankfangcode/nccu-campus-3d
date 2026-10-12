@@ -53,6 +53,8 @@ func _ready() -> void:
 	for lot in game.data.lots:
 		if lot.get("map_only",false):
 			continue
+		if lot.name in ["四維堂","中正圖書館","中央圖書館"]:
+			continue
 		pois.append({"name":lot.name,"pos":Vector3(lot.get("approach_x",lot.x),0,lot.get("approach_z",lot.z+lot.d/2+2)),"kind":"place"})
 	for marker in game.architecture_detail.find_children("*","Marker3D",true,false):
 		if marker.get_meta("map_only",false) and marker.get_meta("lot_name","") in ["李園","鳳凰林","教育學院"]:

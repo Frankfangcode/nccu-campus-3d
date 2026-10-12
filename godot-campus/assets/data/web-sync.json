@@ -6,7 +6,10 @@
   "version": "1.24",
   "date": "2026-10-12",
   "content": ["weather.json", "old-principal.json"],
-  "models": ["weather_lion.glb", "old_principal.glb"],
+  "models": ["campus.glb", "weather_lion.glb", "old_principal.glb"],
+  "world_manifest": "latest-world.json",
+  "static_building_groups": 16,
+  "static_source_meshes": 4611,
   "implementation": "scripts/web_events.gd",
   "preserved": ["photo architecture", "mobile touch ownership", "manual mobile vehicle camera"]
 }
