@@ -72,3 +72,15 @@ Latest modular web campus geometry (2026-10-12)
   migrated with tools/import_latest_world.py and tools/sync_world_data.py.
   Godot photo-survey Law College, Swimming Pool, Journalism and western
   campus district remain separate and are excluded from the static export.
+
+Player character and Zhinan Road traffic (2026-10-13)
+  Player model: "Cute Korean Girl Full Body 3D Model" by HackNetAyush (CC BY 4.0)
+  https://sketchfab.com/3d-models/cute-korean-girl-full-body-3d-model-137d899dfe674275bb4a2f28ce004c4c
+  Modified: rescaled, skinned to the existing Grab3D student skeleton so it
+  reuses the walk/run clips, hidden trouser waist removed. Material names show
+  the source avatar was made with Ready Player Me; confirm those terms before
+  any commercial release.
+  Vehicle system: M.A.V.S 1.2.5 by Millu30 (MIT), addons/M.A.V.S
+  https://github.com/Dente222/MAdvanced-Vehicle-Controller at e760b5a
+  Full license: licenses/MAVS-LICENSE.txt. Editor temp/backup files omitted.
+  One AI car loops Zhinan Road: scripts/traffic.gd.
