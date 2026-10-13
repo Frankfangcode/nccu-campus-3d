@@ -21,6 +21,7 @@ var npcs: Array = []
 var markers: Array = []
 var pangolin: Node3D
 var car: CharacterBody3D
+var traffic: Node3D
 var carrying := false
 var car_speed := 0.0
 var elapsed := 0.0
@@ -63,6 +64,9 @@ func _ready() -> void:
 	player.position = Vector3(-2, 0.2, 21)
 	print("CAMPUS_BUILD actors")
 	build_actors()
+	traffic = load("res://scripts/traffic.gd").new()
+	traffic.player = player
+	add_child(traffic)
 	build_stories()
 	load_progress()
 	navigation = Navigation.new()

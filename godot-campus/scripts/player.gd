@@ -29,7 +29,7 @@ func _ready() -> void:
 	add_child(collider)
 	visual = Actor.new()
 	add_child(visual)
-	visual.setup()
+	visual.setup(false, "res://assets/models/student_girl_hoodie.glb")
 	visual.rotation.y = PI
 	pivot = Node3D.new()
 	add_child(pivot)

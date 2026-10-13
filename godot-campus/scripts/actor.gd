@@ -6,9 +6,11 @@ var umbrella_active := false
 var skeleton: Skeleton3D
 static var idle_cache: Dictionary = {}
 
-func setup(female: bool = false) -> void:
+func setup(female: bool = false, custom_path: String = "") -> void:
 	var path := "res://assets/models/student_female.glb" if female else "res://assets/models/student.glb"
-	if OS.has_feature("web") or "--mobile-test" in OS.get_cmdline_user_args():
+	if custom_path != "":
+		path = custom_path
+	elif OS.has_feature("web") or "--mobile-test" in OS.get_cmdline_user_args():
 		path = path.replace(".glb","_mobile.glb")
 	var model: Node3D = load(path).instantiate()
 	add_child(model)
