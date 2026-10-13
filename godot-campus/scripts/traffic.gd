@@ -1,6 +1,10 @@
 extends Node3D
-## One M.A.V.S traffic car looping along Zhinan Road; it knocks the player aside on impact.
-const CAR := "res://addons/M.A.V.S/Vehicle/AI_Vehicles/AI_Muscle_Car.tscn"
+## M.A.V.S traffic cars looping along Zhinan Road; they knock the player aside on impact.
+# One entry per moving car; they start evenly spaced around the loop.
+const CARS := [
+	"res://addons/M.A.V.S/Vehicle/AI_Vehicles/AI_Muscle_Car.tscn",
+	"res://addons/M.A.V.S/Vehicle/AI_Vehicles/AI_TRG.tscn",
+]
 const TARGET := "res://addons/M.A.V.S/Scenes/Traffic_Target.tscn"
 const LANE_OUT := 48.0   # +x direction, right-hand traffic
 const LANE_BACK := 39.6  # -x direction; tree trunks stand along z = 37
@@ -12,11 +16,11 @@ const TURN_SPEED := 3.2    # m/s through the U-turns
 const TURN_ZONE := 22.0
 
 var player: CharacterBody3D
-var car: VehicleBody3D
-var target: PathFollow3D
+var cars: Array[VehicleBody3D] = []
+var targets: Array[PathFollow3D] = []
+var stuck_times: Array[float] = []
 var lane: Path3D
 var hit_cooldown := 0.0
-var stuck_time := 0.0
 
 func _ready() -> void:
 	# Run after the M.A.V.S car script so the U-turn braking below is not overwritten.
@@ -25,22 +29,28 @@ func _ready() -> void:
 	lane.set_script(load("res://addons/M.A.V.S/Scripts/MPathManager.gd"))
 	lane.curve = loop_curve()
 	add_child(lane)
-	# The lane leads back into itself, so the car keeps circling.
+	# The lane leads back into itself, so the cars keep circling.
 	var next: Array[MPathManager] = [lane]
 	lane.roads = next
-	target = load(TARGET).instantiate()
-	target.speed = DRIVE_FORCE
-	lane.add_child(target)
-	target.get_node("MeshInstance3D").hide()
-	car = load(CAR).instantiate()
-	car.target_ray = target
-	car.take_speed_from_target = true
-	car.boost_speed = true
-	add_child(car)
-	target.target_veh = car
-	if car.veh_indicator:
-		car.veh_indicator.hide()
-	place_at_start()
+	for path in CARS:
+		var target: PathFollow3D = load(TARGET).instantiate()
+		target.speed = DRIVE_FORCE
+		lane.add_child(target)
+		target.get_node("MeshInstance3D").hide()
+		var car: VehicleBody3D = load(path).instantiate()
+		car.collision_layer = 3
+		car.collision_mask = 3
+		car.target_ray = target
+		car.take_speed_from_target = true
+		car.boost_speed = true
+		add_child(car)
+		target.target_veh = car
+		if car.veh_indicator:
+			car.veh_indicator.hide()
+		cars.append(car)
+		targets.append(target)
+		stuck_times.append(0.0)
+		place_at_start(cars.size() - 1)
 
 func loop_curve() -> Curve3D:
 	var curve := Curve3D.new()
@@ -60,24 +70,36 @@ func loop_curve() -> Curve3D:
 	curve.add_point(Vector3(X_MIN, y, LANE_OUT))
 	return curve
 
-func place_at_start() -> void:
-	target.progress = 6.0
+func place_at_start(index: int) -> void:
+	var curve := lane.curve
+	var length := curve.get_baked_length()
+	var behind := length * index / CARS.size()
+	var target := targets[index]
+	var car := cars[index]
+	target.progress = behind + 6.0
 	target.active = true
 	car.linear_velocity = Vector3.ZERO
 	car.angular_velocity = Vector3.ZERO
+	var from := curve.sample_baked(behind)
+	var heading := (curve.sample_baked(behind + 2.0) - from).normalized()
 	# M.A.V.S cars drive along their local +Z axis.
-	car.global_transform = Transform3D(Basis(Vector3.UP, PI / 2.0), Vector3(X_MIN, 0.6, LANE_OUT))
-	stuck_time = 0.0
+	car.global_transform = Transform3D(Basis.looking_at(-heading), from)
+	stuck_times[index] = 0.0
 
 func _physics_process(delta: float) -> void:
+	hit_cooldown = maxf(0.0, hit_cooldown - delta)
+	for index in cars.size():
+		drive(index, delta)
+
+func drive(index: int, delta: float) -> void:
+	var car := cars[index]
 	if not is_instance_valid(car):
 		return
-	hit_cooldown = maxf(0.0, hit_cooldown - delta)
 	var speed := car.linear_velocity.length()
 	# Recover a car that flipped, fell or wedged itself somewhere.
-	stuck_time = stuck_time + delta if speed < 0.5 else 0.0
-	if car.global_position.y < -3.0 or car.global_basis.y.y < 0.3 or stuck_time > 12.0:
-		place_at_start()
+	stuck_times[index] = stuck_times[index] + delta if speed < 0.5 else 0.0
+	if car.global_position.y < -3.0 or car.global_basis.y.y < 0.3 or stuck_times[index] > 12.0:
+		place_at_start(index)
 		return
 	var turning := car.global_position.x > X_MAX - TURN_ZONE or car.global_position.x < X_MIN + TURN_ZONE
 	var limit := TURN_SPEED if turning else CRUISE_SPEED

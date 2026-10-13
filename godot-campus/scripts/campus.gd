@@ -20,7 +20,9 @@ var web_events: Node3D
 var npcs: Array = []
 var markers: Array = []
 var pangolin: Node3D
-var car: CharacterBody3D
+var car: CharacterBody3D # the car being driven, or the last one driven
+var drive_cars: Array[CharacterBody3D] = []
+var drive_names: Array[String] = []
 var traffic: Node3D
 var carrying := false
 var car_speed := 0.0
@@ -345,19 +347,50 @@ func build_actors() -> void:
 	pangolin = load("res://assets/models/pangolin.glb").instantiate()
 	add_child(pangolin)
 	pangolin.position = Vector3(-3, 0.1, 8)
-	car = CharacterBody3D.new()
-	car.collision_layer = 4
-	car.collision_mask = 1
-	add_child(car)
-	car.position = Vector3(data.police.x, 0.1, data.police.z)
-	car.rotation.y = data.police.yaw
-	car.add_child(load("res://assets/models/police.glb").instantiate())
+	car = add_drive_car("巡邏車", load("res://assets/models/police.glb").instantiate(), Vector3(data.police.x, 0.1, data.police.z), data.police.yaw, Vector3(1.8, 1.2, 3.8))
+	# Parked between two street trees in front of the main gate, nose angled out so it pulls away clear of the next trunk.
+	add_drive_car("跑車", sports_car_visual(), Vector3(17.5, 0.1, 36.7), PI / 2.0 + deg_to_rad(20.0), Vector3(1.9, 1.2, 4.4))
+
+func add_drive_car(title: String, visual: Node3D, at: Vector3, yaw: float, size: Vector3) -> CharacterBody3D:
+	var body := CharacterBody3D.new()
+	body.collision_layer = 4
+	body.collision_mask = 1
+	add_child(body)
+	body.position = at
+	body.rotation.y = yaw
+	body.add_child(visual)
 	var collider := CollisionShape3D.new()
 	var box := BoxShape3D.new()
-	box.size = Vector3(1.8, 1.2, 3.8)
+	box.size = size
 	collider.shape = box
 	collider.position.y = 0.7
-	car.add_child(collider)
+	body.add_child(collider)
+	drive_cars.append(body)
+	drive_names.append(title)
+	return body
+
+func sports_car_visual() -> Node3D:
+	# Borrow only the looks of the M.A.V.S NightSky; its own driving script is left behind.
+	var source: Node3D = load("res://addons/M.A.V.S/Vehicle/AI_Vehicles/AI_NightSky.tscn").instantiate()
+	var visual := Node3D.new()
+	var body_mesh: Node3D = source.get_node("CollisionShape3D/Sport_Body")
+	var body_at: Transform3D = source.get_node("CollisionShape3D").transform * body_mesh.transform
+	body_mesh.owner = null
+	body_mesh.get_parent().remove_child(body_mesh)
+	visual.add_child(body_mesh)
+	body_mesh.transform = body_at
+	for wheel in source.get_children():
+		if wheel is VehicleWheel3D:
+			var rim: Node3D = wheel.get_child(0)
+			var rim_at: Transform3D = wheel.transform * rim.transform
+			rim.owner = null
+			wheel.remove_child(rim)
+			visual.add_child(rim)
+			rim.transform = rim_at
+	source.free()
+	# M.A.V.S cars point along +Z, the campus cars along -Z.
+	visual.rotation.y = PI
+	return visual
 
 func build_stories() -> void:
 	for info in data.stories:
@@ -513,7 +546,8 @@ func update_interaction() -> void:
 				candidate("story", markers[i].position, "E  拾起校園記憶", i)
 		candidate("enter", Vector3(0, 0, -73), "E  進入四維堂", -1, 4)
 		candidate("exit", Vector3(300, 0, 22), "E  返回校園", -1, 3)
-		candidate("car", car.position, "E  駕駛巡邏車", -1, 4)
+		for i in range(drive_cars.size()):
+			candidate("car", drive_cars[i].position, "E  駕駛%s" % drive_names[i], i, 4)
 		candidate("pangolin", pangolin.position, "E  放下穿山甲" if carrying else "E  抱起穿山甲", -1, 2.5)
 		if is_instance_valid(web_events): web_events.candidates()
 	hud.prompt.text = str(target.get("text", "")) if not hud.dialogue.visible else ""
@@ -581,6 +615,7 @@ func interact() -> void:
 				if carrying:
 					carrying = false
 					pangolin.position.y = 0.1
+				car = drive_cars[target.index]
 				player.driving = true
 
 func save_progress() -> void:
