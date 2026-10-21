@@ -50,6 +50,24 @@ func building(pos: Vector2,dimensions: Vector2,title: String = "") -> void:
 	if expanded and zoom>0.85 and not title.is_empty():
 		text_at(rect.position+Vector2(3,-5),title,12)
 
+## 半圓環建築（羅馬廣場）：圓弧在 +x 沿 -z 側展開，直邊朝 +z。
+func arc_building(lot: Dictionary) -> void:
+	var c := Vector2(lot.cx,lot.cz)
+	var ring := PackedVector2Array()
+	var lawn := PackedVector2Array()
+	for i in range(33):
+		var a := PI*i/32.0
+		ring.append(point(c+Vector2(cos(a),-sin(a))*lot.r_out))
+		lawn.append(point(c+Vector2(cos(a),-sin(a))*lot.r_in))
+	var inner := lawn.duplicate()
+	inner.reverse()
+	ring.append_array(inner)
+	draw_colored_polygon(lawn,Color("2b4a3a"))
+	draw_colored_polygon(ring,Color("344249"))
+	draw_polyline(ring,Color("54616a"),1,true)
+	if expanded and zoom>0.85:
+		text_at(point(c+Vector2(-18,-lot.r_in*0.45)),lot.name,12)
+
 func _draw() -> void:
 	if not is_instance_valid(game) or not is_instance_valid(game.player) or not is_instance_valid(game.navigation):
 		return
@@ -73,6 +91,9 @@ func _draw() -> void:
 			line_world(road,Color("587078"),5.5)
 		for lot in game.data.lots:
 			if lot.name in ["教育學院","李園","鳳凰林"]:
+				continue
+			if lot.get("shape","")=="arc":
+				arc_building(lot)
 				continue
 			building(Vector2(lot.x,lot.z),Vector2(lot.w,lot.d),"" if lot.get("map_only",false) else lot.name)
 		line_world([[-150,42],[149,42]],Color("587078"),8.0)

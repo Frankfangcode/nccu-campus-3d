@@ -14,7 +14,7 @@ func run() -> void:
 	root.add_child(game)
 	game.set_playing(true)
 	game.web_events.set_process(false)
-	for spec in [["電算中心",Vector3(70,0,-43)],["資訊大樓",Vector3(40,0,-31)],["樂活館",Vector3(38,0,-5)],["集英樓",Vector3(112,0,-4)],["大仁樓",Vector3(150,0,-21)],["司令台",Vector3(54,0,-112)]]:
+	for spec in [["電算中心",Vector3(70,0,-43)],["資訊大樓",Vector3(40,0,-31)],["樂活館",Vector3(38,0,-5)],["集英樓",Vector3(112,0,-4)],["大仁樓",Vector3(150,0,-21)],["司令台",Vector3(54,0,-112)],["羅馬廣場",Vector3(90,0,-59)]]:
 		var found := false
 		for poi in game.navigation.pois:
 			if poi.name==spec[0]: found = true
