@@ -84,3 +84,12 @@ Player character and Zhinan Road traffic (2026-10-13)
   https://github.com/Dente222/MAdvanced-Vehicle-Controller at e760b5a
   Full license: licenses/MAVS-LICENSE.txt. Editor temp/backup files omitted.
   One AI car loops Zhinan Road: scripts/traffic.gd.
+
+Web v1.50 downhill campus geometry (2026-10-21)
+  Source: https://github.com/wenzhotw/nccu100 at 482194e (main, v1.50).
+  Static exterior of the downhill campus re-exported with
+  tools/import_latest_world.py (adds Roman plaza, gym exterior, shop street,
+  prefab trees/lamps) and tools/sync_world_data.py. The uphill campus and
+  interiors other than the existing Siwei Hall interior are not imported;
+  story/NPC/quest content is unchanged. Photo-survey buildings, player model,
+  Zhinan traffic and drivable sports car remain Godot-only.

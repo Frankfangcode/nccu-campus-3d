@@ -13,7 +13,18 @@ async () => {
  const {GLTFExporter}=await import('/world-export/GLTFExporter.js');
  const {mergeBufferGeometries}=await import('/world-export/BufferGeometryUtils.js');
  const preserve=new Set(['law-school','swimming-hall','law-education-route']);
+ // 山上校區是公車可達的另一張地圖（換場景、第一次上山才建立），不屬於山下靜態校園；室內房間同理。
+ const outOfScope=new Set(['uphill-campus']);
+ const skipId=id=>preserve.has(id)||outOfScope.has(id);
  const region=(x,z)=>(x>-253&&x<-76&&z>-116&&z<-22)||(x>-222&&x<-138&&z>-126&&z<=-116)||(x>-162&&x<-84&&z>-136&&z<=-116)||(x>99&&x<125&&z>-32&&z<-18);
+
+ // 例外：四維堂室內（x=300 的獨立房間）從以前就是 Godot 現有功能（進出四維堂、舞台階梯、相機/互動都用 x=300），
+ // 網頁 v1.50 改成「第一次進門才建立」的房間，所以這裡手動建立一次並併入 Building_siwei-hall，維持現況。
+ // 其他室內（體育館、泳館、商學院、山上校區…）不建立，也不匯出。
+ const keepInterior=new Set(['siwei-hall']);
+ const R=await import('/src/core/rooms.js');
+ for(const id of keepInterior){R.switchTo(id);R.switchTo(null);}
+ const interiorColliders=[...keepInterior].flatMap(id=>R.rooms[id].colliders);
  const skip=new Set([sky,police,driveCar,...clouds]);
  const cache=new Map(),buckets=new Map();let count=0;
  const root=new T.Group();root.name='NCCU_LatestWeb';
@@ -51,7 +62,7 @@ async () => {
  }
  function walk(o,group='Terrain'){
    if(skip.has(o)||!o.visible||o.isSprite||o.isPoints||o.isLight||o.isLine||o.material===OUT||o.name.startsWith('石獅'))return;
-   if(o.name.startsWith('Building_')){if(preserve.has(o.name.slice(9)))return;group=o.name;}
+   if(o.name.startsWith('Building_')){if(skipId(o.name.slice(9)))return;group=o.name;}
    if(o.isMesh){
      const mats=Array.isArray(o.material)?o.material:[o.material];
      if(mats.some(m=>m.side===T.BackSide))return;
@@ -66,27 +77,31 @@ async () => {
    o.children.forEach(c=>walk(c,group));
  }
  scene.children.forEach(o=>walk(o));
+ for(const id of keepInterior){const rs=R.rooms[id].scene;rs.updateMatrixWorld(true);rs.children.forEach(o=>walk(o,'Building_'+id));}
  const groups=new Map();
  for(const {mat,group,cell,geos} of buckets.values()){
    if(!groups.has(group)){const node=new T.Group();node.name=group;root.add(node);groups.set(group,node);}
    const merged=mergeBufferGeometries(geos,false);if(!merged)throw Error('Cannot merge '+group);
    const mesh=new T.Mesh(merged,mat);mesh.name=mat.name+'_'+cell.join('_');groups.get(group).add(mesh);
  }
- const buildings=world.buildings.filter(b=>!preserve.has(b.id)).map(b=>({id:b.id,name:b.name,map:(b.map||[]).filter(s=>s.x!==undefined)}));
+ const buildings=world.buildings.filter(b=>!skipId(b.id)).map(b=>({id:b.id,name:b.name,map:(b.map||[]).filter(s=>s.x!==undefined)}));
  const heights=[];
  for(const b of world.buildings){
-   if(preserve.has(b.id)||!b.heightAt)continue;
+   if(skipId(b.id)||!b.heightAt)continue;
    const group=groups.get('Building_'+b.id);if(!group)continue;
+   const inner=(world.interiors[b.id]||{}).heightAt||(()=>null);
    const box=new T.Box3().setFromObject(group);const step=.5;
    for(let x=Math.floor(box.min.x)-1;x<Math.ceil(box.max.x)+1;x+=step)for(let z=Math.floor(box.min.z)-1;z<Math.ceil(box.max.z)+1;z+=step){
-     const h=b.heightAt(x+step/2,z+step/2);if(h==null||h<=.025||region(x,z))continue;
-     const ys=[[x,z],[x+step,z],[x+step,z+step],[x,z+step]].map(([px,pz])=>b.heightAt(px,pz)??h);
+     const hAt=(px,pz)=>keepInterior.has(b.id)&&px>200?inner(px,pz):b.heightAt(px,pz);
+     const h=hAt(x+step/2,z+step/2);if(h==null||h<=.025||region(x,z))continue;
+     const ys=[[x,z],[x+step,z],[x+step,z+step],[x,z+step]].map(([px,pz])=>hAt(px,pz)??h);
      heights.push([x,z,step,...ys]);
    }
  }
- const filtered=colliders.filter(c=>!region(c.x??c.cx??(c.x0+c.x1)/2,c.z??c.cz??(c.z0+c.z1)/2));
- const data={source:'9fde140',buildings,colliders:filtered,lots:LOTS.filter(l=>!region(l.x,l.z)),river:RIV,heights,groups:[...groups.keys()],meshes:count};
+ const filtered=[...colliders,...interiorColliders].filter(c=>!region(c.x??c.cx??(c.x0+c.x1)/2,c.z??c.cz??(c.z0+c.z1)/2));
+ const data={source:'482194e',buildings,colliders:filtered,lots:LOTS.filter(l=>!region(l.x,l.z)),river:RIV,heights,groups:[...groups.keys()],meshes:count};
  const glb=await new Promise((ok,bad)=>new GLTFExporter().parse(root,ok,bad,{binary:true,maxTextureSize:1024}));
  for(const [name,body] of [['campus.glb',glb],['latest-world.json',JSON.stringify(data)]]){const r=await fetch('http://127.0.0.1:8794/'+name,{method:'POST',body});if(!r.ok)throw Error('Cannot save '+name);}
- return {groups:data.groups,meshes:count,colliders:filtered.length,heights:heights.length,bytes:glb.byteLength};
+ const bbox=new T.Box3().setFromObject(root);
+ return {groups:data.groups,meshes:count,colliders:filtered.length,heights:heights.length,lots:data.lots.length,buildings:buildings.map(b=>b.id),bytes:glb.byteLength,bbox:[bbox.min.toArray(),bbox.max.toArray()],worldBuildingIds:world.buildings.map(b=>b.id),interiorsBuilt:Object.values((await import('/src/core/rooms.js')).rooms).filter(r=>r.built).map(r=>r.id)};
 }
