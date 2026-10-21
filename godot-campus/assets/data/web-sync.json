@@ -1,15 +1,32 @@
 {
   "repository": "https://github.com/wenzhotw/nccu100",
   "branch": "main",
-  "feature_branch": "feature/v1.24-rain-polish",
-  "commit": "9fde140",
-  "version": "1.24",
-  "date": "2026-10-12",
-  "content": ["weather.json", "old-principal.json"],
-  "models": ["campus.glb", "weather_lion.glb", "old_principal.glb"],
+  "commit": "482194e",
+  "version": "1.50",
+  "date": "2026-10-21",
+  "content": [
+    "weather.json",
+    "old-principal.json"
+  ],
+  "models": [
+    "campus.glb",
+    "weather_lion.glb",
+    "old_principal.glb"
+  ],
   "world_manifest": "latest-world.json",
-  "static_building_groups": 16,
-  "static_source_meshes": 4611,
+  "static_building_groups": 17,
+  "static_source_meshes": 5738,
   "implementation": "scripts/web_events.gd",
-  "preserved": ["photo architecture", "mobile touch ownership", "manual mobile vehicle camera"]
+  "preserved": [
+    "photo architecture",
+    "mobile touch ownership",
+    "manual mobile vehicle camera"
+  ],
+  "excluded": [
+    "uphill-campus",
+    "interiors (siwei-hall interior kept as before)",
+    "gym interior",
+    "story/NPC/quest content"
+  ],
+  "content_commit": "9fde140 (story/NPC/quest content not re-synced)"
 }
